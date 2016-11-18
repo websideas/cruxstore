@@ -1,0 +1,282 @@
+/*
+Theme Name: Delphinus
+Description: Used to style the TinyMCE editor.
+*/
+
+// Sass tools and helpers used across the project.
+@import '../sass/utils/variables';
+@import '../sass/utils/mixin';
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Body
+ * 2.0 - Typography
+ * 3.0 - Elements
+ * 4.0 - Alignment
+ * 5.0 - Caption
+ * 6.0 - Galleries
+ * 7.0 - Audio / Video
+ * 8.0 - RTL
+ */
+
+
+/**
+ * 1.0 Body
+ */
+
+body {
+  font-size: 14px;
+  color: #3b3e43;
+  font-family: "Karla",sans-serif;
+  font-weight: 400;
+  line-height: 1.6471;
+  margin: 20px 40px;
+  max-width: 870px;
+  vertical-align: baseline;
+}
+
+
+
+/**
+ * 2.0 Typography
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  margin: 0 0 20px;
+  font-family: $heading-font;
+  font-weight: bold;
+  color: $black;
+  clear: both;
+}
+
+h1, .h1 {
+  font-size: 36px;
+}
+
+h2, .h2 {
+  font-size: 30px;
+}
+
+h3, .h3 {
+  font-size: 24px;
+}
+
+h4, .h4 {
+  font-size: 18px;
+}
+
+h5, .h5 {
+  font-size: 14px;
+}
+
+h6, .h6 {
+  font-size: 12px;
+}
+
+p {
+  margin: 0 0 25px;
+}
+
+
+blockquote {
+  padding: 20px 0 0 50px;
+  margin-bottom: $vspacing;
+  border: none;
+  position: relative;
+  font-size: 14px;
+  font-style: italic;
+  font-family: $extra-font;
+  color: $gray-text;
+
+  &:before{
+    color: $extra-color;
+    content: "\201C";
+    font-size: 72px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    text-align: left;
+    line-height: 72px;
+  }
+
+  .blockquote-reverse {
+    padding: 20px 50px 0 0 ;
+    &:before {
+      left: auto;
+      right: 0;
+      content: "\201D";
+    }
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * 3.0 Elements
+ */
+
+
+
+
+/**
+ * 4.0 Alignment
+ */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: $vspacing;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: $vspacing;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/**
+ * 5.0 Captions
+ */
+.wp-caption {
+  margin-bottom: $vspacing;
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+  .wp-caption-text {
+    text-align: left;
+    padding: .7em 0 0;
+    font-size: 12px;
+    color: $gray-text;
+    line-height: 1.4;
+  }
+}
+
+/**
+ * 6.0 Galleries
+ */
+
+.gallery {
+  @include clearfix();
+  margin: 0 -1.1666667% $vspacing;
+
+  .gallery-item {
+    display: inline-block;
+    max-width: 33.33%;
+    padding: 0 1.1400652% 2.2801304%;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+
+    .gallery-icon {
+      a {
+        display: block;
+      }
+      img {
+        border: none;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+    .gallery-caption {
+      line-height: 1.4;
+      margin: 10px 0 0;
+      text-align: center;
+    }
+  }
+
+  &.gallery-columns-1 {
+    .gallery-item {
+      max-width: 100%;
+    }
+  }
+
+  &.gallery-columns-2 {
+    .gallery-item {
+      max-width: 50%;
+    }
+  }
+
+  &.gallery-columns-3 {
+    .gallery-item {
+      max-width: 33.3%;
+    }
+  }
+
+  &.gallery-columns-4 {
+    .gallery-item {
+      max-width: 25%;
+    }
+  }
+
+  &.gallery-columns-5 {
+    .gallery-item {
+      max-width: 20%;
+    }
+  }
+
+  &.gallery-columns-6 {
+    .gallery-item {
+      max-width: 16.666666667%;
+    }
+  }
+
+  &.gallery-columns-7 {
+    .gallery-item {
+      max-width: 14.285714286%;
+    }
+  }
+
+  &.gallery-columns-8 {
+    .gallery-item {
+      max-width: 12.5%;
+    }
+  }
+
+  &.gallery-columns-9 {
+    .gallery-item {
+      max-width: 11.111111111%;
+    }
+  }
+}
+
+.gallery-columns-6,
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9{
+  .gallery-caption{
+    display: none;
+  }
+}
+
+
+
+/**
+ * 7.0 Audio / Video
+ */
+
+.mce-content-body .wpview-wrap {
+  margin-bottom: 32px;
+}
+
+.mce-content-body .wp-audio-playlist {
+  margin: 0;
+}

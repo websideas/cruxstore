@@ -1,0 +1,208 @@
+
+
+@font-face {
+  font-family: "Flaticoneco";
+  src: url("./Flaticoneco.eot");
+  src: url("./Flaticoneco.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticoneco.woff") format("woff"),
+       url("./Flaticoneco.ttf") format("truetype"),
+       url("./Flaticoneco.svg#Flaticoneco") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "flaticoneco";
+    src: url("./Flaticoneco.svg#Flaticoneco") format("svg");
+  }
+}
+
+.fi:before{
+  display: inline-block;
+  font-family: "Flaticoneco";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticoneco-badge:before { content: "\f100"; }
+.flaticoneco-bill:before { content: "\f101"; }
+.flaticoneco-bills:before { content: "\f102"; }
+.flaticoneco-box:before { content: "\f103"; }
+.flaticoneco-box-1:before { content: "\f104"; }
+.flaticoneco-box-2:before { content: "\f105"; }
+.flaticoneco-box-3:before { content: "\f106"; }
+.flaticoneco-box-4:before { content: "\f107"; }
+.flaticoneco-box-5:before { content: "\f108"; }
+.flaticoneco-cash:before { content: "\f109"; }
+.flaticoneco-coin:before { content: "\f10a"; }
+.flaticoneco-coins:before { content: "\f10b"; }
+.flaticoneco-credit-card:before { content: "\f10c"; }
+.flaticoneco-delivery:before { content: "\f10d"; }
+.flaticoneco-dislike:before { content: "\f10e"; }
+.flaticoneco-dollar-symbol:before { content: "\f10f"; }
+.flaticoneco-dollar-symbol-1:before { content: "\f110"; }
+.flaticoneco-dollar-symbol-2:before { content: "\f111"; }
+.flaticoneco-dollar-symbol-3:before { content: "\f112"; }
+.flaticoneco-dollar-symbol-4:before { content: "\f113"; }
+.flaticoneco-dollar-symbol-5:before { content: "\f114"; }
+.flaticoneco-headphones:before { content: "\f115"; }
+.flaticoneco-id-card:before { content: "\f116"; }
+.flaticoneco-invoice:before { content: "\f117"; }
+.flaticoneco-like:before { content: "\f118"; }
+.flaticoneco-like-1:before { content: "\f119"; }
+.flaticoneco-like-2:before { content: "\f11a"; }
+.flaticoneco-mathematics:before { content: "\f11b"; }
+.flaticoneco-money:before { content: "\f11c"; }
+.flaticoneco-money-1:before { content: "\f11d"; }
+.flaticoneco-money-2:before { content: "\f11e"; }
+.flaticoneco-money-bag:before { content: "\f11f"; }
+.flaticoneco-monitor:before { content: "\f120"; }
+.flaticoneco-monitor-1:before { content: "\f121"; }
+.flaticoneco-newspaper:before { content: "\f122"; }
+.flaticoneco-package:before { content: "\f123"; }
+.flaticoneco-package-1:before { content: "\f124"; }
+.flaticoneco-package-2:before { content: "\f125"; }
+.flaticoneco-package-3:before { content: "\f126"; }
+.flaticoneco-package-4:before { content: "\f127"; }
+.flaticoneco-package-5:before { content: "\f128"; }
+.flaticoneco-package-6:before { content: "\f129"; }
+.flaticoneco-package-7:before { content: "\f12a"; }
+.flaticoneco-padlock:before { content: "\f12b"; }
+.flaticoneco-payment-method:before { content: "\f12c"; }
+.flaticoneco-pen:before { content: "\f12d"; }
+.flaticoneco-percentage:before { content: "\f12e"; }
+.flaticoneco-pie-chart:before { content: "\f12f"; }
+.flaticoneco-piggy-bank:before { content: "\f130"; }
+.flaticoneco-piggy-bank-1:before { content: "\f131"; }
+.flaticoneco-piggy-bank-2:before { content: "\f132"; }
+.flaticoneco-price-tag:before { content: "\f133"; }
+.flaticoneco-shield:before { content: "\f134"; }
+.flaticoneco-shop:before { content: "\f135"; }
+.flaticoneco-shopping-bag:before { content: "\f136"; }
+.flaticoneco-shopping-bag-1:before { content: "\f137"; }
+.flaticoneco-shopping-bag-10:before { content: "\f138"; }
+.flaticoneco-shopping-bag-2:before { content: "\f139"; }
+.flaticoneco-shopping-bag-3:before { content: "\f13a"; }
+.flaticoneco-shopping-bag-4:before { content: "\f13b"; }
+.flaticoneco-shopping-bag-5:before { content: "\f13c"; }
+.flaticoneco-shopping-bag-6:before { content: "\f13d"; }
+.flaticoneco-shopping-bag-7:before { content: "\f13e"; }
+.flaticoneco-shopping-bag-8:before { content: "\f13f"; }
+.flaticoneco-shopping-bag-9:before { content: "\f140"; }
+.flaticoneco-shopping-basket:before { content: "\f141"; }
+.flaticoneco-shopping-cart:before { content: "\f142"; }
+.flaticoneco-shopping-cart-1:before { content: "\f143"; }
+.flaticoneco-shopping-cart-2:before { content: "\f144"; }
+.flaticoneco-shopping-cart-3:before { content: "\f145"; }
+.flaticoneco-shopping-cart-4:before { content: "\f146"; }
+.flaticoneco-shopping-cart-5:before { content: "\f147"; }
+.flaticoneco-shopping-cart-6:before { content: "\f148"; }
+.flaticoneco-shopping-cart-7:before { content: "\f149"; }
+.flaticoneco-shopping-cart-8:before { content: "\f14a"; }
+.flaticoneco-shopping-cart-9:before { content: "\f14b"; }
+.flaticoneco-speech-bubble:before { content: "\f14c"; }
+.flaticoneco-speech-bubble-1:before { content: "\f14d"; }
+.flaticoneco-tag:before { content: "\f14e"; }
+.flaticoneco-telephone:before { content: "\f14f"; }
+.flaticoneco-telephone-1:before { content: "\f150"; }
+.flaticoneco-trolley:before { content: "\f151"; }
+.flaticoneco-truck:before { content: "\f152"; }
+.flaticoneco-truck-1:before { content: "\f153"; }
+.flaticoneco-up-arrow:before { content: "\f154"; }
+.flaticoneco-wallet:before { content: "\f155"; }
+    
+    $font-Flaticoneco-badge: "\f100";
+    $font-Flaticoneco-bill: "\f101";
+    $font-Flaticoneco-bills: "\f102";
+    $font-Flaticoneco-box: "\f103";
+    $font-Flaticoneco-box-1: "\f104";
+    $font-Flaticoneco-box-2: "\f105";
+    $font-Flaticoneco-box-3: "\f106";
+    $font-Flaticoneco-box-4: "\f107";
+    $font-Flaticoneco-box-5: "\f108";
+    $font-Flaticoneco-cash: "\f109";
+    $font-Flaticoneco-coin: "\f10a";
+    $font-Flaticoneco-coins: "\f10b";
+    $font-Flaticoneco-credit-card: "\f10c";
+    $font-Flaticoneco-delivery: "\f10d";
+    $font-Flaticoneco-dislike: "\f10e";
+    $font-Flaticoneco-dollar-symbol: "\f10f";
+    $font-Flaticoneco-dollar-symbol-1: "\f110";
+    $font-Flaticoneco-dollar-symbol-2: "\f111";
+    $font-Flaticoneco-dollar-symbol-3: "\f112";
+    $font-Flaticoneco-dollar-symbol-4: "\f113";
+    $font-Flaticoneco-dollar-symbol-5: "\f114";
+    $font-Flaticoneco-headphones: "\f115";
+    $font-Flaticoneco-id-card: "\f116";
+    $font-Flaticoneco-invoice: "\f117";
+    $font-Flaticoneco-like: "\f118";
+    $font-Flaticoneco-like-1: "\f119";
+    $font-Flaticoneco-like-2: "\f11a";
+    $font-Flaticoneco-mathematics: "\f11b";
+    $font-Flaticoneco-money: "\f11c";
+    $font-Flaticoneco-money-1: "\f11d";
+    $font-Flaticoneco-money-2: "\f11e";
+    $font-Flaticoneco-money-bag: "\f11f";
+    $font-Flaticoneco-monitor: "\f120";
+    $font-Flaticoneco-monitor-1: "\f121";
+    $font-Flaticoneco-newspaper: "\f122";
+    $font-Flaticoneco-package: "\f123";
+    $font-Flaticoneco-package-1: "\f124";
+    $font-Flaticoneco-package-2: "\f125";
+    $font-Flaticoneco-package-3: "\f126";
+    $font-Flaticoneco-package-4: "\f127";
+    $font-Flaticoneco-package-5: "\f128";
+    $font-Flaticoneco-package-6: "\f129";
+    $font-Flaticoneco-package-7: "\f12a";
+    $font-Flaticoneco-padlock: "\f12b";
+    $font-Flaticoneco-payment-method: "\f12c";
+    $font-Flaticoneco-pen: "\f12d";
+    $font-Flaticoneco-percentage: "\f12e";
+    $font-Flaticoneco-pie-chart: "\f12f";
+    $font-Flaticoneco-piggy-bank: "\f130";
+    $font-Flaticoneco-piggy-bank-1: "\f131";
+    $font-Flaticoneco-piggy-bank-2: "\f132";
+    $font-Flaticoneco-price-tag: "\f133";
+    $font-Flaticoneco-shield: "\f134";
+    $font-Flaticoneco-shop: "\f135";
+    $font-Flaticoneco-shopping-bag: "\f136";
+    $font-Flaticoneco-shopping-bag-1: "\f137";
+    $font-Flaticoneco-shopping-bag-10: "\f138";
+    $font-Flaticoneco-shopping-bag-2: "\f139";
+    $font-Flaticoneco-shopping-bag-3: "\f13a";
+    $font-Flaticoneco-shopping-bag-4: "\f13b";
+    $font-Flaticoneco-shopping-bag-5: "\f13c";
+    $font-Flaticoneco-shopping-bag-6: "\f13d";
+    $font-Flaticoneco-shopping-bag-7: "\f13e";
+    $font-Flaticoneco-shopping-bag-8: "\f13f";
+    $font-Flaticoneco-shopping-bag-9: "\f140";
+    $font-Flaticoneco-shopping-basket: "\f141";
+    $font-Flaticoneco-shopping-cart: "\f142";
+    $font-Flaticoneco-shopping-cart-1: "\f143";
+    $font-Flaticoneco-shopping-cart-2: "\f144";
+    $font-Flaticoneco-shopping-cart-3: "\f145";
+    $font-Flaticoneco-shopping-cart-4: "\f146";
+    $font-Flaticoneco-shopping-cart-5: "\f147";
+    $font-Flaticoneco-shopping-cart-6: "\f148";
+    $font-Flaticoneco-shopping-cart-7: "\f149";
+    $font-Flaticoneco-shopping-cart-8: "\f14a";
+    $font-Flaticoneco-shopping-cart-9: "\f14b";
+    $font-Flaticoneco-speech-bubble: "\f14c";
+    $font-Flaticoneco-speech-bubble-1: "\f14d";
+    $font-Flaticoneco-tag: "\f14e";
+    $font-Flaticoneco-telephone: "\f14f";
+    $font-Flaticoneco-telephone-1: "\f150";
+    $font-Flaticoneco-trolley: "\f151";
+    $font-Flaticoneco-truck: "\f152";
+    $font-Flaticoneco-truck-1: "\f153";
+    $font-Flaticoneco-up-arrow: "\f154";
+    $font-Flaticoneco-wallet: "\f155";

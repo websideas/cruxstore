@@ -1,0 +1,141 @@
+/**
+ * Media
+ */
+
+.page-content,
+.entry-content,
+.comment-content {
+	img.wp-smiley {
+		border: none;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: 0;
+		display: inline-block;
+	}
+}
+
+/**
+ * Captions
+ */
+.wp-caption {
+  margin-bottom: $vspacing;
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+  .wp-caption-text {
+    text-align: left;
+    padding: .7em 0 0;
+    font-size: 12px;
+    color: $gray-text;
+    line-height: 1.4;
+  }
+}
+
+/**
+ * Galleries
+ */
+.gallery {
+  @include clearfix();
+  margin: 0 -1.1666667% $vspacing;
+
+  .gallery-item {
+    display: inline-block;
+    max-width: 33.33%;
+    padding: 0 1.1400652% 2.2801304%;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+
+    .gallery-icon {
+      a {
+          display: block;
+      }
+      img {
+          border: none;
+          height: auto;
+          margin: 0 auto;
+      }
+    }
+    .gallery-caption {
+      line-height: 1.4;
+      margin: 10px 0 0;
+      text-align: center;
+    }
+  }
+
+  &.gallery-columns-1 {
+      .gallery-item {
+        max-width: 100%;
+      }
+  }
+
+  &.gallery-columns-2 {
+      .gallery-item {
+        max-width: 50%;
+      }
+  }
+
+  &.gallery-columns-3 {
+      .gallery-item {
+        max-width: 33.3%;
+      }
+  }
+
+  &.gallery-columns-4 {
+      .gallery-item {
+        max-width: 25%;
+      }
+  }
+
+  &.gallery-columns-5 {
+      .gallery-item {
+        max-width: 20%;
+      }
+  }
+
+  &.gallery-columns-6 {
+      .gallery-item {
+        max-width: 16.666666667%;
+      }
+  }
+
+  &.gallery-columns-7 {
+      .gallery-item {
+        max-width: 14.285714286%;
+      }
+  }
+
+  &.gallery-columns-8 {
+      .gallery-item {
+        max-width: 12.5%;
+      }
+  }
+
+  &.gallery-columns-9 {
+      .gallery-item {
+        max-width: 11.111111111%;
+      }
+  }
+}
+
+.gallery-columns-6,
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9{
+  .gallery-caption{
+    display: none;
+  }
+}
+
+/**
+ * Embeds
+ */
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+}

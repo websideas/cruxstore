@@ -1,0 +1,92 @@
+.woocommerce-pagination,
+.pagination {
+  display: block;
+  margin: 0;
+  position: relative;
+  padding-top: 30px;
+}
+
+
+.pagination {
+  .nav-links{
+    position: relative;
+    *:first-child{
+      margin-left: 0;
+    }
+    *:last-child{
+      margin-right: 0;
+    }
+    a{
+      color: $black;
+      &:hover{
+        color: $primary-color;
+      }
+    }
+  }
+  .page-numbers {
+    border: 1px solid $gray-lighter;
+    color: $gray-text;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 38px;
+    margin: 0 5px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    @include transition();
+    text-align: center;
+    font-family: $extra-font;
+    @include border-radius(50%);
+    font-weight: bold;
+    vertical-align: top;
+    &.next,
+    &.prev {
+      text-indent: -999px;
+      overflow: hidden;
+      position: relative;
+      &:before{
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 100%;
+        text-indent: 0;
+      }
+    }
+    &.next{
+      &:before{
+        @include FontIcon('\f105');
+        right: 0;
+      }
+    }
+    &.prev{
+      &:before{
+        @include FontIcon('\f104');
+        left: 0;
+      }
+    }
+
+  }
+
+  a.page-numbers:hover,
+  a.page-numbers:focus,
+  .page-numbers.current{
+    border-color: $black;
+    background: $black;
+    color: $white;
+  }
+}
+
+
+.pagination-button{
+  @include clearfix();
+  .nav-previous{
+    float: left;
+  }
+  .nav-next{
+    float: right;
+  }
+}
+
+.pagination-loadmore{
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+.page-header{
+  border: none;
+  margin: 0;
+  padding: 85px 0;
+  background: $gray-bg;
+  .page-header-title{
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+  }
+  .woocommerce-breadcrumb{
+    margin: 0;
+    a{
+      color: inherit;
+    }
+  }
+  &.page-header-centered{
+    &.ph-align-center{
+      text-align: center;
+    }
+    &.ph-align-left{
+      text-align: left;
+    }
+    &.ph-align-right{
+      text-align: right;
+    }
+    .woocommerce-breadcrumb{
+      margin-top: 10px;
+    }
+  }
+  .page-header-right{
+    text-align: right;
+    float: right;
+  }
+}
+
+

@@ -1,0 +1,534 @@
+.searchform{
+  margin: 0 auto;
+  position: relative;
+  .wrap_product_cat{
+    display: none;
+  }
+  input[type=text] {
+    background: transparent;
+    width: 100%;
+    padding: 8px 50px 8px 16px;
+  }
+  button {
+    background: none;
+    border: none;
+    height: 40px;
+    padding: 0;
+    right: 2px;
+    width: 40px;
+    line-height: 40px;
+    @include translate('y');
+    i{
+      line-height: 42px;
+    }
+    span{
+      display: none;
+    }
+  }
+}
+
+.widget{
+  margin-bottom: 30px;
+  .widget-title{
+    font-size: 14px;
+    margin: 0 0 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &.widget_categories,
+  &.widget_archive,
+  &.widget_product_categories,
+  &.widget_pages,
+  &.widget_nav_menu,
+  &.widget_recent_entries,
+  &.widget_meta,
+  &.widget_rss,
+  &.widget_layered_nav,
+  &.widget_color_filter,
+  &.widget_cruxstore_price_filter,
+  &.widget_cruxstore_orderby{
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li{
+        padding-bottom: 6px;
+        position: relative;
+        a{
+          color: $gray-darker;
+          &:hover{
+            color: #000000;
+          }
+        }
+        .count{
+          padding-left: 17px;
+          font-size: 12px;
+          color: #cacaca;
+        }
+      }
+
+    }
+  }
+
+  &.widget_recent_comments{
+    color: $gray-text;
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li{
+        padding: 12px 0;
+        border-bottom: 1px solid $gray-light;
+        &:first-child{
+          padding-top: 0;
+        }
+        a{
+          color: $black;
+          font-weight: normal;
+          &:hover,
+          &:focus{
+            text-decoration: un;
+          }
+        }
+      }
+    }
+  }
+
+
+  &.widget_layered_nav,
+  &.widget_color_filter{
+    li.chosen {
+      a {
+        &:before {
+          display: none;
+        }
+        &:after {
+          @include FontIcon("\e013", 'WooCommerce');
+          color: #a00;
+          font-size: 12px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .widget_layered_nav_filters{
+    ul {
+      li {
+        a {
+          &:before {
+            display: none;
+          }
+          &:after {
+            @include FontIcon("\e013", 'WooCommerce');
+            font-size: 12px;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  &.widget_cruxstore_price_filter,
+  &.widget_cruxstore_orderby{
+    li.selected{
+      color: $black;
+    }
+  }
+
+  &.widget_product_categories,
+  &.widget_product_categories,
+  &.widget_pages,
+  &.widget_nav_menu{
+    font-size: 12px;
+    ul{
+
+      .current-cat{
+        > a{
+          color: $black;
+          font-weight: 600;
+          .count{
+            color: $primary-color;
+          }
+        }
+      }
+
+      margin-top: 5px;
+      &.children{
+        padding-left: 25px;
+        position: relative;
+        &:before{
+          background: $border-color-dark;
+          content: "";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 1px;
+        }
+
+        > li{
+          &:before{
+            background: $border-color-dark;
+            content: "";
+            height: 1px;
+            left: -25px;
+            position: absolute;
+            top: 15px;
+            width: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  &.widget_cruxstore_socials{
+    .socials-icon-wrapper{
+      margin-bottom: 0;
+    }
+  }
+
+  &.widget_cruxstore_posts{
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li{
+        margin-bottom: 20px;
+        .entry-thumbnail{
+          float: left;
+          width: 100px;
+          margin-right: 20px;
+        }
+        .content{
+          overflow: hidden;
+          line-height: 24px;
+        }
+        .title-link{
+          margin-top: -4px;
+          font-size: 14px;
+          display: block;
+          margin-bottom: 5px;
+          color: $text;
+          font-weight: bold;
+          line-height: 24px;
+          &:hover{
+            color: $primary-color;
+          }
+        }
+        .post-meta{
+          color: #afb0b1;
+          font-size: 13px;
+        }
+        &:after{
+          content: " ";
+          display: table;
+          clear: both;
+        }
+        &:last-child{
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  #calendar_wrap{
+    border: 1px solid $border-color;
+    table{
+      border-collapse: collapse;
+      display: table;
+      position: relative;
+      table-layout: fixed;
+      width: 100%;
+      border: none;
+      text-align: center;
+      text-transform: uppercase;
+      caption{
+        text-align: center;
+      }
+      tfoot{
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        tr{
+          display: block;
+          width: 100%;
+          > td{
+            border: none;
+            float: left;
+            padding: 8px 0;
+            &#prev{
+              padding-left: 10px;
+              text-align: left;
+              width: 75px;
+            }
+            &#next{
+              float: right;
+              padding-right: 10px;
+              text-align: right;
+              width: 75px;
+            }
+          }
+        }
+      }
+      tbody,thead{
+        th,td{
+          padding: 10px;
+          border: 1px solid $border-color;
+          line-height: normal;
+          &:first-child{
+            border-left: 0;
+          }
+          &:last-child{
+            border-right: 0;
+          }
+        }
+        th{
+          border-bottom: 0;
+          text-align: center;
+          font-weight: bold;
+        }
+        td#today{
+          color: #fff;
+          background: $primary-color;
+          a{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+
+  &.widget_tag_cloud,
+  &.widget_product_tag_cloud{
+    a{
+      font-size: 14px !important;
+      line-height: normal !important;
+      display: inline-block;
+      margin: 0 20px 20px 0;
+      color: #666;
+      &:hover{
+        color: $primary-color;
+      }
+    }
+  }
+
+  &.widget_contact_info{
+    .contact-info{
+      margin: 0;
+    }
+  }
+
+
+  &.widget_cruxstore_fadein{
+    .fadeinwidget{
+      visibility: hidden;
+      @include opacity(0);
+      @include transition('all 0.4s ease-in-out');
+    }
+    &:hover{
+      .fadeinwidget{
+        visibility: visible;
+        @include opacity(1);
+      }
+    }
+  }
+
+
+  &.widget_cruxstore_posts_carousel{
+    div.post{
+      position: relative;
+      a.post-carousel-link{
+        &,
+        &:before{
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          position: absolute;
+        }
+        &:before{
+          content: '';
+          @include transition();
+          background: rgba($black, .4);
+          z-index: 5;
+        }
+        &:hover{
+          &:before{
+            background: rgba($black, .6);
+          }
+        }
+      }
+      .post-carousel-content{
+        position: absolute;
+        bottom: 20px;
+        left: 25px;
+        right: 25px;
+        z-index: 15;
+        color: $white;
+      }
+      .cat-links{
+        display: block;
+        border-bottom: 4px solid rgba($white, .2);
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        padding: 0 6px 5px;
+        font-size: 12px;
+        a{
+          color: $white;
+        }
+      }
+      h4{
+        line-height: 26px;
+        color: $white;
+        font-size: 14px;
+        text-transform: none;
+        margin: 0;
+        padding: 0 6px;
+        font-weight: 500;
+      }
+
+
+    }
+  }
+
+  &.widget_cruxstore_nav_menu{
+    ul{
+      margin: 0 -7px;
+      padding: 0;
+      list-style: none;
+      @include clearfix;
+      li{
+        width: 50%;
+        padding: 0 7px;
+        display: inline-block;
+        float: left;
+        &:nth-child(2n + 3) {
+          clear: left;
+        }
+      }
+    }
+  }
+
+  &.widget_kt_mailchimp{
+    .kt-mailchimp-wrapper{
+      margin-bottom: 0;
+    }
+  }
+
+  &.null-instagram-feed{
+    ul{
+      margin: 0 -7px;
+      padding: 0;
+      list-style: none;
+      @include clearfix();
+
+      li{
+        width: 33.3333%;
+        padding: 0 7px;
+        display: inline-block;
+        float: left;
+        margin-bottom: 14px;
+        a{
+          display: block;
+          position: relative;
+          &:before,
+          &:after{
+            @include opacity(0);
+            @include transition();
+            position: absolute;
+          }
+          &:before{
+            width: 100%;
+            height: 100%;
+            background: rgba($black, .6);
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 1;
+          }
+          &:after{
+            @include FontIcon('\f16d');
+            @include translate();
+            z-index: 1;
+            color: $white;
+          }
+          &:hover{
+            &:before,
+            &:after{
+              @include opacity(1);
+            }
+          }
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+    p{
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+}
+
+.side-bar{
+  .widget{
+    margin-bottom: 50px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .widget-title {
+      font-size: 12px;
+      border-bottom: 4px solid $gray-bg;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      position: relative;
+      letter-spacing: 0.025em;
+      font-weight: 600;
+      span{
+        position: relative;
+        display: inline-block;
+        &:before{
+          position: absolute;
+          bottom: -14px;
+          width: 100%;
+          height: 4px;
+          left: 0;
+          content: '';
+          background: $black;
+        }
+      }
+    }
+  }
+}
+
+#footer-bottom,
+#footer-top{
+  .widget{
+    margin-bottom: 0;
+    .widget-title{
+      text-transform: uppercase;
+    }
+  }
+}
+
+#cruxstore-shop-filters{
+  .widget{
+    .widget-title{
+      font-family: inherit;
+      font-size: 14px;
+    }
+  }
+}
+
+
+.global-header{
+  .widget{
+    margin-bottom: 0;
+  }
+}

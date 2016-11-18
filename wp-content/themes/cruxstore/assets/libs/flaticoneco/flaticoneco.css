@@ -1,0 +1,118 @@
+
+@font-face {
+  font-family: "Flaticoneco";
+  src: url("./Flaticoneco.eot");
+  src: url("./Flaticoneco.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticoneco.woff") format("woff"),
+       url("./Flaticoneco.ttf") format("truetype"),
+       url("./Flaticoneco.svg#Flaticoneco") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticoneco";
+    src: url("./Flaticoneco.svg#Flaticoneco") format("svg");
+  }
+}
+
+[class^="flaticoneco-"]:before,
+[class*=" flaticoneco-"]:before{
+	font-family: Flaticoneco;
+	speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticoneco-badge:before { content: "\f100"; }
+.flaticoneco-bill:before { content: "\f101"; }
+.flaticoneco-bills:before { content: "\f102"; }
+.flaticoneco-box:before { content: "\f103"; }
+.flaticoneco-box-1:before { content: "\f104"; }
+.flaticoneco-box-2:before { content: "\f105"; }
+.flaticoneco-box-3:before { content: "\f106"; }
+.flaticoneco-box-4:before { content: "\f107"; }
+.flaticoneco-box-5:before { content: "\f108"; }
+.flaticoneco-cash:before { content: "\f109"; }
+.flaticoneco-coin:before { content: "\f10a"; }
+.flaticoneco-coins:before { content: "\f10b"; }
+.flaticoneco-credit-card:before { content: "\f10c"; }
+.flaticoneco-delivery:before { content: "\f10d"; }
+.flaticoneco-dislike:before { content: "\f10e"; }
+.flaticoneco-dollar-symbol:before { content: "\f10f"; }
+.flaticoneco-dollar-symbol-1:before { content: "\f110"; }
+.flaticoneco-dollar-symbol-2:before { content: "\f111"; }
+.flaticoneco-dollar-symbol-3:before { content: "\f112"; }
+.flaticoneco-dollar-symbol-4:before { content: "\f113"; }
+.flaticoneco-dollar-symbol-5:before { content: "\f114"; }
+.flaticoneco-headphones:before { content: "\f115"; }
+.flaticoneco-id-card:before { content: "\f116"; }
+.flaticoneco-invoice:before { content: "\f117"; }
+.flaticoneco-like:before { content: "\f118"; }
+.flaticoneco-like-1:before { content: "\f119"; }
+.flaticoneco-like-2:before { content: "\f11a"; }
+.flaticoneco-mathematics:before { content: "\f11b"; }
+.flaticoneco-money:before { content: "\f11c"; }
+.flaticoneco-money-1:before { content: "\f11d"; }
+.flaticoneco-money-2:before { content: "\f11e"; }
+.flaticoneco-money-bag:before { content: "\f11f"; }
+.flaticoneco-monitor:before { content: "\f120"; }
+.flaticoneco-monitor-1:before { content: "\f121"; }
+.flaticoneco-newspaper:before { content: "\f122"; }
+.flaticoneco-package:before { content: "\f123"; }
+.flaticoneco-package-1:before { content: "\f124"; }
+.flaticoneco-package-2:before { content: "\f125"; }
+.flaticoneco-package-3:before { content: "\f126"; }
+.flaticoneco-package-4:before { content: "\f127"; }
+.flaticoneco-package-5:before { content: "\f128"; }
+.flaticoneco-package-6:before { content: "\f129"; }
+.flaticoneco-package-7:before { content: "\f12a"; }
+.flaticoneco-padlock:before { content: "\f12b"; }
+.flaticoneco-payment-method:before { content: "\f12c"; }
+.flaticoneco-pen:before { content: "\f12d"; }
+.flaticoneco-percentage:before { content: "\f12e"; }
+.flaticoneco-pie-chart:before { content: "\f12f"; }
+.flaticoneco-piggy-bank:before { content: "\f130"; }
+.flaticoneco-piggy-bank-1:before { content: "\f131"; }
+.flaticoneco-piggy-bank-2:before { content: "\f132"; }
+.flaticoneco-price-tag:before { content: "\f133"; }
+.flaticoneco-shield:before { content: "\f134"; }
+.flaticoneco-shop:before { content: "\f135"; }
+.flaticoneco-shopping-bag:before { content: "\f136"; }
+.flaticoneco-shopping-bag-1:before { content: "\f137"; }
+.flaticoneco-shopping-bag-10:before { content: "\f138"; }
+.flaticoneco-shopping-bag-2:before { content: "\f139"; }
+.flaticoneco-shopping-bag-3:before { content: "\f13a"; }
+.flaticoneco-shopping-bag-4:before { content: "\f13b"; }
+.flaticoneco-shopping-bag-5:before { content: "\f13c"; }
+.flaticoneco-shopping-bag-6:before { content: "\f13d"; }
+.flaticoneco-shopping-bag-7:before { content: "\f13e"; }
+.flaticoneco-shopping-bag-8:before { content: "\f13f"; }
+.flaticoneco-shopping-bag-9:before { content: "\f140"; }
+.flaticoneco-shopping-basket:before { content: "\f141"; }
+.flaticoneco-shopping-cart:before { content: "\f142"; }
+.flaticoneco-shopping-cart-1:before { content: "\f143"; }
+.flaticoneco-shopping-cart-2:before { content: "\f144"; }
+.flaticoneco-shopping-cart-3:before { content: "\f145"; }
+.flaticoneco-shopping-cart-4:before { content: "\f146"; }
+.flaticoneco-shopping-cart-5:before { content: "\f147"; }
+.flaticoneco-shopping-cart-6:before { content: "\f148"; }
+.flaticoneco-shopping-cart-7:before { content: "\f149"; }
+.flaticoneco-shopping-cart-8:before { content: "\f14a"; }
+.flaticoneco-shopping-cart-9:before { content: "\f14b"; }
+.flaticoneco-speech-bubble:before { content: "\f14c"; }
+.flaticoneco-speech-bubble-1:before { content: "\f14d"; }
+.flaticoneco-tag:before { content: "\f14e"; }
+.flaticoneco-telephone:before { content: "\f14f"; }
+.flaticoneco-telephone-1:before { content: "\f150"; }
+.flaticoneco-trolley:before { content: "\f151"; }
+.flaticoneco-truck:before { content: "\f152"; }
+.flaticoneco-truck-1:before { content: "\f153"; }
+.flaticoneco-up-arrow:before { content: "\f154"; }
+.flaticoneco-wallet:before { content: "\f155"; }

@@ -1,0 +1,93 @@
+.pace {
+  background: #FFFFFF;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  width: 100%;
+  z-index: 999999;
+  text-align: center;
+  @include opacity(1);
+  @include css3-prefix('pointer-events', 'none');
+  @include css3-prefix(user-select, 'none');
+  @include css3-prefix(background-clip, 'padding-box');
+  @include transition();
+  &.pace-inactive {
+    visibility: hidden;
+    @include opacity(0);
+  }
+}
+
+.pace-activity {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .page-loading-wrapper{
+    display: inline-block;
+  }
+}
+
+.page-loading-wrapper {
+  display: none;
+  vertical-align: middle;
+  padding: 0 15px;
+  width: 99%;
+  .progress-bar-loading {
+    width: 110px;
+    margin: 0 auto;
+    height: 105px;
+    float: none;
+    @include border-radius-separate(13px, 13px, 13px, 13px);
+    background: #fff;
+    max-width: 100%;
+    position: relative;
+    .progress-bar-inner{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 110px;
+      overflow: hidden;
+      &.back-loading{
+        path{
+          fill: #eeeeee;
+        }
+      }
+      &.front-loading{
+        width: 1%;
+        @include transition();
+        path{
+          fill: #000000;
+        }
+      }
+    }
+    .progress-bar-number{
+      font-family: $heading-font;
+      color: #000000;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.075em;
+      line-height: 1;
+      padding-left: 30px;
+      text-align: center;
+    }
+    svg{
+      width: 110px;
+      path{
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    }
+  }
+}

@@ -1,0 +1,359 @@
+/*
+ * Owl Carousel
+ */
+
+
+.owl-carousel-kt{
+  margin-bottom: 50px;
+  position: relative;
+
+  .owl-wrapper{
+    cursor: url(../images/drag.png) 16 9, ew-resize !important;
+  }
+
+  &.carousel-gutters{
+    margin-left: -15px;
+    margin-right: -15px;
+    .cruxstore-owl-carousel{
+      .owl-item {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .owl-pagination{
+    text-align: center;
+    .owl-page{
+      cursor: pointer;
+      height: 14px;
+      display: inline-block;
+      width: 14px;
+      position: relative;
+      span{
+        @include transition();
+        @include border-radius(50%);
+        @include transition();
+        overflow: hidden;
+        cursor: pointer;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      + .owl-page{
+        margin-left: 14px;
+      }
+    }
+  }
+
+  &.pagination-fade{
+    .owl-page{
+      span{
+        background: $black;
+      }
+      &.active span,
+      &:hover span{
+        background: rgba($black, .5);
+      }
+    }
+    &.carousel-skin-white{
+      .owl-page{
+        span{
+          background: $white;
+        }
+        &.active span,
+        &:hover span{
+          background: rgba($white, .5);
+        }
+      }
+    }
+  }
+
+  &.pagination-dot-stroke{
+    .owl-page{
+      span{
+        background-color: rgba($black, 0.3);
+        @include box-shadow(0, 0, 0, rgba($black, .5), inset, 8px);
+      }
+      &.active span,
+      &:hover span{
+        @include box-shadow(0, 0, 0, $black, inset, 1px);
+      }
+    }
+
+    &.carousel-skin-white{
+      .owl-page{
+        span{
+          background-color: rgba($white, 0.3);
+          @include box-shadow(0, 0, 0, rgba($white, .5), inset, 8px);
+        }
+        &.active span,
+        &:hover span{
+          @include box-shadow(0, 0, 0, $white, inset, 1px);
+        }
+      }
+    }
+  }
+
+  &.pagination-fill-up,
+  &.pagination-circle-grow{
+    .owl-page{
+      span{
+        @include box-shadow(0, 0, 0, $black, inset, 2px);
+        &:after {
+          background-color: $black;
+          @include border-radius(50%);
+          bottom: 0;
+          content: "";
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+
+    &.carousel-skin-white{
+      .owl-page{
+        span{
+          @include box-shadow(0, 0, 0, $white, inset, 2px);
+          &:after {
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+  }
+
+  &.pagination-fill-up {
+    .owl-page{
+      span{
+        &:after {
+          height: 0;
+          @include transition('height 0.3s ease 0s');
+        }
+      }
+      &.active span,
+      &:hover span{
+        &:after {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &.pagination-circle-grow{
+    .owl-page{
+      span{
+        &:after{
+          height: 100%;
+          @include transform(scale(0));
+          @include css3-prefix('transform-origin', '50% 50% 0');
+          @include transition('transform 0.3s ease 0s');
+        }
+      }
+      &.active span,
+      &:hover span{
+        &:after {
+          @include transform(scale(1));
+        }
+      }
+    }
+  }
+
+  .owl-buttons {
+    @include transition(all 1s ease);
+    position: relative;
+    text-align: center;
+    @include opacity(0);
+    > div{
+      font-weight: normal;
+      color: $black;
+      font-size: 20px;
+      height: 40px;
+      width: 40px;
+      line-height: 38px;
+      display: inline-block;
+      text-align: center;
+      z-index: 5;
+      &:before{
+        font-family: FontAwesome;
+      }
+      &.owl-prev{
+        &:before{
+          content:"\f104";
+        }
+      }
+      &.owl-next{
+        &:before{
+          content:"\f105";
+        }
+      }
+    }
+  }
+
+  &.carousel-skin-white{
+    .owl-buttons {
+      > div{
+        color: $white;
+      }
+    }
+  }
+
+  &:hover{
+    .owl-buttons{
+      @include opacity(1);
+    }
+  }
+
+  &.visiable-navigation{
+    .owl-buttons {
+      @include opacity(1);
+    }
+  }
+
+
+
+  &.navigation-center-outside,
+  &.navigation-center{
+    .owl-controls{
+      margin-top: 0;
+    }
+    .owl-buttons{
+      position: static;
+      &:before{
+        display: none;
+      }
+      > div{
+        @include translate(y);
+        text-align: center;
+        margin: 0;
+        &.owl-prev{
+          left: -70px;
+        }
+        &.owl-next{
+          right: -70px;
+        }
+      }
+    }
+  }
+
+
+  &.navigation-center{
+    .owl-buttons{
+      > div{
+        &.owl-prev{
+          left: 20px;
+        }
+        &.owl-next{
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  &.navigation-top{
+    .owl-buttons{
+      margin-bottom: 20px;
+    }
+  }
+
+  &.navigation-normal{
+    .owl-buttons {
+      div{
+        font-size: 30px;
+      }
+    }
+  }
+
+  &.navigation-round-background,
+  &.navigation-circle-background,
+  &.navigation-square-background{
+    .owl-buttons {
+      div{
+        @include box-shadow(0,2px, 6px, rgba(#000, 0.05));
+        background: $black;
+        color: $white;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+
+    &.carousel-skin-white{
+      .owl-buttons {
+        div{
+          color: $gray-text;
+          background: $white;
+        }
+      }
+    }
+  }
+
+
+  &.navigation-round-border,
+  &.navigation-circle-border,
+  &.navigation-square-border{
+    .owl-buttons {
+      div{
+        border: 1px solid $black;
+        color: $black;
+      }
+    }
+  }
+
+  &.navigation-round-border,
+  &.navigation-round-background{
+    .owl-buttons {
+      div{
+        @include border-radius(5px);
+      }
+    }
+  }
+
+  &.navigation-circle-background,
+  &.navigation-circle-border{
+    .owl-buttons {
+      div{
+        @include border-radius(50%);
+      }
+    }
+  }
+
+
+
+
+  &.pagination-center-top{
+    .owl-pagination{
+      margin-bottom: 20px;
+    }
+  }
+
+  &.pagination-bottom-left,
+  &.pagination-center-bottom{
+    .owl-pagination{
+      margin-top: 20px;
+    }
+  }
+
+  &.pagination-bottom-left{
+    .owl-pagination{
+      text-align: left;
+      padding-left: 15px;
+    }
+  }
+  .owl-item{
+    .blog-post-wrap{
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+#sideshow-inner{
+  > *{
+    margin-bottom: 0;
+  }
+}

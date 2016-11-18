@@ -1,0 +1,415 @@
+/*
+ * Custom VC Full height
+ */
+.vc_row-o-full-height{
+  min-height: 100vh!important;
+}
+
+/*
+ * Custom VC button
+ */
+.vc_btn3.vc_general{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .110em;
+  &.vc_btn3-size-xs{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 8px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &.vc_btn3-size-sm{
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 10px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+
+  &.vc_btn3-size-md{
+    padding-left: 28px;
+    padding-right: 28px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+
+  &.vc_btn3-size-lg{
+    padding-left: 45px;
+    padding-right: 45px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+  }
+
+  &.vc_btn3-style-custom{
+    background-image: none;
+  }
+
+}
+.wpb_single_image{
+  .zoomin,
+  .zoomout,
+  .slide,
+  .shine,
+  .border-box-1,
+  .border-box-2{
+    position: relative;
+    overflow: hidden;
+    img{
+      @include transition('.3s ease-in-out');
+    }
+  }
+
+  .zoomin{
+    img{
+      @include transform(scale(1));
+    }
+    &:hover{
+      img{
+        @include transform(scale(1.2));
+      }
+    }
+  }
+
+  .zoomout{
+    img{
+      @include transform(scale(1.2));
+    }
+    &:hover{
+      img{
+        @include transform(scale(1));
+      }
+    }
+  }
+
+  .slide{
+    img{
+      @include transform(scale(1.2));
+      margin-left: 30px;
+    }
+    &:hover{
+      img{
+        margin-left: 0;
+      }
+    }
+  }
+  .shine{
+    &:before{
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      display: block;
+      content: '';
+      width: 30%;
+      height: 100%;
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+      @include transform(skewX(-25deg));
+    }
+    &:hover{
+      &:before{
+        @include animation('shine .75s');
+      }
+    }
+  }
+
+  .border-box-1,
+  .border-box-2{
+    background: $black;
+    &:before,
+    &:after{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      content: '';
+      @include transition('opacity 0.35s, transform 0.35s')
+    }
+    &:hover{
+      &:before,
+      &:after{
+        @include opacity(1);
+        @include transform(scale(1));
+      }
+      img{
+        @include opacity(0.7);
+      }
+    }
+    a{
+      position: relative;
+      z-index: 1;
+    }
+    img{
+      @include opacity(1);
+    }
+  }
+
+  .border-box-1{
+    &:before {
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      @include transform(scale(0, 1));
+    }
+    &:after {
+      border-right: 1px solid $white;
+      border-left: 1px solid $white;
+      @include transform(scale(1, 0));
+    }
+  }
+
+  .border-box-2{
+    &:before {
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      top: 30px;
+      right: 20px;
+      bottom: 30px;
+      left: 20px;
+      @include transform(scale(1,0));
+    }
+    &:after {
+      border-left: 1px solid $white;
+      border-right: 1px solid $white;
+      @include transform(scale(0,1));
+      top: 20px;
+      right: 30px;
+      bottom: 20px;
+      left: 30px;
+    }
+  }
+}
+
+@include keyframes('shine'){
+  100% {
+    left: 125%;
+  }
+}
+/**
+** Custom VC ACCORDION
+*/
+
+.vc_general.vc_tta.vc_tta-accordion{
+  .vc_tta-panel-title{
+    font-size: 14px;
+    font-family: inherit;
+    > a{
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+  }
+
+  &.vc_tta-style-outline{
+    .vc_tta-panel-body,
+    .vc_tta-panel-heading,
+    .vc_tta-tab > a{
+      border-width: 1px;
+    }
+
+    .vc_tta-panel{
+      .vc_tta-panel-heading{
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+
+  &.vc_tta-style-flat{
+    &.shadow{
+      .vc_tta-panel{
+        .vc_tta-panel-heading{
+          @include box-shadow(0, 2px, 6px, rgba(0,0,0,0.05));
+        }
+      }
+    }
+  }
+
+}
+.vc_general.vc_tta-color-white{
+  &.vc_tta-style-flat{
+    .vc_tta-panel{
+      .vc_tta-panel-heading{
+        &,
+        &:hover{
+          background: $white;
+          border-color: $white;
+          .vc_tta-panel-title{
+            > a{
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.vc_general.vc_tta-color-black{
+  &.vc_tta-style-classic{
+    .vc_tta-controls-icon{
+      &:after,
+      &:before{
+        border-color: $black;
+      }
+    }
+    .vc_tta-panel{
+      .vc_tta-panel-heading{
+        background: $gray-bg;
+        border-color: $gray-bg;
+        .vc_tta-panel-title{
+          > a{
+            color: $black;
+          }
+        }
+      }
+      .vc_tta-panel-heading:hover,
+      &.vc_active{
+        .vc_tta-panel-heading{
+          background: $black;
+          border-color: $black;
+        }
+        .vc_tta-panel-title{
+          > a{
+            color: $white;
+          }
+        }
+        .vc_tta-controls-icon{
+          &:after,
+          &:before{
+            border-color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &.vc_tta-style-outline{
+    .vc_tta-panel{
+      .vc_tta-panel-heading{
+        border-color: $border-color;
+        .vc_tta-panel-title{
+          > a{
+            color: lighten($black, 30%);
+          }
+        }
+        &:hover{
+          .vc_tta-panel-title{
+            > a{
+              color: $white;
+            }
+          }
+        }
+      }
+      &.vc_active{
+        .vc_tta-panel-heading{
+          &,
+          &:hover{
+            border-color: $border-color;
+            .vc_tta-panel-title{
+              > a{
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+/**
+** Custom VC ACCORDION
+*/
+
+
+.vc_general.vc_tta.vc_tta-tabs{
+  &.vc_tta-style-flat{
+    &.shadow{
+      .vc_tta-tab{
+        > a{
+          @include box-shadow(0, 2px, 6px, rgba(0,0,0,0.05));
+        }
+      }
+    }
+  }
+  .vc_tta-tab{
+    > a{
+      font-size: 14px;
+     font-weight: bold;
+      line-height: 1;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      text-transform: uppercase;
+    }
+  }
+}
+/**
+** Custom VC SEPARATOR
+*/
+
+.vc_separator{
+  .vc_icon_element.vc_icon_element-outer{
+    .vc_icon_element-inner{
+      border-width: 1px;
+    }
+  }
+  &.vc_separator_align_center{
+    &:not(.vc_separator-has-text){
+      .vc_icon_element{
+        margin-left: 0.8em;
+        margin-right: 0.8em;
+      }
+    }
+  }
+  &.vc_separator_align_left{
+    &:not(.vc_separator-has-text){
+      .vc_icon_element{
+        margin-right: 0.8em;
+      }
+    }
+  }
+  &.vc_separator_align_right{
+    &:not(.vc_separator-has-text){
+      .vc_icon_element{
+        margin-left: 0.8em;
+      }
+    }
+  }
+}
+/**
+** Custom VC CTA
+*/
+section.vc_cta3-container{
+  margin: 0;
+}
+
+.vc_general.vc_cta3{
+  margin-bottom: $vspacing;
+  &.vc_cta3-style-transparent{
+    border: none;
+    @include border-radius(0);
+    padding: 0;
+    .vc_cta3_content-container{
+      display: table;
+      width: 100%;
+    }
+    .vc_cta3-content{
+      margin-bottom: 20px;
+    }
+  }
+
+}

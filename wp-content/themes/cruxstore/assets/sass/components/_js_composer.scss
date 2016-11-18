@@ -1,0 +1,679 @@
+/*
+ * Custom VC Full height
+ */
+.vc_row-o-full-height{
+  min-height: 100vh!important;
+}
+
+/*
+ * Custom VC button
+ */
+.vc_btn3.vc_general{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .110em;
+  &.vc_btn3-size-xs{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 8px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &.vc_btn3-size-sm{
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 10px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+
+  &.vc_btn3-size-md{
+    padding: 11px 42px 8px;
+    font-size: 13px;
+    letter-spacing: .2em;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding: 13px 42px 10px;
+    }
+  }
+
+  &.vc_btn3-size-lg{
+    padding-left: 45px;
+    padding-right: 45px;
+    &.vc_btn3-style-outline,
+    &.vc_btn3-style-outline-custom{
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+  }
+
+  &.vc_btn3-style-custom{
+    background-image: none;
+  }
+
+  &.vc_btn3-color-accent {
+    &,
+    &.vc_btn3-style-flat{
+      background: $primary-color;
+      color: $white;
+      &:focus,
+      &:hover{
+        background: $primary-dark-color;
+        color: $white;
+      }
+    }
+    &.vc_btn3-style-3d{
+      @include box-shadow(0, 5px, 0, $primary-dark-color);
+      color: $white;
+      &:focus,
+      &:hover{
+        background: $primary-color;
+        @include box-shadow(0, 2px, 0, $primary-dark-color);
+        color: $white;
+        top: 3px;
+      }
+    }
+    &.vc_btn3-style-modern{
+      background: $primary-lighter-color;
+      border-color: $primary-lighter-color;
+      color: $white;
+      &:focus,
+      &:hover{
+        background: $primary-color;
+        border-color: $primary-color;
+        color: $white;
+      }
+    }
+    &.vc_btn3-style-outline{
+      border-color: $primary-color;
+      color: $primary-color;
+      background: transparent;
+      &:focus,
+      &:hover{
+        background: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+.wpb_single_image{
+  .zoomin,
+  .zoomout,
+  .slide,
+  .shine,
+  .border-box-1,
+  .border-box-2{
+    position: relative;
+    overflow: hidden;
+    img{
+      @include transition('.3s ease-in-out');
+    }
+  }
+
+  .zoomin{
+    img{
+      @include transform(scale(1));
+    }
+    &:hover{
+      img{
+        @include transform(scale(1.2));
+      }
+    }
+  }
+
+  .zoomout{
+    img{
+      @include transform(scale(1.2));
+    }
+    &:hover{
+      img{
+        @include transform(scale(1));
+      }
+    }
+  }
+
+  .slide{
+    img{
+      @include transform(scale(1.2));
+      margin-left: 30px;
+    }
+    &:hover{
+      img{
+        margin-left: 0;
+      }
+    }
+  }
+  .shine{
+    &:before{
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      display: block;
+      content: '';
+      width: 30%;
+      height: 100%;
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+      @include transform(skewX(-25deg));
+    }
+    &:hover{
+      &:before{
+        @include animation('shine .75s');
+      }
+    }
+  }
+
+  .border-box-1,
+  .border-box-2{
+    background: $black;
+    &:before,
+    &:after{
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      content: '';
+      @include transition('opacity 0.35s, transform 0.35s')
+    }
+    &:hover{
+      &:before,
+      &:after{
+        @include opacity(1);
+        @include transform(scale(1));
+      }
+      img{
+        @include opacity(0.7);
+      }
+    }
+    a{
+      position: relative;
+      z-index: 1;
+    }
+    img{
+      @include opacity(1);
+    }
+  }
+
+  .border-box-1{
+    &:before {
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      @include transform(scale(0, 1));
+    }
+    &:after {
+      border-right: 1px solid $white;
+      border-left: 1px solid $white;
+      @include transform(scale(1, 0));
+    }
+  }
+
+  .border-box-2{
+    &:before {
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      top: 30px;
+      right: 20px;
+      bottom: 30px;
+      left: 20px;
+      @include transform(scale(1,0));
+    }
+    &:after {
+      border-left: 1px solid $white;
+      border-right: 1px solid $white;
+      @include transform(scale(0,1));
+      top: 20px;
+      right: 30px;
+      bottom: 20px;
+      left: 30px;
+    }
+  }
+}
+
+@include keyframes('shine'){
+  100% {
+    left: 125%;
+  }
+}
+
+
+/**
+** Custom VC GALLERY
+*/
+
+div.wpb_gallery{
+  .wpb_flexslider{
+    border: none;
+    @include box-shadow(0, 0, 0);
+    .flex-control-nav{
+      bottom: 15px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: auto;
+      line-height: 1;
+    }
+    .flex-direction-nav{
+      display: none!important;
+    }
+    .flex-control-paging li a{
+      background: rgba($white, .4);
+      @include box-shadow(0, 0, 0);
+      width: 8px;
+      height: 8px;
+      &:hover,
+      &.flex-active{
+        background: $primary-color;
+      }
+    }
+
+  }
+}
+
+/**
+** Custom VC ACCORDION
+*/
+
+
+
+div.vc_tta.vc_tta-accordion{
+  .vc_tta-controls-icon.vc_tta-controls-icon-arrow-circle{
+    margin-top: -3px;
+    color: $primary-color;
+    &:before{
+      @include FontIcon('\f18e');
+      font-size: 14px;
+    }
+  }
+  .vc_active{
+    .vc_tta-controls-icon.vc_tta-controls-icon-arrow-circle{
+      &:before{
+        content: '\f01a';
+      }
+    }
+  }
+
+  &.vc_tta-style-flat{
+    .vc_tta-panel-title > a{
+      padding: 20px;
+      font-weight: 600;
+    }
+    .vc_tta-panel-body{
+      padding: 0px 48px 38px;
+    }
+    &.vc_tta-color-white{
+      .vc_tta-panel .vc_tta-panel-title > a{
+        color: #000;
+      }
+    }
+  }
+
+  &.vc_tta-style-wrapper{
+    .vc_tta-panel{
+      border:2px solid $gray-bg;
+      background: $white;
+      @include transition();
+      &:last-child{
+        margin-bottom: 0!important;
+      }
+    }
+    &:not(.shadow){
+      @include tta_color('chino', '#CEC2AB');
+      @include tta_color('blue', '#5472D2');
+      @include tta_color('turquoise', '#00C1CF');
+      @include tta_color('pink', '#FE6C61');
+      @include tta_color('violet', '#8D6DC4');
+      @include tta_color('peacoc', '#4CADC9');
+      @include tta_color('mulled-wine', '#50485B');
+      @include tta_color('vista-blue', '#75D69C');
+      @include tta_color('black', '#EBEBEB');
+      @include tta_color('orange', '#F7BE68');
+      @include tta_color('sky', '#5AA1E3');
+      @include tta_color('green', '#6DAB3C');
+      @include tta_color('juicy-pink', '#F4524D');
+      @include tta_color('sandy-brown', '#F79468');
+      @include tta_color('grace', '#AED13B');
+      @include tta_color('purple', '#B97EBB');
+      @include tta_color('white', '#FFFFFF');
+      .vc_tta-panel{
+        &.vc_active{
+          border-color: $primary-color!important;
+        }
+      }
+    }
+    &.shadow{
+      .vc_tta-panel{
+        @include box-shadow(0, 2px, 6px, rgba($black,0.05));
+      }
+      @include tta_color('chino', '#CEC2AB', 'background');
+      @include tta_color('blue', '#5472D2', 'background');
+      @include tta_color('turquoise', '#00C1CF', 'background');
+      @include tta_color('pink', '#FE6C61', 'background');
+      @include tta_color('violet', '#8D6DC4', 'background');
+      @include tta_color('peacoc', '#4CADC9', 'background');
+      @include tta_color('mulled-wine', '#50485B', 'background');
+      @include tta_color('vista-blue', '#75D69C', 'background');
+      @include tta_color('black', '#EBEBEB', 'background');
+      @include tta_color('orange', '#F7BE68', 'background');
+      @include tta_color('sky', '#5AA1E3', 'background');
+      @include tta_color('green', '#6DAB3C', 'background');
+      @include tta_color('juicy-pink', '#F4524D', 'background');
+      @include tta_color('sandy-brown', '#F79468', 'background');
+      @include tta_color('grace', '#AED13B', 'background');
+      @include tta_color('purple', '#B97EBB', 'background');
+      @include tta_color('white', '#FFFFFF', 'background');
+    }
+
+    .vc_tta-panel-heading{
+      margin-bottom: 0!important;
+      margin-top: 0!important;
+      border: none!important;
+    }
+    .vc_tta-panel-body{
+      border: none !important;
+      padding-bottom: 30px !important;
+      padding-left: 46px !important;
+      padding-top: 2px !important;
+    }
+
+    @include tta_spacing(1);
+    @include tta_spacing(2);
+    @include tta_spacing(3);
+    @include tta_spacing(4);
+    @include tta_spacing(5);
+    @include tta_spacing(10);
+    @include tta_spacing(15);
+    @include tta_spacing(20);
+    @include tta_spacing(25);
+    @include tta_spacing(30);
+    @include tta_spacing(35);
+
+  }
+
+  .vc_tta-panel-title{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    > a{
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  &.vc_tta-style-outline{
+    .vc_tta-panel-body,
+    .vc_tta-panel-heading,
+    .vc_tta-tab > a{
+      border-width: 1px;
+    }
+
+    .vc_tta-panel{
+      .vc_tta-panel-heading{
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+}
+
+.vc_general.vc_tta-color-black{
+  &.vc_tta-style-classic{
+    .vc_tta-tab {
+      > a{
+        background-color: $gray-bg;
+        border-color: $gray-bg;
+        color: $gray-darker;
+        &:focus,
+        &:hover{
+          color: $white;
+        }
+      }
+      &.vc_active a{
+        background-color: $black;
+        border-color: $black;
+        color: $white;
+      }
+    }
+  }
+}
+/**
+** Custom VC TABS
+*/
+.vc_general.vc_tta.vc_tta-tabs{
+  &.vc_tta-style-wrapper{
+    .vc_tta-tabs-container{
+      background: $white;
+      padding-left: 16px;
+      .vc_tta-tabs-list{
+        margin-top: 0!important;
+        margin-bottom: 0!important;
+      }
+      .vc_tta-tab{
+        margin-top: 0!important;
+        margin-bottom: 0!important;
+        > a{
+          color: $gray-lighter;
+          @include transition();
+        }
+        &.vc_active a,
+        > a:hover{
+          color: $black;
+        }
+      }
+    }
+    .vc_tta-panels-container{
+      background: $white;
+      padding: 12px 16px;
+    }
+    &.shadow{
+      .vc_tta-tabs-container,
+      .vc_tta-panels-container{
+        @include box-shadow(0, 2px, 6px, rgba($black,0.05));
+      }
+    }
+  }
+
+  .vc_tta-tab{
+    > a{
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      padding-bottom: 15px;
+      padding-top: 15px;
+    }
+  }
+}
+/**
+** Custom VC TOOGLE
+*/
+div.vc_toggle{
+  border: 2px solid $gray-light;
+  padding: 12px 20px;
+
+  &.vc_toggle_active{
+    border-color: $primary-color;
+  }
+
+  .vc_toggle_title{
+    h4{
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .vc_toggle_content{
+    > p:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &.vc_toggle_check-circle{
+    .vc_toggle_title,
+    .vc_toggle_content{
+      padding-left: 28px;
+    }
+
+    .vc_toggle_icon {
+      @include translate(y);
+      left: 0;
+      display: inline-block;
+      text-align: center;
+      line-height: 22px;
+      font-size: 14px;
+      &:before{
+        @include FontIcon('\f05d');
+      }
+    }
+    &.vc_toggle_size_lg{
+      .vc_toggle_icon {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+    &.vc_toggle_size_sm{
+      .vc_toggle_icon {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &.vc_toggle_color_accent{
+    .vc_toggle_icon{
+      color: $primary-color;
+    }
+
+    &.vc_toggle_square,
+    &.vc_toggle_round{
+
+      .vc_toggle_title:hover .vc_toggle_icon,
+      .vc_toggle_icon{
+        border-color: transparent;
+        background-color: $primary-color;
+        &:after,
+        &:before{
+          background-color: $white;
+        }
+      }
+
+      &.vc_toggle_color_inverted{
+        .vc_toggle_title:hover .vc_toggle_icon,
+        .vc_toggle_icon{
+          border-color: $primary-color;
+          background: transparent;
+          &:after,
+          &:before{
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+
+    &.vc_toggle_simple{
+      .vc_toggle_title:hover .vc_toggle_icon,
+      .vc_toggle_icon{
+        border-color: transparent;
+        background: transparent;
+        &:after,
+        &:before{
+          background-color: $primary-color;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+/**
+** Custom VC SEPARATOR
+*/
+
+.vc_separator{
+  .vc_icon_element.vc_icon_element-outer{
+    .vc_icon_element-inner{
+      border-width: 1px;
+    }
+  }
+  &.vc_separator_align_center{
+    &:not(.vc_separator-has-text){
+      .vc_icon_element{
+        margin-left: 0.8em;
+        margin-right: 0.8em;
+      }
+    }
+  }
+  &.vc_separator_align_left{
+    &:not(.vc_separator-has-text){
+      .vc_icon_element{
+        margin-right: 0.8em;
+      }
+    }
+  }
+  &.vc_separator_align_right{
+    &:not(.vc_separator-has-text){
+      .vc_icon_element{
+        margin-left: 0.8em;
+      }
+    }
+  }
+}
+/**
+** Custom VC CTA
+*/
+section.vc_cta3-container{
+  margin: 0;
+}
+
+.vc_general.vc_cta3{
+  margin-bottom: $vspacing;
+
+  &.vc_cta3-style-transparent{
+    border: none;
+    @include border-radius(0);
+    padding: 0;
+    h2{
+      font-size: 24px;
+    }
+    .vc_cta3_content-container{
+      display: table;
+      width: 100%;
+    }
+    .vc_cta3-content{
+      margin-bottom: 20px;
+    }
+  }
+  &.vc_cta3-color-white{
+    color: $white;
+    h2{
+      color: $white;
+    }
+  }
+  &.no-content{
+    .vc_cta3-content-header{
+      padding-top: 10px;
+      h2,h4{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.no-header{
+    .vc_cta3-content{
+      padding-top: 10px;
+    }
+  }
+  .vc_btn3.vc_general.vc_btn3-size-md.vc_btn3-style-outline,
+  .vc_btn3.vc_general.vc_btn3-size-md.vc_btn3-style-outline-custom{
+    padding: 13px 65px 10px;
+  }
+
+}

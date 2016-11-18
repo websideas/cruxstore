@@ -1,0 +1,45 @@
+/**
+ * 404 Styles
+ */
+
+.wrapper-404{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+#error404{
+  text-align: center;
+  position: absolute;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  @include translate;
+  padding: 0 30px;
+  border-left: 2px solid $white;
+  border-right: 2px solid $white;
+  z-index: 2;
+  h1{
+    font-size: 150px;
+    line-height: 150px;
+    margin-bottom: 45px;
+    letter-spacing: 0;
+    font-weight: 400;
+    color: $primary-color;
+    white-space: nowrap;
+  }
+  h4{
+    font-size: 18px;
+    color: $white;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 35px;
+  }
+  p{
+    a{
+      color: $white;
+    }
+  }
+}

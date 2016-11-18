@@ -1,0 +1,1 @@
+<a href="#" class="footer-subscribe"><?php esc_html_e('Subscribe', 'delphinus') ?></a>

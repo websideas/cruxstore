@@ -1,0 +1,622 @@
+/*==================================
+* Helpers
+===================================*/
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+#setting-error-tgmpa{
+    display: block;
+}
+.colors-table{
+    width: 100%;
+}
+.colors-table td{
+    vertical-align: top;
+}
+/*==================================
+* Spinner
+===================================*/
+.cruxstore-spinner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+    display: none;
+    background: url(../images/spinner.gif) no-repeat center center;
+}
+.preview-position-center{
+    text-align: center;
+}
+
+table.wp-list-table td.column-thumb .term_text,
+table.wp-list-table td.column-thumb .term_color {
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+table.wp-list-table td.column-thumb .term_text{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 2px;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+}
+table.wp-list-table td.column-thumb .term_color {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+}
+
+/*==================================
+* KT-Socials
+===================================*/
+.cruxstore-socials-options{
+
+}
+.cruxstore-socials-lists{
+    margin: 0;
+    min-height: 30px;
+    padding: 0;
+}
+.cruxstore-socials-profiles li,
+.cruxstore-socials-lists li{
+    border: 1px solid #ccc;
+    color: #cccccc;
+    display: inline-block;
+    font-size: 20px;
+    height: 30px;
+    margin: 0 5px 5px 0!important;
+    text-align: center;
+    width: 30px;
+    cursor: pointer;
+    float: left;
+    position: relative;
+}
+.cruxstore-socials-profiles li{
+    border-color: #333;
+    cursor: move;
+    color: #333;
+    background: #FFF;
+}
+.cruxstore-socials-profiles li:hover,
+.cruxstore-socials-lists li:hover,
+.cruxstore-socials-lists li.selected{
+    border-color: #000;
+    color: #000;
+}
+.cruxstore-socials-lists li.selected{
+    cursor: not-allowed;
+}
+
+
+.cruxstore-socials-profiles li i,
+.cruxstore-socials-lists li i{
+    line-height: 30px;
+}
+.cruxstore-socials-profiles li span{
+    background: rgba(0, 0, 0, 0.8);
+    color: red;
+    display: none;
+    cursor: pointer;
+    font-size: 9px;
+    height: 10px;
+    line-height: 8px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 10px;
+}
+.cruxstore-socials-profiles li span:after{
+    content: "\f00d";
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+}
+.cruxstore-socials-profiles li:hover span{
+    display: block;
+}
+.cruxstore-socials-profiles{
+    border: 1px solid #333;
+    margin-top: 5px;
+    padding: 5px 5px 0 5px;
+    min-height: 32px;
+}
+
+.ui-socials-highlight{
+    width: 30px;
+    height: 30px;
+    background: #DDD;
+}
+
+/* ============================================================
+  SWITCH
+============================================================ */
+.cmn-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+.cmn-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input.cmn-toggle-round-flat + label {
+    padding: 2px;
+    width: 80px;
+    height: 30px;
+    background-color: #dddddd;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    -o-transition: background 0.4s;
+    transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+input.cmn-toggle-round-flat + label:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    background-color: #fff;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+    border-radius: 60px;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+    -o-transition: background 0.4s;
+    transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:after {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    width: 26px;
+    background-color: #dddddd;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    -ms-border-radius: 26px;
+    -o-border-radius: 26px;
+    border-radius: 26px;
+    -webkit-transition: margin 0.4s, background 0.4s;
+    -moz-transition: margin 0.4s, background 0.4s;
+    -o-transition: margin 0.4s, background 0.4s;
+    transition: margin 0.4s, background 0.4s;
+}
+input.cmn-toggle-round-flat:checked + label {
+    background-color: #093459;
+}
+input.cmn-toggle-round-flat:checked + label:after {
+    margin-left: 49px;
+    background-color: #093459;
+}
+/*==================================
+* Widget KT image
+===================================*/
+.cruxstore_image_preview{
+    border: 1px solid #ddd;
+    display: none;
+    float: left;
+    margin: 10px 0;
+    padding: 2px;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.cruxstore_image_preview img{
+    max-width: 100%;
+    display: block;
+}
+.cruxstore_image_preview i{
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 20px;
+}
+
+/*==================================
+* Custom stype for metabox
+===================================*/
+
+.rwmb-meta-box{
+    margin: 20px -12px 0 -12px;
+}
+.rwmb-meta-box .rwmb-field{
+    border-bottom: 1px solid #e8e8e8;
+    padding: 15px;
+}
+
+.rwmb-meta-box .rwmb-field:last-child{
+    border-bottom: 0;
+}
+
+.rwmb-meta-box .rwmb-label{
+    width: 34%;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+.rwmb-meta-box .rwmb-label ~ .rwmb-input{
+    width: 64%;
+}
+div#post-body .rwmb-select-advanced{
+    min-width: 400px;
+}
+
+.rwmb-meta-box .description{
+    font-size: 12px;
+}
+
+div#post-body .rwmb-revSlider,
+div#post-body .rwmb-layerslider,
+div#post-body .rwmb-post,
+div#post-body .rwmb-select{
+    -moz-appearance: none;
+    background: url("../images/selectbox-arrow.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+    height: 35px;
+    width: 400px;
+    box-shadow: none;
+    max-width: 100%;
+}
+
+div#post-body .rwmb-text{
+    border: 1px solid #e4e4e4;
+    height: 35px;
+    width: 400px;
+    box-shadow: none;
+    max-width: 100%;
+}
+
+.rwmb-radio_image-wrapper .rwmb-input label{
+    float:left;
+    text-align:center;
+    margin:0 10px;
+}
+#side-sortables .rwmb-input .rwmb-text{
+    max-width: 100%;
+}
+.slider-no-image-preview .upload_button_div,
+.slider-no-image-preview .redux_slides_add_remove{
+    display: none;
+}
+.rwmb-color-wrapper .wp-picker-holder{
+    z-index: 1;
+}
+
+.rwmb-background-wrapper .cruxstore_image_url{
+    width: 100%;
+}
+.rwmb-background-wrapper .cruxstore_image_remove{
+    margin-left: 10px;
+    color: #ef521d;
+}
+.rwmb-Ktgallery-wrapper .button{
+    margin-right: 5px;
+}
+.rwmb-Ktgallery-wrapper .cruxstore-gallery-images{
+    margin: 0;
+}
+.rwmb-Ktgallery-wrapper .cruxstore-gallery-images li{
+    border: 5px solid #1e8cbe;
+    display: inline-block;
+    float: left;
+    margin: 0 20px 19px 0;
+    max-width: 150px;
+}
+.rwmb-Ktgallery-wrapper .cruxstore-gallery-images li img{
+    display: block;
+}
+
+.post-type-cruxstore_portfolio .gallery-settings{
+    display: none;
+}
+
+.rwmb-meta-box .wrapper_cruxstore_image_upload .wp-picker-container{
+    margin-bottom: 10px;
+}
+
+.rwmb-meta-box .wrapper_cruxstore_image_upload .rwmb-field{
+    border: medium none;
+    padding: 0;
+}
+
+/*==================================
+* Troubleshooting
+===================================*/
+.form-table td fieldset .troubleshooting{
+
+}
+.form-table td fieldset .troubleshooting ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.form-table td fieldset .troubleshooting li {
+    background: none repeat scroll 0 0 #f3f3f3;
+    line-height: 30px;
+    margin-bottom: 3px!important;
+    padding: 0 8px;
+}
+.form-table td fieldset .troubleshooting li span{
+    font-weight: bold;
+}
+/*==================================
+* Icon for post type
+===================================*/
+#menu-posts-designer .dashicons-before:before{
+    font-family: "ElegantIcons";
+    font-size: 16px;
+}
+#menu-posts-designer .dashicons-before:before{
+    content: "\e08b";
+}
+
+/*==================================
+* Custom redux
+===================================*/
+.redux-container-image_select ul.redux-image-select li{
+    padding: 2px 15px 10px 0;
+}
+.redux-container-image_select ul.redux-image-select li,
+.redux-container-image_select ul.redux-image-select li label{
+    max-width: 100%;
+}
+/*==================================
+* Disable post-preview for some post type
+===================================*/
+.post-type-designer #post-preview{
+    display: none;
+}
+.post-type-designer #preview-action:before{
+    content: ' ';
+    color: red;
+    text-align: left;
+    display: block;
+
+}
+.post-type-designer #titlediv div.inside{
+    display: none;
+}
+
+/*==================================
+* WBC Importer
+===================================*/
+.theme-browser .theme .theme-name{
+    text-transform: capitalize;
+}
+.wbc_importer .theme-browser .theme .spinner{
+    display: none;
+    visibility: visible;
+}
+
+/*==================================
+* Responsive
+===================================*/
+@media screen and (max-width:782px){
+    .menu-item-settings input[type="checkbox"]{width:auto;}
+
+    .rwmb-meta-box .rwmb-label,
+    .rwmb-meta-box .rwmb-input,
+    .rwmb-meta-box .rwmb-label ~ .rwmb-input{
+        width: 100%
+    }
+    .rwmb-meta-box .rwmb-label{
+        margin-bottom: 10px;
+    }
+    body .rwmb-tab-nav li{
+        display: block;
+    }
+}
+/*==================================
+* END Responsive
+===================================*/
+.section-heading{
+    background: #282828;
+    color: #fff;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+#page_meta_boxes .hndle{
+    display: none;
+}
+
+#page_meta_boxes .handlediv:before{
+    right: 23px;
+    top: 7px;
+    z-index: 1;
+}
+
+#page_meta_boxes.closed .hndle{
+    display: block;
+}
+#page_meta_boxes.closed .handlediv:before{
+    right: 12px;
+    top: 0;
+}
+
+
+#page_meta_boxes .rwmb-meta-box{
+    margin-top: 0;
+}
+
+#page_meta_boxes > .inside{
+    margin: 0;
+}
+
+
+/*==================================
+* KT icons
+===================================*/
+.wpb_el_type_cruxstore_icons{
+    background: #fff;
+    padding: 15px;
+}
+.wpb_el_type_cruxstore_icons ul{
+    list-style: none;
+    margin: 0;
+    background: #f6f6f6;
+    padding: 10px;
+    max-height: 167px;
+    min-height: 44px;
+    overflow: auto;
+}
+.wpb_el_type_cruxstore_icons ul li{
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin: 1px;
+    text-align: center;
+    width: 40px;
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+    background: #f6f6f6;
+}
+.wpb_el_type_cruxstore_icons ul li.current{
+    background: #305288;
+    border-color: #305288;
+    color: #ffffff;
+}
+.wpb_el_type_cruxstore_icons ul li:hover{
+    position: relative;
+    z-index: 50;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    box-shadow: 0 0 5px #999;
+}
+
+.wpb_el_type_cruxstore_icons .param-icon-header{
+    position: relative;
+    padding-left: 100px;
+    min-height: 100px;
+}
+
+.wpb_el_type_cruxstore_icons .param-icon-preview{
+    background: #f6f6f6;
+    border: 1px solid #dddddd;
+    float: right;
+    font-size: 50px;
+    height: 85px;
+    line-height: 83px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    top: 0;
+    width: 85px;
+}
+.wpb_el_type_cruxstore_icons .icon-preview-remove:after{
+    content: "\f00d";
+    background: rgba(255, 0, 0, 0.6);
+    color: #ffffff;
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 12px;
+    height: 20px;
+    line-height: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    display: none;
+}
+.wpb_el_type_cruxstore_icons .active .icon-preview-remove:after{
+    display: block;
+}
+
+
+
+.rwmb-image_radio-wrapper .rwmb-input{
+    margin-left: -10px;
+}
+.rwmb-image_radio-wrapper p.description{
+    margin-left: 10px;
+}
+.rwmb-image_radio-wrapper label{
+    display: inline-block;
+    margin: 0 10px 15px;
+    padding: 2px 2px 2px 0;
+    text-align: center;
+    max-width: 100%;
+}
+.rwmb-image_radio-wrapper label img{
+    display: block;
+    border: 4px solid #d9d9d9;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+.rwmb-image_radio-wrapper input{
+    display: none;
+}
+.rwmb-image_radio-wrapper input:checked + img{
+    border-color: #0073aa;
+}
+
+
+
+
+
+
+.widget-content .chosen-container{
+    width: 100%!important;
+}
+.widget-content .chosen-container + .chosen-container{
+    display: none!important;
+}
+.widget-content .chosen-container-multi .chosen-choices li.search-field input[type="text"]{
+    height: 30px;
+    min-width: 150px;
+}

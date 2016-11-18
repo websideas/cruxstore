@@ -1,0 +1,86 @@
+.woocommerce-pagination,
+.pagination {
+  text-align: center;
+  display: block;
+  margin: 0;
+  padding-top: 35px;
+  border-top: 2px solid #f6f6f6;
+  position: relative;
+}
+
+.pagination {
+  .nav-links{
+    position: relative;
+  }
+  .page-numbers {
+    border: 2px solid transparent;
+    color: $gray-darker;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 36px;
+    margin: 0 2px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+
+    &.next,
+    &.prev {
+      font-size: 18px;
+      margin: 0;
+      text-indent: -999px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      &:hover{
+        border-color: transparent;
+        color: $primary-color;
+      }
+      &:before{
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 100%;
+        text-indent: 0;
+      }
+    }
+
+    &.next{
+      right: 0;
+      &:before{
+        @include FontIcon('\ebf9', 'delphinus');
+        right: 0;
+        text-align: right;
+      }
+    }
+
+    &.prev{
+      left: 0;
+      &:before{
+        @include FontIcon('\ea26', 'delphinus');
+        left: 0;
+      }
+    }
+
+  }
+
+  a.page-numbers:hover,
+  a.page-numbers:focus,
+  .page-numbers.current{
+    border-color: #f0f0f0;
+  }
+}
+
+
+.pagination-button{
+  @include clearfix();
+  .nav-previous{
+    float: left;
+  }
+  .nav-next{
+    float: right;
+  }
+}
+
+.pagination-loadmore{
+  text-align: center;
+}

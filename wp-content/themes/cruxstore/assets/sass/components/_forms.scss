@@ -1,0 +1,289 @@
+/**
+ * Forms fields
+ */
+input[type=email],
+input[type=password],
+input[type=phone],
+input[type=tel],
+input[type=text],
+input[type=number],
+input[type=url],
+textarea {
+  border: 1px solid $border-color;
+  color: $gray-text;
+  padding: 6px 12px;
+  height: 40px;
+  background: none;
+  @include border-radius(0);
+  @include css3-prefix('box-shadow', 'none');
+  @include css3-prefix('appearance', 'none');
+  @include css3-prefix('transition', 'none');
+  width: 100%;
+  &:focus {
+    @include css3-prefix('box-shadow', 'none');
+    border-color: $gray-text;
+    outline: 0;
+    color: $gray-text;
+  }
+
+  &.input-bg{
+    background: $gray-bg;
+    border: 1px solid $border-color-light;
+    font-size: 12px;
+    letter-spacing: 0.075em;
+  }
+}
+
+textarea {
+  height: auto;
+}
+
+
+select {
+  @include border-radius(0);
+  width: 100%;
+  height: 40px;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  border: 1px solid $border-color;
+  background: none;
+  cursor: pointer;
+  color: $text;
+  &:not([multiple]) {
+    @include css3-prefix('box-shadow', 'none');
+    @include css3-prefix('appearance', 'none');
+    background: url(../images/selectbox-arrow.png) no-repeat right center;
+  }
+}
+
+
+.form-control {
+  @include border-radius(0);
+  @include css3-prefix('box-shadow', 'none');
+  :focus {
+    @include css3-prefix('box-shadow', 'none');
+  }
+}
+
+.select-icon{
+  display: inline-block;
+  position: relative;
+  color: $gray-darker;
+  vertical-align: middle;
+  line-height: 1;
+  &:after{
+    content: "";
+    display: block;
+    pointer-events: none;
+    right: 0;
+    z-index: 1;
+    @include FontIcon('\f107');
+    @include translate(y);
+    font-size: 12px;
+
+  }
+  select{
+    border: none;
+    background: none;
+    padding: 0 10px 0 0;
+    height: auto;
+    color: $gray-darker;
+  }
+}
+
+
+/**
+ * Buttons
+ */
+
+.btn {
+  @include border-radius(0);
+  border: 2px solid transparent;
+  display: inline-block;
+  line-height: 1.42857;
+  padding: 8px 26px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: $button-text;
+  &:focus,
+  &:active:focus,
+  &.active:focus {
+    outline: none;
+  }
+  &.active,
+  &:active {
+    @include css3-prefix('box-shadow', 'none');
+  }
+
+  /* Button size */
+  &-xs {
+    padding: 6px 10px;
+    font-size: 8px;
+  }
+  &-sm {
+    padding: 8px 20px;
+    font-size: 10px;
+  }
+  &-lg {
+    padding: 10px 60px;
+    font-size: 18px;
+  }
+  &-xlg {
+    padding: 12px 65px;
+    font-size: 20px;
+  }
+
+  /* Button shapes */
+  &-round {
+    border-radius: 3px;
+  }
+  &-circle {
+    border-radius: 30px;
+  }
+
+  /* Button icon */
+  &-icon-left {
+    margin-right: 5px;
+  }
+  &-icon-right {
+    margin-left: 5px;
+  }
+
+  /* Button style */
+
+  &-primary{
+    background: $primary-color;
+    color: $white;
+    border-color: $primary-color;
+    &:focus,
+    &:hover{
+      color: $white;
+      background: $primary-dark-color;
+      border-color: $primary-dark-color;
+    }
+  }
+
+  &-default {
+    background: #000000;
+    color: #FFFFFF;
+    border-color: #000000;
+  }
+  &-animation{
+    span{
+      @include transform(translateX(0));
+      @include transition("all .3s ease-in-out 0s");
+      display: block;
+      position: relative;
+      i{
+        @include opacity(0);
+        @include transition("all .3s ease-in-out 0s");
+        @include transform(translate(30px, -50%));
+        position: absolute;
+        right: 0;
+        top:50%;
+      }
+    }
+    &:hover{
+      span{
+        @include transform(translateX(-10px));
+        i{
+          @include opacity(1);
+        }
+      }
+    }
+  }
+  &-gray{
+    background: $gray-bg;
+    color: $gray-darker;
+    border-color:$gray-bg;
+    &:hover{
+      background: $black;
+      color: $white;
+      border-color: $black;
+    }
+  }
+
+
+  &-gray-b{
+    background: $gray-bg;
+    color: $black;
+    border: 1px solid $border-color-light;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    &:hover{
+      background: $black;
+      color: $white;
+      border-color: $black;
+    }
+  }
+
+  &-light{
+    border-color: #FFFFFF;
+    background: #FFFFFF;
+    color: #000000;
+    &:hover{
+      background: #000000;
+      color: #FFFFFF;
+      border-color: #000000;
+    }
+  }
+
+  &-dark-b {
+    background: none;
+    color: #000000;
+    border-color: #000000;
+  }
+  &-light-b{
+    border: 1px solid #FFFFFF;
+    background: none;
+    font-family: $font-stack;
+    font-weight: normal;
+    color: #FFFFFF;
+    &:hover{
+      background: #FFFFFF;
+      color: #000000;
+    }
+  }
+
+  &-medium{
+    background: $gray-bg;
+    border: 1px solid #f0f0f0;
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    &:hover{
+      background: #000000;
+      border-color: #000000;
+      color: #fff;
+    }
+  }
+
+  &-default,
+  &-dark-b{
+    &:hover{
+      background: $primary-color;
+      color: #FFFFFF;
+      border-color: $primary-color;
+    }
+  }
+
+  &-more{
+    font-size: 12px;
+    padding: 0;
+    border: none;
+  }
+  &-list-more{
+    padding: 0;
+    border: none;
+    text-transform: capitalize;
+    font-weight: inherit;
+    font-size: inherit;
+  }
+}
+
+.wpcf7-submit{
+  @extend .btn;
+}
+
