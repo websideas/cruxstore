@@ -138,7 +138,7 @@ class KTMegaWalker extends Walker_Nav_Menu{
         $style = '';
         $clwidth = get_post_meta( $item->ID, '_menu_item_megamenu_clwidth', true );
         if($depth == 1 && $clwidth){
-            $style = 'width: '.$clwidth;
+            $style .= 'width: '.$clwidth.';';
         }
 
 
@@ -196,15 +196,7 @@ class KTMegaWalker extends Walker_Nav_Menu{
         }else{
             $item_output .= '<span class="megamenu-title">';
         }
-        if(($this->megamenu_enable && $depth == 1)){
-            $image = get_post_meta( $item->ID, '_menu_item_megamenu_image', true );
-            if($image){
-                $file = cruxstore_get_thumbnail_attachment($image, 'full');
-                if($file['src']){
-                    $item_output .= sprintf('<img src="%s" alt="%s" title="%s" class="img-responsive"/>', $file['src'], $file['alt'], $file['title']);
-                }
-            }
-        }
+
 
         $icon = get_post_meta( $item->ID, '_menu_item_megamenu_icon', true );
         $icon = ($icon) ? '<i class="icon-menu '.$icon.'"></i>' : '';
@@ -226,7 +218,28 @@ class KTMegaWalker extends Walker_Nav_Menu{
             $position = ($this->megamenu_width != 'full') ? ' megamenu-position-'.$this->megamenu_position : '';
             $layout = ' megamenu-layout-'.$this->megamenu_layout;
 
-            $item_output .= "\n$indent<div class=\"cruxstore-megamenu-wrapper $position $layout megamenu-columns-$colums \">\n";
+            $background_style = '';
+            if(($this->megamenu_enable && $depth == 0)){
+                $image = get_post_meta( $item->ID, '_menu_item_megamenu_image', true );
+                if($image){
+                    $file = cruxstore_get_thumbnail_attachment($image, 'full');
+                    if($file['src']){
+                        $background_style .= 'background-image: url('.$file['src'].');';
+                    }
+
+                    $bgrepeat = get_post_meta( $item->ID, '_menu_item_megamenu_bgrepeat', true );
+                    $background_style .= 'background-repeat: '.$bgrepeat.';';
+
+                    $bgposition = get_post_meta( $item->ID, '_menu_item_megamenu_bgposition', true );
+                    $background_style .= 'background-position: '.$bgposition.';';
+                }
+            }
+
+            if($background_style){
+                $background_style = 'style="'.$background_style.'"';
+            }
+
+            $item_output .= "\n$indent<div class=\"cruxstore-megamenu-wrapper $position $layout megamenu-columns-$colums \" $background_style>\n";
 
             if ( $depth == 0 && $item->object == 'category' ) {
 

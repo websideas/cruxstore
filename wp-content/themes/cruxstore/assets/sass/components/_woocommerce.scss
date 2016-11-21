@@ -399,20 +399,20 @@
     }
   }
 
-  &.widget_color_filter{
+  .widget_layered_nav{
     ul{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      span{
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        @include border-radius(50%);
-        margin-right: 10px;
+      li{
+        a{
+          &:before{
+            left: 0;
+            position: absolute;
+            top: 6px;
+          }
+        }
       }
     }
   }
+
 
   .widget_shopping_cart,
   &.widget_shopping_cart{

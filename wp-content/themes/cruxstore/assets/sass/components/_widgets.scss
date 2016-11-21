@@ -96,46 +96,38 @@
   }
 
 
-  &.widget_layered_nav,
-  &.widget_color_filter{
-    li.chosen {
-      a {
-        &:before {
-          display: none;
-        }
-        &:after {
-          @include FontIcon("\e013", 'WooCommerce');
-          color: #a00;
-          font-size: 12px;
-          margin-left: 15px;
-        }
-      }
-    }
-  }
-
-  .widget_layered_nav_filters{
-    ul {
-      li {
-        a {
-          &:before {
-            display: none;
-          }
-          &:after {
-            @include FontIcon("\e013", 'WooCommerce');
-            font-size: 12px;
-            margin-left: 15px;
-          }
-        }
-      }
-    }
-  }
-
+  &.widget_layered_nav.woocommerce,
   &.widget_cruxstore_price_filter,
+  &.widget_color_filter,
   &.widget_cruxstore_orderby{
-    li.selected{
-      color: $black;
+    li{
+      padding-left: 22px;
+      &:before,
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+      &:before{
+        width: 10px;
+        height: 10px;
+        top: 8px;
+        background: $gray-light;
+      }
+
+      &.selected{
+        color: $black;
+        &:after{
+          @include FontIcon('\f00c');
+          color: $gray-darker;
+          font-size: 12px;
+          top: -1px;
+        }
+      }
+
     }
   }
+
 
   &.widget_product_categories,
   &.widget_product_categories,

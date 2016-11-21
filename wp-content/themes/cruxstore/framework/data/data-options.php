@@ -2501,7 +2501,8 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'options'  => array(
                             '0' => esc_html__('Disable', 'cruxstore' ),
                             '1' => esc_html__('Default', 'cruxstore' ),
-                            '2' => esc_html__('Categories', 'cruxstore' )
+                            '2' => esc_html__('Categories', 'cruxstore' ),
+                            '3' => esc_html__('A', 'cruxstore' )
                         ),
                         'default'  => '1'
                     ),

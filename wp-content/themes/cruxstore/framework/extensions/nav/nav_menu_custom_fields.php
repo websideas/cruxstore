@@ -75,8 +75,60 @@ function cruxstore_add_custom_fields( $item_id, $item, $depth, $args ) { ?>
                             </select>
                         </label>
                     </p>
+                    <hr/>
+
+                    <p class="field-image description description-wide">
+                        <?php
+                        $preview = false;
+                        $img_preview = "";
+                        if($item->image){
+                            $file = cruxstore_get_thumbnail_attachment($item->image, 'full');
+                            $preview = true;
+                            $img_preview = $file['src'];
+                        }
+                        ?>
+                        <label for="menu-item-image-<?php echo $item_id; ?>">
+                            <?php _e( 'Menu Background', 'cruxstore'); ?><br />
+                            <input type="hidden" value="<?php echo esc_attr( $item->image ); ?>" name="menu-item-megamenu-image[<?php echo $item_id; ?>]" id="menu-item-image-<?php echo $item_id; ?>" class="widefat edit-menu-item-image" />
+                        </label>
+                        <span class="clearfix"></span>
+                        <span class="cruxstore_image_preview" style="<?php if($preview){ echo "display: block;";} ?>">
+                            <img src="<?php echo esc_url($img_preview); ?>" alt="" title="" />
+                            <i class="fa fa-times"></i>
+                        </span>
+                        <span class="clearfix"></span>
+                        <input type="button" class="button-secondary cruxstore_image_menu" value="<?php _e('Upload image', 'cruxstore'); ?>" />
+                    </p>
+
+                    <p class="description description-bgrepeat description-wide">
+                        <label>
+                            <?php esc_html_e( 'Background Repeat', 'cruxstore'); ?><br />
+                            <select id="menu-item-bgrepeat-<?php echo esc_attr($item_id); ?>" name="menu-item-megamenu-bgrepeat[<?php echo esc_attr($item_id); ?>]" class="widefat edit-menu-item-bgrepeat">
+                                <option <?php selected($item->bgrepeat, ''); ?> value=""></option>
+                                <option <?php selected($item->bgrepeat, 'no-repeat'); ?> value="no-repeat"><?php esc_html_e( 'No Repeat', 'cruxstore'); ?></option>
+                                <option <?php selected($item->bgrepeat, 'repeat'); ?> value="repeat"><?php esc_html_e( 'Repeat All', 'cruxstore'); ?></option>
+                                <option <?php selected($item->bgrepeat, 'repeat-x'); ?> value="repeat-x"><?php esc_html_e( 'Repeat Horizontally', 'cruxstore'); ?></option>
+                                <option <?php selected($item->bgrepeat, 'repeat-y'); ?> value="repeat-y"><?php esc_html_e( 'Repeat Vertically', 'cruxstore'); ?></option>
+                            </select>
+                        </label>
+                    </p>
+
+                    <p class="description description-bgposition description-wide">
+                        <label>
+                            <?php esc_html_e( 'Background Position', 'cruxstore'); ?><br />
+                            <select id="menu-item-repeat-<?php echo esc_attr($item_id); ?>" name="menu-item-megamenu-bgposition[<?php echo esc_attr($item_id); ?>]" class="widefat edit-menu-item-bgposition">
+                                <option <?php selected($item->bgposition, ''); ?> value=""></option>
+                                <option <?php selected($item->bgposition, 'right top'); ?> value="right top"><?php esc_html_e( 'Right Top', 'cruxstore'); ?></option>
+                                <option <?php selected($item->bgposition, 'right center'); ?> value="right center"><?php esc_html_e( 'Right center', 'cruxstore'); ?></option>
+                                <option <?php selected($item->bgposition, 'right bottom'); ?> value="right bottom"><?php esc_html_e( 'Right Bottom', 'cruxstore'); ?></option>
+                                <option <?php selected($item->bgposition, 'center center'); ?> value="right-y"><?php esc_html_e( 'Center Center', 'cruxstore'); ?></option>
+                            </select>
+                        </label>
+                    </p>
                 </div>
                 <div class="megamenu-layout-depth-1">
+
+
                     <p class="field-clwidth description description-wide">
                         <label for="menu-item-clwidth-<?php echo esc_attr($item_id); ?>">
                             <?php esc_html_e( 'Mega Menu Column Width - Overrides parent colum (in percentage, ex: 30%)', 'cruxstore'); ?><br />
@@ -113,6 +165,10 @@ function cruxstore_add_custom_fields( $item_id, $item, $depth, $args ) { ?>
                             </select>
                         </label>
                     </p>
+
+
+
+
                 </div>
             </div><!-- #content-megamenu-<?php echo esc_attr($item_id); ?> -->
         </div><!-- .wrapper-megamenu -->
