@@ -235,8 +235,6 @@
     .header-top-center{
       text-align: center;
     }
-
-
     .branding{
       float: none;
     }
@@ -361,6 +359,23 @@
     }
   }
 }
+
+.content-header-9{
+  #header{
+    .top-menu{
+      display: inline-block;
+      height: 35px;
+      text-align: center;
+      width: 100%;
+      ul#main-navigation{
+        float:left;
+      }
+    }
+
+  }
+
+}
+
 
 
 

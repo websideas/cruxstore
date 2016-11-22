@@ -276,6 +276,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             6 => array( 'alt' => esc_html__( 'Layout 6', 'cruxstore' ), 'img' => CRUXSTORE_FW_IMG . 'header/header-v6.jpg' ),
                             7 => array( 'alt' => esc_html__( 'Layout 7', 'cruxstore' ), 'img' => CRUXSTORE_FW_IMG . 'header/header-v7.jpg' ),
                             8 => array( 'alt' => esc_html__( 'Layout 8', 'cruxstore' ), 'img' => CRUXSTORE_FW_IMG . 'header/header-v8.jpg' ),
+                            9 => array( 'alt' => esc_html__( 'Layout 9', 'cruxstore' ), 'img' => CRUXSTORE_FW_IMG . 'header/header-v8.jpg' ),
                         ),
                         'default'  => 1
                     ),
