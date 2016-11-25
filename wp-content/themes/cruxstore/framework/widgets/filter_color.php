@@ -101,6 +101,7 @@ class WC_Widget_Color_Filter extends WC_Widget {
      * @param array $instance
      */
     public function widget( $args, $instance ) {
+
         if ( ! is_post_type_archive( 'product' ) && ! is_tax( get_object_taxonomies( 'product' ) ) ) {
             return;
         }
@@ -108,7 +109,7 @@ class WC_Widget_Color_Filter extends WC_Widget {
         $_chosen_attributes = WC_Query::get_layered_nav_chosen_attributes();
         $taxonomy           = isset( $instance['attribute'] ) ? wc_attribute_taxonomy_name( $instance['attribute'] ) : $this->settings['attribute']['std'];
         $query_type         = isset( $instance['query_type'] ) ? $instance['query_type'] : $this->settings['query_type']['std'];
-        $display_type       = isset( $instance['display_type'] ) ? $instance['display_type'] : $this->settings['display_type']['std'];
+
 
         if ( ! taxonomy_exists( $taxonomy ) ) {
             return;
@@ -327,6 +328,7 @@ class WC_Widget_Color_Filter extends WC_Widget {
      * @return bool Will nav display?
      */
     protected function layered_nav_list( $terms, $taxonomy, $query_type ) {
+
         // List display
         echo '<ul>';
 
@@ -384,6 +386,24 @@ class WC_Widget_Color_Filter extends WC_Widget {
             }
 
             echo '<li class="wc-layered-nav-term ' . ( $option_is_set ? 'selected' : '' ) . '">';
+
+
+            $display_type = get_woocommerce_term_meta( $term->term_id, 'display_type', true );
+            $term_color = get_woocommerce_term_meta( $term->term_id, 'term_color', true );
+
+
+            if($display_type == 'color' && $term_color){
+                printf('<span class="product-swatche-item swatche_color" style="background: %s;" title="%s" data-toggle="tooltip" data-placement="top">&nbsp;</span>', $term_color, $term->name);
+            }else{
+                $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+                $image = wp_get_attachment_thumb_url( $thumbnail_id );
+                if($thumbnail_id){
+                    $image = str_replace( ' ', '%20', $image );
+                    echo '<span class="product-swatche-item swatche_image" title="'.esc_attr($term->name).'" data-toggle="tooltip" data-placement="top"><img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'woocommerce' ) . '" class="wp-post-image" height="48" width="48" /></span>';
+                }
+
+            }
+
 
             echo ( $count > 0 || $option_is_set ) ? '<a href="' . esc_url( apply_filters( 'woocommerce_layered_nav_link', $link ) ) . '">' : '<span>';
 

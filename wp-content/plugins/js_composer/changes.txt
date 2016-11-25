@@ -1,3 +1,10 @@
+17.11.2016 - ver 5.0.1
+   Improved: Auto update process on hostings with wrong chmod on /tmp directory
+   Fixed: CSS Animation "none" works differently on save
+   Fixed: Prettyphoto jumps up on closing in firefox
+   Fixed: Section in template breaks
+   Fixed: Warning for array_merge in vc_gitem_template_attribute_post_image_url
+
 09.11.2016 - ver 5.0
    Added: Visual Composer Template Library with downloadable templates
    Added: Section element to combine rows

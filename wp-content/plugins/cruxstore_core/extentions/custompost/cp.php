@@ -29,6 +29,7 @@ function cruxstore_register_client_init(){
         'show_ui' => true,
         'show_in_menu' => true,
         'show_in_nav_menus' => false,
+        'exclude_from_search' => true,
         'supports' 	=> array('title', 'thumbnail', 'page-attributes'),
         'menu_icon' => 'dashicons-universal-access-alt',
     );
@@ -75,6 +76,7 @@ function cruxstore_register_testimonial_init(){
         'show_in_nav_menus' => false,
         'menu_icon' => 'dashicons-format-chat',
         'supports' 	=> array('title', 'editor', 'thumbnail', 'page-attributes'),
+        'exclude_from_search' => true,
     );
     register_post_type( 'crux_testimonial', $args );
     

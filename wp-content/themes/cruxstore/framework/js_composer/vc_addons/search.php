@@ -75,7 +75,7 @@ vc_map( array(
             'description' => esc_html__( 'Choose search form layout.', 'cruxstore' ),
             "admin_label" => true,
         ),
-        
+
         cruxstore_map_add_css_animation(),
         cruxstore_map_add_css_animation_delay(),
         array(

@@ -639,7 +639,7 @@ if ( ! class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		public function getCSSAnimation( $css_animation ) {
 			$output = '';
-			if ( '' !== $css_animation ) {
+			if ( '' !== $css_animation && 'none' !== $css_animation ) {
 				wp_enqueue_script( 'waypoints' );
 				wp_enqueue_style( 'animate-css' );
 				$output = ' wpb_animate_when_almost_visible wpb_' . $css_animation . ' ' . $css_animation;

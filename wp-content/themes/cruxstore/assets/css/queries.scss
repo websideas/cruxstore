@@ -102,15 +102,7 @@ only screen and (min-resolution: 144dpi) {
     }
   }
 
-  .side-bar-inner{
-    .sidebar-right &{
-      padding-left: 20px;
-    }
-    .sidebar-left &{
-      padding-right: 20px;
-    }
-  }
-  
+
 
 }
 
@@ -126,6 +118,31 @@ only screen and (min-resolution: 144dpi) {
       }
     }
   }
+
+  .side-bar-inner{
+    .sidebar-right &{
+      padding-left: 20px;
+    }
+    .sidebar-left &{
+      padding-right: 20px;
+    }
+  }
+
+  .footer-area-2{
+    .footer-area-left{
+      padding-right: 35px;
+    }
+    .footer-area-right{
+      padding-left: 45px;
+    }
+  }
+
+  .footer-area-6{
+    .footer-area-right{
+      padding-left: 55px;
+    }
+  }
+
 }
 
 /* 4. Styles for devices(<=1199px) */
@@ -278,6 +295,7 @@ only screen and (min-resolution: 144dpi) {
         margin-right: 0;
         margin-top: 30px;
         max-width: 100%;
+        overflow: auto;
       }
       .shop-header-left{
         max-width: 100%;
@@ -701,14 +719,9 @@ only screen and (min-resolution: 144dpi) {
 
 }
 
-@media screen and (max-height: 800px) {
-  .shopping-bag .woocommerce.shopping-bag-content .product_list_widget {
-    max-height: 410px;
-  }
-}
 
 @media screen and (max-height: 760px) {
   .shopping-bag .woocommerce.shopping-bag-content .product_list_widget {
-    max-height: 272px;
+    max-height: 274px;
   }
 }

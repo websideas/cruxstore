@@ -30,6 +30,28 @@ function cruxstore_add_custom_fields( $item_id, $item, $depth, $args ) { ?>
             </p>
             <div id="content-megamenu-<?php echo esc_attr($item_id); ?>" class="megamenu-layout clearfix">
                 <div class="megamenu-layout-depth-0">
+
+
+                    <p class="field-mega-item description description-wide">
+                        <label for="menu-item-megamenu-mgitem-<?php echo esc_attr($item_id); ?>">
+                            <?php esc_html_e('Mega Menu content', 'cruxstore'); ?><br />
+                            <?php
+                            global $post;
+                            $menu_posts = get_posts( apply_filters('cruxstore_megamenu_mgitem', array( 'posts_per_page' => -1, 'post_type' => 'kt_mgmenu' )) );
+                            ?>
+                            <select id="menu-item-megamenu-mgitem<?php echo esc_attr($item_id); ?>" name="menu-item-megamenu-mgitem[<?php echo esc_attr($item_id); ?>]" class="widefat edit-menu-item-widget">
+                                <option value=""><?php esc_html_e( 'Select Mega Menu content', 'cruxstore'); ?></option>
+                                <?php foreach( $menu_posts as $post ): ?>
+                                    <option <?php selected($item->mgitem, get_the_ID()); ?> value="<?php the_ID() ?>"><?php the_title(); ?></option>
+                                <?php
+                                endforeach;
+                                wp_reset_postdata();
+                                ?>
+                            </select>
+                        </label>
+                        <span class="description"><?php esc_html_e('if you choose mega menu content. mega menu columns will disable', 'cruxstore') ?></span>
+                    </p>
+
                     <p class="field-columns description description-wide">
                         <label for="menu-item-columns-<?php echo esc_attr($item_id); ?>">
                             <?php esc_html_e( 'Mega Menu number of columns', 'cruxstore'); ?><br />

@@ -19,7 +19,7 @@
     line-height: 40px;
     @include translate('y');
     i{
-      line-height: 42px;
+      line-height: 40px;
     }
     span{
       display: none;
@@ -125,11 +125,26 @@
         }
       }
 
+      .product-swatche-item{
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        top: 8px;
+        img{
+          vertical-align: top;
+        }
+      }
+
     }
   }
 
+  &.widget_layered_nav_filters{
+    li{
+      margin-right: 10px;
+    }
+  }
 
-  &.widget_product_categories,
   &.widget_product_categories,
   &.widget_pages,
   &.widget_nav_menu{
@@ -498,6 +513,7 @@
     }
   }
 }
+
 
 #footer-bottom,
 #footer-top{

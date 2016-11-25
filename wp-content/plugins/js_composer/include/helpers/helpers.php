@@ -533,6 +533,9 @@ function js_composer_body_class( $classes ) {
  */
 function vc_convert_shortcode( $m ) {
 	list( $output, $m_one, $tag, $attr_string, $m_four, $content ) = $m;
+	if ( 'vc_row' === $tag || 'vc_section' === $tag ) {
+		return $output;
+	}
 	$result = $width = $el_position = '';
 	$shortcode_attr = shortcode_parse_atts( $attr_string );
 	extract( shortcode_atts( array(
@@ -540,15 +543,12 @@ function vc_convert_shortcode( $m ) {
 		'el_class' => '',
 		'el_position' => '',
 	), $shortcode_attr ) );
-	if ( 'vc_row' === $tag ) {
-		return $output;
-	}
 	// Start
 	if ( preg_match( '/first/', $el_position ) || empty( $shortcode_attr['width'] ) || '1/1' === $shortcode_attr['width'] ) {
 		$result = '[vc_row]';
 	}
 	if ( 'vc_column' !== $tag ) {
-		$result .= "\n" . '[vc_column width="' . $width . '"]';
+		$result .= '[vc_column width="' . $width . '"]';
 	}
 
 	// Tag
@@ -569,7 +569,7 @@ function vc_convert_shortcode( $m ) {
 		$result .= '[/vc_row]' . "\n";
 	}
 
-	return $result;
+	return trim( $result );
 }
 
 /**

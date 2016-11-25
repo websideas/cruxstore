@@ -46,9 +46,7 @@
                 get_template_part( 'templates/footers/footer', 'top');
 
                 if($footer_widgets = cruxstore_footer_widgets()){
-                    $widgets_layout = cruxstore_option('footer_widgets_layout', 'featured');
-                    $layout = ($widgets_layout == 'featured') ? 'widgets-featured' : 'widgets';
-                    get_template_part( 'templates/footers/footer', $layout);
+                    get_template_part( 'templates/footers/footer', 'widgets');
                 }
 
                 if(cruxstore_option('footer_bottom', false)){

@@ -175,7 +175,7 @@ function cruxstore_add_scripts() {
         $ajax_filter = 0;
 
         $shop_header = cruxstore_option('shop_header_tool_bar', 1);
-        if($shop_header == 2){
+        if($shop_header == 2 || $shop_header == 3){
             if($shop_header_ajax = cruxstore_option('shop_header_ajax', 1)){
                 $ajax_filter = 1;
             }
@@ -225,8 +225,6 @@ function cruxstore_setting_script() {
             }
         }
     }
-
-
 
     if(is_page() || is_singular() || $is_shop || is_home()){
 
@@ -344,6 +342,54 @@ function cruxstore_setting_script() {
 }
 add_action('wp_enqueue_scripts', 'cruxstore_setting_script');
 
+
+
+/**
+ * Add CustomCss
+ **/
+
+add_action('wp_enqueue_scripts', 'cruxstore_addFrontCss', 1000);
+function cruxstore_addFrontCss( ){
+
+    $shortcodes_custom_css = '';
+
+    if(is_404()){
+        if($page_id = cruxstore_option('notfound_page_id')){
+            $shortcodes_custom_css .= get_post_meta( $page_id, '_wpb_shortcodes_custom_css', true );
+        }
+    }
+
+    $primary = cruxstore_get_mainmenu();
+
+    if(!$primary['custom']) {
+        $locations = get_nav_menu_locations();
+        $menu = wp_get_nav_menu_object( $locations[ $primary['menu'] ] );
+    }else{
+        $menu = $primary['menu'];
+    }
+
+    $args = array(
+        'meta_query' => array(
+            array(
+                'key'     => '_menu_item_megamenu_mgitem',
+                'value'   => '',
+                'compare' => '!=',
+            ),
+        ),
+    );
+
+    $items = wp_get_nav_menu_items($menu->term_id, $args);
+
+    foreach ($items as $item){
+        $mgitem = get_post_meta( $item->ID, '_menu_item_megamenu_mgitem', true );
+        $shortcodes_custom_css .= get_post_meta( $mgitem, '_wpb_shortcodes_custom_css', true );
+    }
+
+    if (  $shortcodes_custom_css ) {
+        $shortcodes_custom_css = strip_tags( $shortcodes_custom_css );
+        wp_add_inline_style( 'cruxstore-main', $shortcodes_custom_css );
+    }
+}
 
 if ( ! function_exists( 'cruxstore_excerpt_more' ) ) :
     /**

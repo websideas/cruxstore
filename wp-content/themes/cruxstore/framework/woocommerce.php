@@ -41,39 +41,6 @@ if (!function_exists('cruxstore_get_product_layout')) {
     }
 }
 
-add_action('woocommerce_widget_field_colors', 'cruxstore_wc_widget_field_colors', 10, 4);
-function cruxstore_wc_widget_field_colors($key, $value, $setting, $instance)
-{
-    $terms = get_terms('pa_color', array('hide_empty' => '0'));
-
-    printf('<label>%s</label>', esc_html__('Select color bellow', 'cruxstore'));
-    if (!empty($terms) && !is_wp_error($terms)) {
-        $output = '';
-        foreach ($terms as $term) {
-
-            $id = 'woocommerce_widget_field_colors' . $term->term_id.'-'.rand();
-            $valuecolor = '';
-            if(is_array($value)){
-                $valuecolor = isset($value[$term->term_id]) ? esc_attr($value[$term->term_id]) : '';
-            }
-            $output .= '<tr>
-							<td><label for="' . esc_attr($id) . '">' . esc_attr($term->name) . ' </label></td>
-							<td><input type="text" id="' . esc_attr($id) . '" name="' . esc_attr($setting['name']) . '[' . esc_attr($term->term_id) . ']" value="'.esc_attr($valuecolor).'" size="3" class="color-picker" /></td>
-						</tr>';
-        }
-        printf(
-            '<table class="colors-table"><tr><td><b>%1$s</b></td><td><b>%2$s</b></td></tr>%3$s</table>',
-            esc_html__('Term', 'cruxstore'),
-            esc_html__('Color', 'cruxstore'),
-            $output
-        );
-    } else {
-        printf('<p>%s</p>', wp_kses(__('No product attribute saved with the <strong>"color"</strong> slug yet.', 'cruxstore'), array('strong' => array())));
-    }
-
-}
-
-
 /**
  * Extend the default WordPress body classes.
  *
@@ -287,6 +254,8 @@ if (!function_exists('cruxstore_cart_link_fragment')) {
         return $fragments;
     }
 }
+
+
 if (!function_exists('cruxstore_template_loop_category_title')) {
     /**
      * Show the subcategory title in the product loop.
@@ -463,6 +432,74 @@ function cruxstore_woocommerce_catalog_orderby()
 
 
 /*
+ *	Output product catattributesegories menu
+ */
+function cruxstore_attributes_menu()
+{
+
+    $taxonomy_names = array();
+    $attribute_taxonomies = wc_get_attribute_taxonomies();
+
+    if ( ! empty( $attribute_taxonomies ) ) {
+        foreach ( $attribute_taxonomies as $tax ) {
+            $taxonomy_names[$tax->attribute_name] = $tax->attribute_label;
+        }
+    }
+
+    $header_attributes = cruxstore_option('shop_header_attributes');
+
+    if($header_attributes){
+        $attributes = array();
+        foreach($header_attributes as $attr){
+            $attr_tmp = substr($attr, 3);
+            $attributes[$attr_tmp] = $taxonomy_names[$attr_tmp];
+        }
+    }else{
+        $attributes = $taxonomy_names;
+    }
+
+    $output = '<ul class="shop-header-attrs">';
+
+
+    global $wp_widget_factory;
+    foreach($attributes as $attr => $name){
+
+        $type = 'WC_Widget_Color_Filter';
+
+        $instance = array(
+            'attribute' => $attr,
+            'query_type' => 'or'
+
+        );
+        $args = array(
+            'before_widget' => '<div class="widget widget-fillter-attr %1$s"><div class="widget-content">',
+            'after_widget' => '</div></div>',
+            'before_title' => '',
+            'after_title' => '',
+        );
+
+
+        if ( is_object( $wp_widget_factory ) && isset( $wp_widget_factory->widgets, $wp_widget_factory->widgets[ $type ] ) ) {
+            ob_start();
+            the_widget( $type, $instance, $args );
+            $widget = ob_get_clean();
+        } else {
+            $widget = $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found.' );
+        }
+
+        if($widget){
+            $output .= sprintf('<li class="attrs-item-li"><span class="attrs-item">%s</span>%s</li>', $name, $widget);
+        }
+
+
+    }
+    $output .= '</ul>';
+
+    return '<div id="shop-filters-attrs-left">'.$output.'</div>';
+}
+
+
+/*
  *	Create single category list HTML
  */
 function cruxstore_category_list_item($category, $current_cat)
@@ -481,7 +518,6 @@ function cruxstore_category_menu()
 {
     global $wp_query;
 
-
     $current_cat = (is_product_category()) ? $wp_query->queried_object->term_id : '';
 
 
@@ -498,26 +534,26 @@ function cruxstore_category_menu()
     $orderby = cruxstore_option('shop_header_orderby', 'slug');
     $order = cruxstore_option('shop_header_order', 'ASC');
 
-    $categories = get_categories($args = array(
+    $args = array(
         'type' => 'post',
         'orderby' => $orderby,
         'order' => $order,
         'hide_empty' => 1,
         'taxonomy' => 'product_cat',
-        'parent'  => 0
-    ));
+        'parent'  => 0,
+    );
+
+    $header_cate = cruxstore_option('shop_header_categories');
+    if($header_cate){
+        $args['include'] = $header_cate;
+    }
+    $categories = get_categories($args);
 
     foreach ($categories as $category) {
         $output .= cruxstore_category_list_item($category, $current_cat);
     }
 
     $shop_header_filters = '';
-
-
-    $search = cruxstore_option('shop_header_search', 1);
-    if ($search) {
-        $shop_header_filters .= '<li class="wc-header-search">' . get_product_search_form(false) . '</li>';
-    }
 
     $shop_header_filters .= sprintf('<li class="wc-header-categories"><a href="#cruxstore-shop-categories">%s</a></li>', esc_html__('Categories', 'cruxstore'));
 
@@ -545,6 +581,71 @@ function cruxstore_category_menu()
 
 }
 
+function cruxstore_current_attrs(){
+    if ( ! is_post_type_archive( 'product' ) && ! is_tax( get_object_taxonomies( 'product' ) ) ) {
+        return;
+    }
+
+
+    $_chosen_attributes = WC_Query::get_layered_nav_chosen_attributes();
+    $min_price          = isset( $_GET['min_price'] ) ? wc_clean( $_GET['min_price'] )   : 0;
+    $max_price          = isset( $_GET['max_price'] ) ? wc_clean( $_GET['max_price'] )   : 0;
+    $min_rating         = isset( $_GET['min_rating'] ) ? absint( $_GET['min_rating'] ) : 0;
+
+    $output = '<ul id="wc_layered_nav_filters" class="wc_layered_nav_filters">';
+
+    if ( 0 < count( $_chosen_attributes ) || 0 < $min_price || 0 < $max_price || 0 < $min_rating ) {
+
+        global $wp;
+        $page_url = home_url( $wp->request ); // Base page URL
+
+        $output .= '<li class="actions"><a href="' . esc_url($page_url) . '">' . esc_html__('Clear All', 'cruxstore') . '</a></li>';
+
+        // Attributes
+        if ( ! empty( $_chosen_attributes ) ) {
+            foreach ( $_chosen_attributes as $taxonomy => $data ) {
+                foreach ( $data['terms'] as $term_slug ) {
+                    if ( ! $term = get_term_by( 'slug', $term_slug, $taxonomy ) ) {
+                        continue;
+                    }
+
+                    $filter_name    = 'filter_' . sanitize_title( str_replace( 'pa_', '', $taxonomy ) );
+                    $current_filter = isset( $_GET[ $filter_name ] ) ? explode( ',', wc_clean( $_GET[ $filter_name ] ) ) : array();
+                    $current_filter = array_map( 'sanitize_title', $current_filter );
+                    $new_filter      = array_diff( $current_filter, array( $term_slug ) );
+
+                    $link = remove_query_arg( array( 'add-to-cart', $filter_name ) );
+
+                    if ( sizeof( $new_filter ) > 0 ) {
+                        $link = add_query_arg( $filter_name, implode( ',', $new_filter ), $link );
+                    }
+
+                    $output .= '<li class="chosen"><a title="' . esc_attr__( 'Remove filter', 'woocommerce' ) . '" href="' . esc_url( $link ) . '">' . esc_html( $term->name ) . '</a></li>';
+                }
+            }
+        }
+
+        if ( $min_price ) {
+            $link = remove_query_arg( 'min_price' );
+            $output .= '<li class="chosen"><a title="' . esc_attr__( 'Remove filter', 'woocommerce' ) . '" href="' . esc_url( $link ) . '">' . __( 'Min', 'woocommerce' ) . ' ' . wc_price( $min_price ) . '</a></li>';
+        }
+
+        if ( $max_price ) {
+            $link = remove_query_arg( 'max_price' );
+            $output .= '<li class="chosen"><a title="' . esc_attr__( 'Remove filter', 'woocommerce' ) . '" href="' . esc_url( $link ) . '">' . __( 'Max', 'woocommerce' ) . ' ' . wc_price( $max_price ) . '</a></li>';
+        }
+
+        if ( $min_rating ) {
+            $link = remove_query_arg( 'min_rating' );
+            $output .= '<li class="chosen"><a title="' . esc_attr__( 'Remove filter', 'woocommerce' ) . '" href="' . esc_url( $link ) . '">' . sprintf( __( 'Rated %s and above', 'woocommerce' ), $min_rating ) . '</a></li>';
+        }
+
+    }
+
+    $output .= '</ul>';
+
+    return $output;
+}
 
 function cruxstore_woocommerce_shop_loop()
 {
@@ -555,7 +656,28 @@ function cruxstore_woocommerce_shop_loop()
             echo '<div class="products-shop-header">';
             cruxstore_category_menu();
             echo '</div>';
-        } else {
+        } elseif ($shop_header_tool_bar == 3) {
+
+
+            global $wp_widget_factory;
+            $type = 'WC_Widget_CRUXSTORE_Orderby';
+
+            if ( is_object( $wp_widget_factory ) && isset( $wp_widget_factory->widgets, $wp_widget_factory->widgets[ $type ] ) ) {
+                ob_start();
+                the_widget( $type, array('type'=>'select'), array() );
+                $widget = ob_get_clean();
+            } else {
+                $widget = $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found.' );
+            }
+
+            $attributes = cruxstore_attributes_menu();
+            $current = cruxstore_current_attrs();
+
+            printf('<div class="products-shop-header-atts">%s%s%s</div>', $widget, $attributes, $current);
+
+
+
+        } elseif ($shop_header_tool_bar == 1) {
             echo '<div class="products-tools">';
             woocommerce_result_count();
             woocommerce_catalog_ordering();
@@ -1112,8 +1234,8 @@ add_action('woocommerce_before_shop_loop_item', 'cruxstore_woocommerce_show_prod
 add_action('woocommerce_after_shop_loop_item', 'cruxstore_template_loop_product_link_close');
 
 add_action('woocommerce_shop_loop_item_details', 'cruxstore_woocommerce_template_single_excerpt', 5);
-add_action('woocommerce_shop_loop_item_details', 'woocommerce_template_loop_add_to_cart', 10);
-add_action('woocommerce_shop_loop_item_details', 'cruxstore_template_loop_product_actions', 15);
+add_action('woocommerce_shop_loop_item_details', 'woocommerce_template_loop_price', 10);
+add_action('woocommerce_shop_loop_item_details', 'woocommerce_template_loop_add_to_cart', 15);
 
 add_action('woocommerce_after_shop_loop_item_title', 'cruxstore_template_loop_rating', 15);
 add_action('woocommerce_after_shop_loop_item_title', 'cruxstore_product_attribute_swatche', 20);

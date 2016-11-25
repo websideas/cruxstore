@@ -128,11 +128,25 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
         {
 
             $image_sizes = cruxstore_get_image_sizes();
+
+
             $taxonomy_names = array();
             if(cruxstore_is_wc()){
-                $taxonomies = wc_get_attribute_taxonomy_names();
-                foreach($taxonomies as $tax){
-                    $taxonomy_names[$tax] = $tax;
+
+                $attribute_taxonomies = wc_get_attribute_taxonomies();
+                if ( ! empty( $attribute_taxonomies ) ) {
+                    foreach ( $attribute_taxonomies as $tax ) {
+                        $taxonomy_names[wc_attribute_taxonomy_name( $tax->attribute_name )] = $tax->attribute_label;
+                    }
+                }
+            }
+
+            $all_categories = array();
+            if(cruxstore_is_wc()){
+                $args = array('taxonomy' => 'product_cat' );
+                $categories = get_categories( $args );
+                foreach($categories as $category){
+                    $all_categories[$category->term_id] = $category->name;
                 }
             }
 
@@ -515,18 +529,19 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'title' => esc_html__('Footer widgets layout', 'cruxstore'),
                         'subtitle' => esc_html__('Select your footer widgets layout', 'cruxstore'),
                         'options' => array(
-                            'featured' => array('alt' => esc_html__('Layout 1', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-0.jpg'),
-                            '3-3-3-3' => array('alt' => esc_html__('Layout 2', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-1.jpg'),
-                            '6-3-3' => array('alt' => esc_html__('Layout 3', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-2.jpg'),
-                            '3-3-6' => array('alt' => esc_html__('Layout 4', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-3.jpg'),
-                            '6-6' => array('alt' => esc_html__('Layout 5', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-4.jpg'),
-                            '4-4-4' => array('alt' => esc_html__('Layout 6', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-5.jpg'),
-                            '8-4' => array('alt' => esc_html__('Layout 7', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-6.jpg'),
-                            '4-8' => array('alt' => esc_html__('Layout 8', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-7.jpg'),
-                            '3-6-3' => array('alt' => esc_html__('Layout 9', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-8.jpg'),
-                            '12' => array('alt' => esc_html__('Layout 10', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-9.jpg'),
+                            '1' => array('alt' => esc_html__('Layout 1', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-1.jpg'),
+                            '2' => array('alt' => esc_html__('Layout 2', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-2.jpg'),
+                            '3' => array('alt' => esc_html__('Layout 3', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-3.jpg'),
+                            '4' => array('alt' => esc_html__('Layout 4', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-4.jpg'),
+                            '5' => array('alt' => esc_html__('Layout 5', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-5.jpg'),
+                            '6' => array('alt' => esc_html__('Layout 6', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-6.jpg'),
+                            '7' => array('alt' => esc_html__('Layout 7', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-7.jpg'),
+                            '8' => array('alt' => esc_html__('Layout 8', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-8.jpg'),
+                            '9' => array('alt' => esc_html__('Layout 9', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-9.jpg'),
+
+                            '10' => array('alt' => esc_html__('Layout 10', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-10.jpg'),
                         ),
-                        'default' => 'featured'
+                        'default' => '1'
                     ),
 
                     /* Footer Bottom */
@@ -1190,16 +1205,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'default'   => array(  ),
                         'output'      => array( '#footer-area' ),
                     ),
-
-                    array(
-                        'id'       => 'footer_box_widgets_background',
-                        'type'     => 'background',
-                        'title'    => esc_html__( 'Footer Box widgets Background', 'cruxstore' ),
-                        'subtitle' => esc_html__( 'Footer Box widgets Background with image, color, etc.', 'cruxstore' ),
-                        'default'   => array( ),
-                        'output'      => array( '#footer-area .footer-area-right' ),
-                    ),
-
 
                     array(
                         'id'       => 'footer_widgets_padding',
@@ -2064,7 +2069,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'letter-spacing'  => true,
                         'text-align'      => true,
                         'text-transform' => true,
-                        'output'      => array( '#footer-area h3.widget-title' ),
+                        'output'      => array( '#footer-area .widget .widget-title' ),
                         'default'  => array(
                             'color'       => '#ffffff'
                         ),
@@ -2503,9 +2508,19 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '0' => esc_html__('Disable', 'cruxstore' ),
                             '1' => esc_html__('Default', 'cruxstore' ),
                             '2' => esc_html__('Categories', 'cruxstore' ),
-                            '3' => esc_html__('A', 'cruxstore' )
+                            '3' => esc_html__('Attributes', 'cruxstore' )
                         ),
                         'default'  => '1'
+                    ),
+                    array(
+                        'id'       => 'shop_header_categories',
+                        'type'     => 'select',
+                        'title'    => esc_html__( 'Shop Header - Categories', 'cruxstore' ),
+                        'desc'     => esc_html__('Empty for show all categories', 'cruxstore'),
+                        'options'  => $all_categories,
+                        'default'  => '',
+                        'multi'    => true,
+                        'required' => array('shop_header_tool_bar','equals','2'),
                     ),
                     array(
                         'id'       => 'shop_header_orderby',
@@ -2522,7 +2537,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'default'  => 'slug',
                         'required' => array('shop_header_tool_bar','equals','2'),
                     ),
-
                     array(
                         'id'       => 'shop_header_order',
                         'type'     => 'select',
@@ -2539,33 +2553,39 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                     array(
                         'id' => 'shop_header_filters',
                         'type' => 'switch',
-                        'title' => esc_html__('Show Filters', 'cruxstore'),
+                        'title' => esc_html__('Shop Header - Filters', 'cruxstore'),
                         'desc' => esc_html__('Display filters in the shop header.', 'cruxstore'),
                         "default" => 1,
                         'on' => esc_html__('Enabled', 'cruxstore'),
                         'off' =>esc_html__('Disabled', 'cruxstore'),
                         'required' => array('shop_header_tool_bar','equals','2'),
                     ),
+
                     array(
-                        'id' => 'shop_header_search',
-                        'type' => 'switch',
-                        'title' => esc_html__('Show Search', 'cruxstore'),
-                        'desc' => esc_html__('Display search box in the shop header.', 'cruxstore'),
-                        "default" => 1,
-                        'on' =>  esc_html__('Enabled', 'cruxstore'),
-                        'off' => esc_html__('Disabled', 'cruxstore'),
-                        'required' => array('shop_header_tool_bar','equals','2'),
+                        'id'       => 'shop_header_attributes',
+                        'type'     => 'select',
+                        'title'    => esc_html__( 'Shop Header - Attributes', 'cruxstore' ),
+                        'desc'     => esc_html__('Empty for show all Attributes', 'cruxstore'),
+                        'options'  => $taxonomy_names,
+                        'default'  => '',
+                        'multi'    => true,
+                        'required' => array('shop_header_tool_bar','equals','3'),
                     ),
+
                     array(
                         'id' => 'shop_header_ajax',
                         'type' => 'switch',
-                        'title' => esc_html__('Ajax for fillter', 'cruxstore'),
+                        'title' => esc_html__('Shop Header - Ajax for fillter', 'cruxstore'),
                         'desc' => esc_html__('Enable ajax when use filter.', 'cruxstore'),
                         "default" => 1,
                         'on' =>  esc_html__('Enabled', 'cruxstore'),
                         'off' => esc_html__('Disabled', 'cruxstore'),
-                        'required' => array('shop_header_tool_bar','equals','2'),
+                        'required' => array(
+                            array('shop_header_tool_bar','!=','1'),
+                            array('shop_header_tool_bar','!=','0'),
+                        ),
                     ),
+
                     // For Attribute Swatches
                     array(
                         'id'       => 'shop_attribute_swatches',

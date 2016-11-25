@@ -125,7 +125,7 @@ class KT_MailChimp
 
                 $output .= ($text_before) ? '<div class="mailchimp-before">'.$text_before.'</div>' : '';
 
-                $email = '<input name="email" class="mailchimp-email" type="text" placeholder="'.$placeholder.' *"/>';
+                $email = '<input name="email" class="mailchimp-email" type="email" placeholder="'.$placeholder.' *"/>';
                 $button = '<button data-loading="'.esc_attr(__('Loading', 'cruxstore_core')).'" data-text="'.esc_attr(__('Subscribe', 'cruxstore_core')).'"  class="btn btn-default mailchimp-submit" type="submit">'.__('Subscribe', 'cruxstore_core').'</button>';
 
                 if($disable_names != 'yes'){

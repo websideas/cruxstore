@@ -54,6 +54,9 @@ class WC_Widget_CRUXSTORE_Orderby extends WC_Widget {
             unset( $catalog_orderby_options['rating'] );
         }
 
+        $type = (isset($instance['type'])) ? true : false;
+
+
         global $wp;
         $link = home_url( $wp->request ); // Base page URL
 
@@ -68,13 +71,39 @@ class WC_Widget_CRUXSTORE_Orderby extends WC_Widget {
         foreach ( $catalog_orderby_options as $id => $name ) :
             $link_url = add_query_arg( array( 'orderby' => $id), $link );
             if($orderby == $id){
-                $output .= '<li class="selected">'. esc_html( $name ). '</li>';
+                if($type){
+                    $output .= '<option selected="selected" data-url"' . esc_url( $link_url ) . '" value="'.esc_attr($id).'">'. esc_html( $name ). '</option>';
+                }else{
+                    $output .= '<li class="selected">'. esc_html( $name ). '</li>';
+                }
             }else{
-                $output .= '<li><a href="' . esc_url( $link_url ) . '">' . esc_html( $name ). '</a></li>';
+                if($type){
+                    $output .= '<option  value="'.esc_attr($id).'" data-url="' . esc_url( $link_url ) . '">' . esc_html( $name ). '</option>';
+                }else{
+                    $output .= '<li><a href="' . esc_url( $link_url ) . '">' . esc_html( $name ). '</a></li>';
+                }
             }
         endforeach;
 
-        printf('<ul>%s</ul>', $output);
+        if($type){
+
+            foreach ( $_GET as $key => $val ) {
+                if ( 'orderby' === $key || 'submit' === $key ) {
+                    continue;
+                }
+                if ( is_array( $val ) ) {
+                    foreach( $val as $innerVal ) {
+                        $output .= '<input type="hidden" name="' . esc_attr( $key ) . '[]" value="' . esc_attr( $innerVal ) . '" />';
+                    }
+                } else {
+                    $output .= '<input type="hidden" name="' . esc_attr( $key ) . '" value="' . esc_attr( $val ) . '" />';
+                }
+            }
+
+            printf('<form method="get"><select class="orderby" name="orderby">%s</select></form>', $output);
+        }else{
+            printf('<ul class="orderby">%s</ul>', $output);
+        }
 
         $this->widget_end( $args );
     }

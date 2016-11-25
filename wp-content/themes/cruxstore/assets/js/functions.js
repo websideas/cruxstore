@@ -520,6 +520,56 @@
         });
     }
 
+    function init_scrollMenu(){
+
+        var $scrollMenu = $('#main-navigation .dropdown-scroll .megamenu-mgitem');
+
+
+        $scrollMenu.each(function () {
+            var $this = $(this);
+
+            var $innerContent = $this.find('.megamenu-mgitem-content');
+
+            $this.on('mousemove', function (e) {
+
+
+                var parentOffset = $this.offset();
+
+                var relY = e.pageY - parentOffset.top;
+
+                var deltaHeight = $innerContent.outerHeight() - $this.height();
+
+
+                if (deltaHeight < 0) return;
+
+                var percentY = relY / $this.height();
+
+                var margin = 0;
+
+                if (percentY <= 0) {
+                    margin = 0;
+                } else if (percentY >= 1) {
+                    margin = -deltaHeight;
+                } else {
+                    margin = -percentY * deltaHeight;
+                }
+
+                margin = parseInt(margin);
+
+                $innerContent.css({
+                    'position': 'relative',
+                    'top': margin
+                });
+            });
+        });
+    }
+
+    setTimeout(function() {
+        init_scrollMenu();
+    }, 1000);
+
+    init_scrollMenu();
+
 
 
 })(jQuery); // End of use strict

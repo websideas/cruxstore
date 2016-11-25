@@ -36,6 +36,7 @@ require_once CRUX_EXT_DIR.'shortcodes/shortcodes.php';
 require_once CRUX_EXT_DIR.'importer/importer.php';
 require_once CRUX_EXT_DIR.'mailchimp/mailchimp.php';
 require_once CRUX_EXT_DIR.'meta-box/meta-box.php';
+require_once CRUX_EXT_DIR.'megamenu/megamenu.php';
 
 
 
@@ -49,6 +50,7 @@ if ( is_admin() ) {
         remove_meta_box( 'mymetabox_revslider_0', 'crux_testimonial', 'normal' );
         remove_meta_box( 'mymetabox_revslider_0', 'crux_client', 'normal' );
         remove_meta_box( 'mymetabox_revslider_0', 'crux_employees', 'normal' );
+        remove_meta_box( 'mymetabox_revslider_0', 'kt_mgmenu', 'normal' );
     }
 
 

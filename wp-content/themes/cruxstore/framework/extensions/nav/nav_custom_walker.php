@@ -239,33 +239,20 @@ class KTMegaWalker extends Walker_Nav_Menu{
                 $background_style = 'style="'.$background_style.'"';
             }
 
-            $item_output .= "\n$indent<div class=\"cruxstore-megamenu-wrapper $position $layout megamenu-columns-$colums \" $background_style>\n";
+            $mgitem = get_post_meta( $item->ID, '_menu_item_megamenu_mgitem', true );
+            $mgitem_class = ($mgitem) ? 'cruxstore-megamenu-mgitem' : '';
 
-            if ( $depth == 0 && $item->object == 'category' ) {
+            $item_output .= "\n$indent<div class=\"cruxstore-megamenu-wrapper $mgitem_class $position $layout megamenu-columns-$colums \" $background_style>\n";
 
-                $item_output .= '<div class="megamenu-posts">';
-
-                global $post;
-                $menu_posts = get_posts( apply_filters('cruxstore_megamenu_posts', array( 'posts_per_page' => 3, 'category' => $item->object_id )) );
-
-                ob_start();
-                foreach( $menu_posts as $post ): ?>
-                    <div class="col-lg-4 col-md-4">
-                        <?php get_template_part( 'templates/blog/grid/contento', get_post_format()); ?>
-                    </div>
-                    <?php
-                endforeach;
-                wp_reset_postdata();
-
-                $item_output .= sprintf('<div class="blog-posts-menu"><div class="row">%s</div></div>', ob_get_clean());
-
-                $item_output .= '</div>';
-
+            if($mgitem){
+                $content_post = get_post($mgitem);
+                $content = $content_post->post_content;
+                $content = apply_filters('the_content', $content);
+                $content = str_replace(']]>', ']]&gt;', $content);
+                $item_output .= '<div class="megamenu-mgitem"><div class="megamenu-mgitem-content">'.$content.'</div></div>';
             }
 
-
         }
-
 
         $megamenu_columntitle = get_post_meta( $item->ID, '_menu_item_megamenu_columntitle', true );
         if($megamenu_columntitle && $depth ==1 )

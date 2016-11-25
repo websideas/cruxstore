@@ -27,6 +27,12 @@ if(cruxstore_option('catalog_mode', 0)){
 global $product;
 
 
+if(isset( $class )){
+    $class .= ' wc_add_to_cart';
+}
+
+
+
 $add_to_cart_handler = apply_filters( 'woocommerce_add_to_cart_handler', $product->product_type, $product );
 
 echo '<div class="wc-addtocart-wrap" title="'.esc_attr($product->add_to_cart_text()).'" data-toggle="tooltip" data-added="'.esc_attr(esc_html__('Added to cart', 'cruxstore')).'" data-addbutton="'.esc_attr($product->add_to_cart_text()).'">';
@@ -37,7 +43,7 @@ echo apply_filters( 'woocommerce_loop_add_to_cart_link',
 		esc_attr( $product->id ),
 		esc_attr( $product->get_sku() ),
 		esc_attr( isset( $class ) ? $class : 'button' ),
-		'<i class="fa fa-shopping-basket" aria-hidden="true"></i>'
+		'<i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="text">'.$product->add_to_cart_text().'</span>'
 	),
 $product );
 echo "</div>";

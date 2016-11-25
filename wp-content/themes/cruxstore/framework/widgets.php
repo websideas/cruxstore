@@ -103,7 +103,7 @@ if ( function_exists('register_sidebar')) {
                 'after_title' => '-->',
             ) );
         }
-        $count = 4;
+        $count = 5;
         for($i=1; $i<=$count;$i++){
             register_sidebar( array(
                 'name' => sprintf(esc_html__( 'Footer Column %s', 'cruxstore'), $i) ,

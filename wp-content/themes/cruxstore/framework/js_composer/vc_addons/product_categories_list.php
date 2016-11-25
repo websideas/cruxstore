@@ -13,7 +13,6 @@ class WPBakeryShortCode_Categories_List extends WPBakeryShortCode {
             'orderby' => 'name',
             'order' => 'ASC',
             'ids' => '',
-            'categories_style' => 'normal',
             'hide_empty' => 'true',
             'parent'     => '',
 
@@ -34,7 +33,6 @@ class WPBakeryShortCode_Categories_List extends WPBakeryShortCode {
             'extra' => $this->getExtraClass( $el_class ),
             'css_animation' => cruxstore_getCSSAnimation( $css_animation ),
             'shortcode_custom' => vc_shortcode_custom_css_class( $css, ' ' ),
-            'style' => 'style-'.$categories_style
         );
 
 
@@ -53,7 +51,7 @@ class WPBakeryShortCode_Categories_List extends WPBakeryShortCode {
             'orderby'    => $atts['orderby'],
             'order'      => $atts['order'],
             'hide_empty' => $hide_empty,
-            'include'    => $ids,
+            'slug'    => $ids,
             'pad_counts' => true,
             'child_of'   => $atts['parent']
         );
@@ -124,7 +122,7 @@ vc_map( array(
             'param_name' => 'ids',
             'admin_label' => true,
             'multiple' => true,
-            'select' => 'id',
+            'select' => 'slug',
             'description' => esc_html__('List of product categories', 'cruxstore')
         ),
         array(

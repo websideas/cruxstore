@@ -110,10 +110,12 @@ function cruxstore_taxonomy_settings_field( $settings, $value ) {
         $value_arr = array_map( 'trim', explode(',', $value_arr) );
     }
 
+    print_r($settings);
+
     $size = (!empty($settings['size'])) ? 'size="'.esc_attr($settings['size']).'"' : '';
     $multiple = (!empty($settings['multiple'])) ? 'multiple="multiple"' : '';
     $placeholder = (!empty($settings['placeholder'])) ? 'data-placeholder="'.$settings['placeholder'].'"' : '';
-    $select = (!empty($settings['select'])) ? 'id' : 'slug';
+    $select = (!empty($settings['select'])) ? $settings['select'] : 'id';
 
     $output .= '<select '.$multiple.' '.$placeholder.' '.$size.'
         class="wpb_vc_param_value cruxstore-select-field wpb-input wpb-select '
@@ -128,7 +130,7 @@ function cruxstore_taxonomy_settings_field( $settings, $value ) {
         foreach( $terms as $term ) {
             $term_val = ($select == 'slug') ? $term->slug : $term->term_id;
             $selected = (in_array( $term_val, $value_arr )) ? ' selected="selected"' : '';
-            $output .= "<option class='" . $term_val . "' value='".$term_val."' ".$selected.">".htmlspecialchars($term->name)."</option>";
+            $output .= "<option class='" . $term_val . "' value='".$term_val."' ".$selected.">".$term->name."</option>";
         }
     }
 

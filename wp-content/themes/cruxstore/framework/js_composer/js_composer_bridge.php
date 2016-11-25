@@ -42,7 +42,7 @@ vc_remove_element( 'vc_wp_meta' );
 
 
 
-$visibilities_arr = array('vc_empty_space', 'cruxstore_heading');
+$visibilities_arr = array('vc_empty_space', 'cruxstore_heading', 'vc_single_image');
 foreach($visibilities_arr as $item){
     vc_add_param($item, array(
         "type" => "dropdown",
@@ -63,6 +63,7 @@ foreach($visibilities_arr as $item){
             esc_html__('Hidden on Desktops and Desktops Large', 'cruxstore') => 'hidden-md hidden-lg',
         ),
         "admin_label" => true,
+
     ));
 }
 
@@ -157,6 +158,7 @@ if(cruxstore_is_wc()){
 $list = array(
     'page',
     'product',
+    'kt_mgmenu',
 );
 vc_set_default_editor_post_types( $list );
 

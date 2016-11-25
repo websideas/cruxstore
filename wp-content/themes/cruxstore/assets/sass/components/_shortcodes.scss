@@ -80,6 +80,7 @@
   &-title{
     line-height: 30px;
     margin: 0;
+    font-weight: 600;
     span.first{
         color: $primary-color;
     }
@@ -2151,6 +2152,54 @@
   margin-bottom: $vspacing;
   img{
     display: inline;
+  }
+}
+
+/**
+ *  KT: Product Categories List
+**/
+.products-categories-list{
+  margin-bottom: $vspacing;
+  .products-categories-heading{
+    font-weight: 600;
+    border-bottom: 1px solid $gray-light;
+    padding-bottom: 12px;
+    margin: 0 0 15px;
+    font-size: 16px;
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      + li{
+        padding-top: 16px;
+      }
+      a{
+        padding-left: 20px;
+        position: relative;
+        color: $gray-text;
+        @include transition();
+        &:before{
+          content: '';
+          @include transition();
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          background: $gray-light;
+          @include border-radius(50%);
+          @include translate(y);
+          left: 0;
+        }
+
+        &:hover{
+          color: $primary-color;
+          &:before{
+            background: $primary-color;
+          }
+        }
+      }
+    }
   }
 }
 

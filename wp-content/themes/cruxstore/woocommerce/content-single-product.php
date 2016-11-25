@@ -44,13 +44,14 @@ $classes = array('wc-single-product', 'product-'.$layout);
         <?php } ?>
             <div class="wc-single-content">
                 <?php
-                /**
-                 * woocommerce_before_single_product hook.
-                 *
-                 * @hooked wc_print_notices - 10
-                 */
-                do_action( 'woocommerce_before_single_product' );
-
+                if($layout != 'layout5') {
+                    /**
+                     * woocommerce_before_single_product hook.
+                     *
+                     * @hooked wc_print_notices - 10
+                     */
+                    do_action('woocommerce_before_single_product');
+                }
                 ?>
 
                 <div class="row">
@@ -62,12 +63,21 @@ $classes = array('wc-single-product', 'product-'.$layout);
                          * @hooked woocommerce_show_product_sale_flash - 10
                          * @hooked woocommerce_show_product_images - 20
                          */
-
                         do_action( 'woocommerce_before_single_product_summary' );
                         ?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="summary entry-summary">
+                            <?php
+                            if($layout == 'layout5') {
+                                /**
+                                 * woocommerce_before_single_product hook.
+                                 *
+                                 * @hooked wc_print_notices - 10
+                                 */
+                                do_action('woocommerce_before_single_product');
+                            }
+                            ?>
                             <?php
                             /**
                              * woocommerce_single_product_summary hook.

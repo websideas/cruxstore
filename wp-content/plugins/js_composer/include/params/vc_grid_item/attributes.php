@@ -98,12 +98,12 @@ function vc_gitem_template_attribute_vc_btn( $value, $data ) {
 /**
  * Get post image url
  *
+ * @param $value
  * @param $data
  *
- * @param bool $user_empty
  * @return string
  */
-function vc_gitem_template_attribute_post_image_url( $data, $user_empty = true ) {
+function vc_gitem_template_attribute_post_image_url( $value, $data ) {
 	$output = '';
 	/**
 	 * @var null|Wp_Post $post ;
@@ -122,7 +122,7 @@ function vc_gitem_template_attribute_post_image_url( $data, $user_empty = true )
 		$output = esc_attr( rawurldecode( $data ) );
 	} elseif ( ! empty( $src ) ) {
 		$output = $src[0];
-	} elseif ( $user_empty ) {
+	} else {
 		$output = vc_asset_url( 'vc/vc_gitem_image.png' );
 	}
 

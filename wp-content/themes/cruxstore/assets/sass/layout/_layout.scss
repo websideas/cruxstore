@@ -564,12 +564,16 @@
   position: relative;
   background: #2b2b2b;
   padding: 95px 0 65px;
-  .footer-area-one{
-    text-align: center;
+  font-size: 12px;
+
+
+
+  .widget_text{
     p{
       margin-bottom: 15px;
     }
   }
+
   .widget{
     margin-bottom: 22px;
     border: none;
@@ -581,6 +585,7 @@
       font-size: 14px;
     }
   }
+
 }
 #footer-bottom{
   padding: 25px 0;
