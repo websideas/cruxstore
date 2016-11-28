@@ -361,8 +361,7 @@
 }
 
 .content-header-9{
-  #header{
-    .top-menu{
+  #header .top-menu{
       display: inline-block;
       height: 35px;
       text-align: center;
@@ -371,13 +370,112 @@
         float:left;
       }
     }
+  #menu-vartical-right{
+    float: left;
+    display: inline-block;
+    width: 268px;
+    .menu-category{
+      background: $primary-color;
+      padding: 20px 88px;
+      @include border-radius(5px 5px 0 0);
+      a{
+        color: #fff;
+        text-transform: uppercase;
 
+      }
+    }
+    #main-vertical{
+      margin: 0;
+      padding: 28px 0;
+      background: #fff;
+      text-align: left;
+      li:hover > .sub-menu-dropdown,
+      li:hover > .cruxstore-megamenu-wrapper
+      {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0,0);
+      }
+      .sub-menu-dropdown,
+      .cruxstore-megamenu-wrapper
+      {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        top:0;
+        left: 100%;
+        transform: translate(198px ,0);
+        background: #fff;
+        @include box-shadow(10px, 0, 20px, rgba(0, 0, 0, .04));
+        transition: all 0.3 ease-in-out;
+        width: 100%;
+        padding: 29px 0;
+      }
+      .sub-menu-dropdown > li,
+      > li{
+        list-style: none;
+        padding:  0 23px ;
+        display: block;
+        position: relative;
+
+
+      }
+      .sub-menu-dropdown > li > a,
+      li> a{
+        position: relative;
+        color:$gray-text ;
+        display: block;
+        color:$gray-text ;
+      }
+      .menu-item-has-children > a > span:after,
+      .menu-item-has-children > .sub-menu-dropdown > span:after
+      {
+        font-family: FontAwesome;
+        content: "\f105";
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right: 0;
+
+      }
+      .cruxstore-megamenu-wrapper {
+        padding: 29px 23px;
+        .menu-vertical-nav ul {
+          padding: 0;
+          li{
+            list-style: none;
+            width: 100%;
+            padding-bottom: 12px ;
+            font-size: 12px;
+          }
+        }
+        .menu-vertical-nav h4{
+          font-size: 14px;
+
+        }
+      }
+      .cruxstore-megamenu-item-full .cruxstore-megamenu-wrapper{
+        width: 900px;
+      }
+      .cruxstore-megamenu-item-three .cruxstore-megamenu-wrapper{
+         width: 680px;
+      }
+      .cruxstore-megamenu-item-half .cruxstore-megamenu-wrapper{
+        width: 398px;
+      }
+      .megamenu-columns-3 li{
+        width: 33.3333%;
+      }
+      .megamenu-columns-2 li{
+        width: 50%;
+      }
+      .megamenu-columns-4 li{
+        width: 25%;
+      }
+
+    }
   }
-
 }
-
-
-
 
 .header-sticky-background{
   width: 100%;
