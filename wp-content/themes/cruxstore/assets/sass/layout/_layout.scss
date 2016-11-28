@@ -359,10 +359,9 @@
     }
   }
 }
-
+// header9
 .content-header-9{
-  #header{
-    .top-menu{
+  #header .top-menu{
       display: inline-block;
       height: 35px;
       text-align: center;
@@ -371,13 +370,163 @@
         float:left;
       }
     }
-
+  .menu-right{
+    position: relative;
   }
+  #menu-vartical-right{
+    float: left;
+    display: inline-block;
+    width: 268px;
+    position: relative;
+    .menu-category{
+      background: $primary-color;
+      padding: 20px 88px;
+      @include border-radius(5px 5px 0 0);
+      a{
+        color: #fff;
+        text-transform: uppercase;
 
+      }
+    }
+    #main-vertical{
+      margin: 0;
+      padding: 28px 0;
+      background: #fff;
+      text-align: left;
+      li:hover > .sub-menu-dropdown,
+      li:hover > .cruxstore-megamenu-wrapper
+      {
+
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0,0);
+      }
+      .position-top-parent-vertical:hover > .cruxstore-megamenu-wrapper
+      {
+        margin: -2px;
+
+      }
+      .sub-menu-dropdown,
+      .cruxstore-megamenu-wrapper
+      {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        top:0;
+        left: 100%;
+        transform: translate(198px ,0);
+        background: #fff;
+        @include box-shadow(0, 0, 20px, rgba(0, 0, 0, .04));
+        transition: all 0.3 ease-in-out;
+        width: 100%;
+        padding: 29px 0;
+      }
+      .sub-menu-dropdown > li,
+      > li{
+        list-style: none;
+        padding:  0 23px ;
+        display: block;
+        position: relative;
+        padding-bottom:15px ;
+
+      }
+      .sub-menu-dropdown > li > a,
+      li> a{
+        position: relative;
+        color:$gray-text ;
+        display: block;
+        color:$gray-text ;
+      }
+      .menu-item-has-children > a > span:after,
+      .menu-item-has-children > .sub-menu-dropdown > span:after,
+      .menu-item-type-custom > a > span:after
+      {
+        font-family: FontAwesome;
+        content: "\f105";
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right: 0;
+
+      }
+      .nemushownumber{
+        height: 0;
+        padding-bottom: 0;
+        opacity: 0;
+        top: 0;
+        transition: opacity 0.5s ease-in-out 0s;
+        z-index: -10;
+      }
+      li.activeon {
+        height: auto;
+        padding-bottom: 12px;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out 0s;
+        z-index: 3;
+      }
+      li.position-top-parent-vertical{
+        position: static;
+        .cruxstore-megamenu-wrapper{
+          border-top: 2px solid $primary-color;
+        }
+      }
+      .cruxstore-megamenu-wrapper {
+        padding: 29px 23px;
+        .menu-vertical-nav ul {
+          padding: 0;
+          li{
+            list-style: none;
+            width: 100%;
+            font-size: 12px;
+            line-height: 30px;
+          }
+        }
+        .menu-vertical-nav h4{
+          font-size: 14px;
+          margin-bottom: 12px;
+          font-weight: 600;
+
+        }
+
+
+      }
+
+      .cruxstore-megamenu-item-full .cruxstore-megamenu-wrapper{
+        width: 900px;
+      }
+      .cruxstore-megamenu-item-three .cruxstore-megamenu-wrapper{
+         width: 728px;
+      }
+      .cruxstore-megamenu-item-half .cruxstore-megamenu-wrapper{
+        width: 402px;
+      }
+      .megamenu-columns-3 li{
+
+      }
+      .megamenu-columns-2 li{
+        width: 50%;
+      }
+      .megamenu-columns-4 li{
+        width: 25%;
+      }
+
+    }
+    .icon_show_menu {
+      background: #f6f6f6 none repeat scroll 0 0;
+      bottom: 0;
+      cursor: pointer;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      @include css3-prefix('transform', 'translateX(-50%)');
+      width: 100%;
+    }
+    .roter i{
+      transform: rotate(180deg);
+      transition: transform 0.4s ease-in-out 0s;
+    }
+  }
 }
-
-
-
 
 .header-sticky-background{
   width: 100%;

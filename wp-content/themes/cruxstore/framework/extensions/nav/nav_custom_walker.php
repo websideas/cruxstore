@@ -106,7 +106,9 @@ class KTMegaWalker extends Walker_Nav_Menu{
         if($depth == 1 && $endrow){
             $classes[] = 'cruxstore-megamenu-item-endrow';
         }
-
+        if( $this->megamenu_enable and $this->megamenu_position=="top-parent-vertical" ){
+            $classes[] = ' position-'.$this->megamenu_position .'';
+        }
         /**
          * Filter the CSS class(es) applied to a menu item's <li>.
          *

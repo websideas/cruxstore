@@ -360,13 +360,17 @@ function cruxstore_addFrontCss( ){
     }
 
     $primary = cruxstore_get_mainmenu();
+    $locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object( $locations[ 'vertical' ] );
 
-    if(!$primary['custom']) {
+   /** if(!$primary['custom']) {
         $locations = get_nav_menu_locations();
         $menu = wp_get_nav_menu_object( $locations[ $primary['menu'] ] );
     }else{
         $menu = $primary['menu'];
     }
+    *
+    * */
 
     $args = array(
         'meta_query' => array(

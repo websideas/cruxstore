@@ -84,8 +84,60 @@
     init_wow();
     init_lightBox();
     init_image_tooltip();
+    show_item_vertical_menu();
+    action_menu_vertical();
     setInterval(init_remove_space, 100);
 
+    /* ---------------------------------------------
+     WOW show_item_vertical_menu
+     --------------------------------------------- */
+    function show_item_vertical_menu(){
+
+        var numbershow=$('.icon_show_menu').attr('data-show');;
+        $("#main-vertical > li").each(function(index){
+            var i=index;
+            if(i  >=  numbershow){
+                $(this).addClass('nemushownumber');
+            }
+        });
+        $('span.icon_show_menu').on('click',function(){
+            if($('li.nemushownumber').hasClass('activeon')){
+                $('li.nemushownumber ').removeClass('activeon');
+                $(this).removeClass('roter');
+            }else{
+                $('li.nemushownumber').addClass('activeon');
+                $(this).addClass('roter');
+            }
+        });
+
+        $('ul.menu-right-nav > li > a > span').on('click',function(){
+            if($(this).parent().parent().hasClass('showmenumobile')){
+                $(this).parent().parent().removeClass('showmenumobile');
+            }else{
+                $(this).parent().parent().addClass('showmenumobile');
+            }
+            return false
+        });
+    }
+    function action_menu_vertical(){
+        var header= $('#header');
+        if(header.hasClass('hover-menu-vertical')){
+
+            $('.menu-right').addClass('action-hover-menu-vertical');
+        }
+        if(header.hasClass('click-menu-vertical')){
+            $('.menu-right').addClass('action-click-menu-vertical');
+            $('.menu-category').on('click', function(){
+                if($('.menu-right').hasClass('action-click-menu-vertical')){
+                    $('.menu-right').removeClass('action-click-menu-vertical');
+                }else{
+                    $('.menu-right').addClass('action-click-menu-vertical');
+                }
+            });
+
+        }
+
+    }
 
     /* ---------------------------------------------
      WOW animations
