@@ -1026,6 +1026,7 @@
               }
             }
           }
+
         }
         &:hover{
           .product-thumbnail-effect{
@@ -1049,7 +1050,13 @@
         > .wc-addtocart-wrap{
           display: none;
         }
+        .wc_add_to_cart{
+          .text{
+            display: none;
+          }
+        }
       }
+
 
       .star-rating{
         float: none;
@@ -1057,7 +1064,8 @@
       }
 
       &.product-effect-1,
-      &.product-effect-3{
+      &.product-effect-3,
+      &.product-effect-5{
         .product-content {
           .product-actions{
             bottom: 20px;
@@ -1110,7 +1118,8 @@
         }
       }
 
-      &.product-effect-3{
+      &.product-effect-3,
+      &.product-effect-5{
         .product-content {
           .product-actions{
             margin-bottom: -3px;
@@ -1153,6 +1162,12 @@
         }
       }
 
+      &.product-effect-5{
+        .star-rating{
+          display: none;
+        }
+      }
+
       &.product-effect-2,
       &.product-effect-4,
       &.product-effect-6{
@@ -1190,13 +1205,10 @@
                 @include border-radius(0);
                 text-align: center;
                 &:before{
-                  color: $black;
+                  color: $white;
                 }
                 &:hover{
                   color: $primary-color;
-                  &:before{
-                    color: $primary-color;
-                  }
                 }
               }
             }
@@ -1214,6 +1226,12 @@
         }
       }
 
+      &.product-effect-2{
+        .price{
+          color: $gray-text;
+        }
+      }
+
       &.product-effect-2,
       &.product-effect-6{
         .product-content {
@@ -1222,14 +1240,21 @@
               a{
                 background: $white;
                 @include css3-prefix('box-shadow', '0 0 3px rgba(0,0,0,0.03)');
+                &:before{
+                  color: $black;
+                }
                 &:hover{
                     @include css3-prefix('box-shadow', '0 0 5px rgba(0,0,0,0.1)');
+                  &:before{
+                    color: $primary-color;
+                  }
                 }
               }
             }
           }
         }
       }
+
 
       &.product-effect-4{
         .product-content {

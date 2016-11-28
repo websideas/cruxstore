@@ -50,7 +50,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                 // Version that appears at the top of your panel
                 'menu_type' => 'menu',
                 //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
-                'allow_sub_menu' => true,
+                'allow_sub_menu' => false,
                 // Show the sections below the admin menu item or not
                 'menu_title' => esc_html__('Theme Options', 'cruxstore'),
 
@@ -610,7 +610,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             'socials' => esc_html__('Socials', 'cruxstore' ),
                             'copyright' => esc_html__('Copyright', 'cruxstore' ),
                             'subscribe' => esc_html__('Subscribe', 'cruxstore' ),
-                            
+                            'image' => esc_html__('Image', 'cruxstore' ),
                         ),
                         'default'  => ''
                     ),
@@ -624,6 +624,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             'socials' => esc_html__('Socials', 'cruxstore' ),
                             'copyright' => esc_html__('Copyright', 'cruxstore' ),
                             'subscribe' => esc_html__('Subscribe', 'cruxstore' ),
+                            'image' => esc_html__('Image', 'cruxstore' ),
                             'navigation_socials' => esc_html__('Navigation + Socials', 'cruxstore' ),
                         ),
                         'default'  => 'copyright'
@@ -646,6 +647,13 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'type' => 'cruxstore_socials',
                         'title'    => esc_html__( 'Select your socials', 'cruxstore' ),
                         'default' => 'facebook,twitter,instagram,linkedin'
+                    ),
+                    array(
+                        'id'       => 'footer_copyright_image',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'compiler' => true,
+                        'title'    => esc_html__( 'Footer Copyright Image', 'cruxstore' ),
                     ),
                     array(
                         'id' => 'footer_copyright_text',

@@ -554,10 +554,12 @@
     height: 160px;
     left: -77px;
     @include translate(y);
-    background: url("../images/footer-top-bg.png") no-repeat center center;
   }
   .footer-top-inner{
     position: relative;
+  }
+  .footer-top-right{
+    text-align: right;
   }
 }
 #footer-area{

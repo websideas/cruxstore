@@ -64,9 +64,9 @@ function cruxstore_theme_setup() {
         add_image_size( 'cruxstore_square', 500, 500, true);
         add_image_size( 'cruxstore_list', 700, 570, true);
         add_image_size( 'cruxstore_classic', 1140, 600, true );
-        add_image_size( 'cruxstore_medium', 700, 570, true);
         add_image_size( 'cruxstore_small', 200, 200, true );
         add_image_size( 'cruxstore_widgets', 100, 100, true );
+        add_image_size( 'cruxstore_widgets2', 100, 75, true );
     }
     
     load_theme_textdomain( 'cruxstore', CRUXSTORE_THEME_DIR . '/languages' );

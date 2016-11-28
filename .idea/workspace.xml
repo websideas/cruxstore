@@ -20,25 +20,7 @@
     <favorites_list name="furniture" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data-options.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/data/data-options.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="534" column="138" selection-start-line="534" selection-start-column="138" selection-end-line="534" selection-end-column="138" />
-              <folding>
-                <marker date="1479975656000" expanded="true" signature="43874:43886" ph="..." />
-                <marker date="1479975656000" expanded="true" signature="49268:49280" ph="..." />
-                <marker date="1479975656000" expanded="true" signature="55158:55170" ph="..." />
-                <marker date="1479975656000" expanded="true" signature="87158:87170" ph="..." />
-                <marker date="1479975656000" expanded="true" signature="93214:93226" ph="..." />
-                <marker date="1479975656000" expanded="true" signature="110166:110180" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -48,15 +30,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/assets/css/megamenu.css" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/woocommerce/loop/add-to-cart.php" />
-        <option value="$PROJECT_DIR$/wp-content/plugins/woocommerce/includes/wc-attribute-functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/widgets/filter_color.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/woocommerce.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/widgets/orderby.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/js/woocommerce.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/woocommerce/content-single-product.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_woocommerce.scss" />
         <option value="$PROJECT_DIR$/wp-content/plugins/cruxstore_core/extentions/custompost/cp.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/cruxstore_core/extentions/megamenu/megamenu.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/cruxstore_core/cruxstore_core.php" />
@@ -69,33 +47,40 @@
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/extensions/nav/nav_custom_walker.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_menu.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/frontend.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/search.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/js_composer_function.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_shortcodes.scss" />
         <option value="&lt;d9dfd7ba-9d6d-49d4-a9de-259b036c1f28&gt;/var/www/meovatgd.com/public_html/furniture2/wp-config.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/js_composer_parrams.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/product_categories_list.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/banner.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/footer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/widgets.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-widgets.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-2.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/gallery.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_widgets.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-4.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-5.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/layout/_layout.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/css/queries.scss" />
         <option value="$PROJECT_DIR$/wp-content/plugins/cruxstore_core/extentions/mailchimp/mailchimp.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-1.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-10.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-8.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-9.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-7.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/data/data-options.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-3.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-6.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-4.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-top.php" />
+        <option value="&lt;d9dfd7ba-9d6d-49d4-a9de-259b036c1f28&gt;/var/www/meovatgd.com/public_html/furniture3/wp-config.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/data/data-options.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-image.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/footer.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/frontend.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/blog_posts.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/templates/blog/widget/content-rectangle.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_content.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_shortcodes.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/css/queries.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/layout/_layout.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_woocommerce.scss" />
       </list>
     </option>
   </component>
@@ -142,6 +127,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,182 +201,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="furniture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="furniture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="furniture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="furniture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="furniture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="furniture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cruxstore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -489,18 +302,21 @@
       <workItem from="1479778924266" duration="13182000" />
       <workItem from="1479866371694" duration="11649000" />
       <workItem from="1479954669816" duration="7451000" />
+      <workItem from="1480040000509" duration="634000" />
+      <workItem from="1480082161862" duration="464000" />
+      <workItem from="1480304776118" duration="8628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53284000" />
+    <option name="totallyTimeSpent" value="63010000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1914" height="1010" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1914" height="1010" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21421108" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1630094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1630094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -547,96 +363,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/cruxstore_core/extentions/megamenu/megamenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="37" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/extensions/nav/nav_menu_custom_fields.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_404.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/headers/header-navigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="584" column="0" selection-start-line="584" selection-start-column="0" selection-end-line="584" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/nav-menu-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="94" column="47" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/headers/header-menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/nav-menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9191">
-          <caret line="267" column="23" selection-start-line="267" selection-start-column="23" selection-end-line="267" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/demo.js" />
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/js_composer_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/js_composer/include/classes/core/class-wpb-map.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="501" column="27" selection-start-line="501" selection-start-column="27" selection-end-line="501" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/js_composer_bridge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/extensions/nav/nav.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="32" column="204" selection-start-line="32" selection-start-column="204" selection-end-line="32" selection-end-column="204" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/extensions/nav/nav_custom_walker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
@@ -655,7 +381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="297" column="24" selection-start-line="297" selection-start-column="24" selection-end-line="297" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,22 +388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/frontend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="382" column="30" selection-start-line="382" selection-start-column="30" selection-end-line="382" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/utils/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -693,7 +402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="540" column="9" selection-start-line="540" selection-start-column="9" selection-end-line="540" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,7 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
           <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,17 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
-          <folding>
-            <marker date="1479895736000" expanded="true" signature="16703:16735" ph="Select image... media" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_shortcodes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="2175" column="23" selection-start-line="2175" selection-start-column="23" selection-end-line="2175" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,17 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/banner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-          <folding>
-            <marker date="1479955400000" expanded="true" signature="8027:8059" ph="Select image... media" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,33 +444,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-widgets-featured.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-widgets-featured.php" />
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/widgets.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <marker date="1479961734000" expanded="true" signature="7424:7430" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,47 +466,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/gallery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/gallery.js" />
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-5.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/layout/_layout.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="553" column="0" selection-start-line="553" selection-start-column="0" selection-end-line="553" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/css/queries.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_widgets.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="515" column="0" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -849,7 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="120" column="64" selection-start-line="120" selection-start-column="64" selection-end-line="120" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,7 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="227" column="26" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,7 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,15 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,7 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,22 +544,199 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_widgets.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="502" column="17" selection-start-line="502" selection-start-column="17" selection-end-line="502" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/layouts/footer-4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/banner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding>
+            <marker date="1480036251000" expanded="true" signature="8027:8059" ph="Select image... media" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/css/woocommerce.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-copyright.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/headers/header-branding.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="293" column="12" selection-start-line="293" selection-start-column="12" selection-end-line="295" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/data/data-options.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="534" column="138" selection-start-line="534" selection-start-column="138" selection-end-line="534" selection-end-column="138" />
+        <state relative-caret-position="533">
+          <caret line="651" column="61" selection-start-line="651" selection-start-column="39" selection-end-line="651" selection-end-column="61" />
           <folding>
-            <marker date="1479975656000" expanded="true" signature="43874:43886" ph="..." />
-            <marker date="1479975656000" expanded="true" signature="49268:49280" ph="..." />
-            <marker date="1479975656000" expanded="true" signature="55158:55170" ph="..." />
-            <marker date="1479975656000" expanded="true" signature="87158:87170" ph="..." />
-            <marker date="1479975656000" expanded="true" signature="93214:93226" ph="..." />
-            <marker date="1479975656000" expanded="true" signature="110166:110180" ph="..." />
+            <marker date="1480322536000" expanded="true" signature="44476:44488" ph="..." />
+            <marker date="1480322536000" expanded="true" signature="49870:49882" ph="..." />
+            <marker date="1480322536000" expanded="true" signature="55760:55772" ph="..." />
+            <marker date="1480322536000" expanded="true" signature="87760:87772" ph="..." />
+            <marker date="1480322536000" expanded="true" signature="93816:93828" ph="..." />
+            <marker date="1480322536000" expanded="true" signature="110768:110782" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/blog/widget/content-3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/js_composer/vc_addons/blog_posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="121" column="40" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/blog/widget/content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/framework/frontend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="68" column="43" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/blog/widget/content-rectangle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="188" column="25" selection-start-line="188" selection-start-column="25" selection-end-line="188" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_shortcodes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="555" column="3" selection-start-line="555" selection-start-column="3" selection-end-line="555" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/templates/footers/footer-top.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/css/queries.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="497" column="32" selection-start-line="497" selection-start-column="32" selection-end-line="497" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/layout/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="547" column="12" selection-start-line="547" selection-start-column="12" selection-end-line="547" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/utils/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/cruxstore/assets/sass/components/_woocommerce.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="1233" column="0" selection-start-line="1233" selection-start-column="0" selection-end-line="1233" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -969,6 +761,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAsJ8O6N2+DgPLYWrILXxjDFpoSymz78QcVp0Djf8xsaGCpv1up4pP53/RCH3oGdhGRukxL9n+7sxbD0UfFOZjccA/UtiDjDR36Y0qdeB7D15h1teNvLQHi3xLnS2obJkT7CINCC9ecHRynZxnBN6fH5SfJsVim8hipAgzEd/IupdTMQ2EnTWK0WGF1m9p834ZQD1YWYNNJRL3uPvOECfltue6/V5JROfSOUHbOIMg7tyDS/8IS43HOLFsD6OYlEAWHw==</data>
+    <data>AAAAsPSWtrGt4LGYP5wcJs+BrOM33NLVJ4OnCu86HrtzQs8M/0BcPS1WTUINJDP27waMiFl/kMrzZwykA1DudPV1URg7RlIAmz4Gi4PjvevHuoGS8os2MU2Kfy7+D3R5LmJaNAhbAO/f+LmGxZwSHOp/xilUazHyvnr4NbuY4m6m2Uh+OSAxNKsfuBFCOiYNKSbeK8ouGeWSfM2FygxE3nfdQTnvaYQXjBwtwDjUiV/vbssZNjTbN/Y+b1xJDGAT7EgPMw==</data>
   </component>
 </project>

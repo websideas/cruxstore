@@ -39,10 +39,10 @@ $footer_fullwidth = cruxstore_option('footer_fullwidth', true);
         <div class="footer-top-inner">
             <div class="footer-top-bg"></div>
             <div class="row">
-                <div class="col-md-8">
+                <div class="footer-top-left col-md-8">
                     <?php dynamic_sidebar('footer-top-1') ?>
                 </div>
-                <div class="col-md-4">
+                <div class="footer-top-right col-md-4">
                     <?php dynamic_sidebar('footer-top-2') ?>
                 </div>
             </div>

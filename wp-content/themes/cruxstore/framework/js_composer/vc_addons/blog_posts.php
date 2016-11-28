@@ -118,9 +118,10 @@ class WPBakeryShortCode_List_Blog_Posts extends WPBakeryShortCode {
                     printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-%2$s col-xs-%2$s">', $article_columns, $article_columns_tab);
                 }
 
-                if($layout['type'] == 'zigzag'){
-                    $format = ($i % 2 )? '' : 'even';
+                if($layout['type'] == 'widget'){
+                    $format = 'rectangle';
                 }
+
                 get_template_part( 'templates/blog/'.$layout['type'].'/content', $format );
 
                 if($layout['type'] == 'grid' || $layout['type'] == 'masonry') {

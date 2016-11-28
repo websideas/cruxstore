@@ -175,7 +175,7 @@
         line-height: 24px;
         color: $black;
         font-size: 13px;
-        font-weight: normal;
+        font-weight: inherit;
         &:hover{
           color: $primary-color;
         }
@@ -183,6 +183,7 @@
       .post-meta{
         color: $gray-text;
         font-size: 12px;
+        line-height: normal;
         > span{
           &:after{
             content: ',';
@@ -199,6 +200,13 @@
           &:hover{
             color: $primary-color;
           }
+        }
+      }
+
+      &.recetange-item{
+        .title-link{
+          font-size: 14px;
+          margin-bottom: 1px;
         }
       }
     }

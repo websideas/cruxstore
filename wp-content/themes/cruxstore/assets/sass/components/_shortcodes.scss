@@ -334,6 +334,13 @@
     text-align: center;
   }
 
+  &.layout-2{
+    .feature-box-readmore,
+    .feature-box-content{
+      margin-top: 10px;
+    }
+  }
+
   &.layout-3,
   &.layout-4,
   &.layout-6{
@@ -462,6 +469,7 @@
       border-color: transparent;
     }
   }
+
   &.layout-5,
   &.layout-6{
     .feature-box-icon{
@@ -539,7 +547,13 @@
     }
 
   }
-
+  &.layout-5{
+    &.size-xs {
+      .feature-box-title {
+        margin-top: 0;
+      }
+    }
+  }
   &.layout-6{
     padding: 35px 40px;
     .feature-box-title{
@@ -689,6 +703,7 @@
       margin-bottom: 0;
     }
     .banner-more{
+      margin-top: 10px;
       &.banner-more-accent{ color: $primary-color;}
       &.banner-more-grey{  color: $compser-grey;  }
       &.banner-more-mulled_wine{ color: $compser-mulled_wine; }

@@ -17,6 +17,8 @@
             ?>
             <div id="footer" class="site-footer">
 
+                <?php get_template_part( 'templates/footers/footer', 'top');  ?>
+
                 <?php
                 if(!$footer_fullwidth){
                     echo '<div class="container">';
@@ -39,11 +41,7 @@
                     ?>
                 <?php } ?>
 
-
-
                 <?php
-
-                get_template_part( 'templates/footers/footer', 'top');
 
                 if($footer_widgets = cruxstore_footer_widgets()){
                     get_template_part( 'templates/footers/footer', 'widgets');

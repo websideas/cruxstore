@@ -130,11 +130,15 @@ only screen and (min-resolution: 144dpi) {
 
   .footer-area-2{
     .footer-area-left{
-      padding-right: 35px;
+      padding-right: 25px;
     }
     .footer-area-right{
       padding-left: 45px;
+      &:last-child{
+        padding-left: 55px;
+      }
     }
+
   }
 
   .footer-area-6{
@@ -153,6 +157,15 @@ only screen and (min-resolution: 144dpi) {
   #header{
     display: none;
   }
+  #footer-top{
+    .footer-top-left{
+      margin-bottom: 30px;
+    }
+  }
+
+
+
+
   .cruxstore-products.cruxstore-products-masonry{
     .product{
       .product-details{
@@ -446,6 +459,10 @@ only screen and (min-resolution: 144dpi) {
   #footer-area .footer-area-inner {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  #footer-top .footer-top-right{
+    text-align: left;
   }
 
   #footer{
