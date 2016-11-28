@@ -2,6 +2,8 @@
 
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit;
+$number= cruxstore_option('header_show_menu', 8);
+
 ?>
 <div class="<?php echo esc_attr(apply_filters('cruxstore_navbar_container', 'navbar-container')); ?>">
 
@@ -30,7 +32,9 @@ if ( !defined('ABSPATH')) exit;
                     </div>
                     <div class="menu-right">
                         <?php get_template_part( 'templates/headers/header',  'vertical'); ?>
-                        <span class="icon_show_menu" data-show="6">
+                        <span class="icon_show_menu" data-show="<?php echo $number; ?>">
+                             <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </span>
                     </div>
                 </div>
 

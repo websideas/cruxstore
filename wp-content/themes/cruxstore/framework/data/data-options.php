@@ -306,6 +306,17 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'on'        => esc_html__( 'Enabled', 'cruxstore' ),
                         'off'       => esc_html__( 'Disabled', 'cruxstore' ),
                     ),
+                   array(
+                        'id'            => 'header_show_menu',
+                        'type'          => 'slider',
+                        'title'         => esc_html__( 'Number show Menus vertical', 'cruxstore' ),
+                        'default'       => 8,
+                        'min'           => 0,
+                        'step'          => 1,
+                        'max'           => 30,
+                        'resolution'    => 1,
+                        'display_value' => 'text'
+                    ),
                     array(
                         'id' => 'header_search',
                         'type' => 'switch',
@@ -705,6 +716,8 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                 'desc'			=> '',
                 'icon'	=> 'fa fa-pencil',
             );
+
+
 
 
             /**

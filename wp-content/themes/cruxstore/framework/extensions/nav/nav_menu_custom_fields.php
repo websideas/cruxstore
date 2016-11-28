@@ -94,6 +94,8 @@ function cruxstore_add_custom_fields( $item_id, $item, $depth, $args ) { ?>
                                 <option <?php selected($item->position, 'right-menubar'); ?> value="right-menubar"><?php esc_html_e( 'Right edge of menu bar', 'cruxstore'); ?></option>
                                 <option <?php selected($item->position, 'left-parent'); ?> value="left-parent"><?php esc_html_e( 'Left Edge of Parent item', 'cruxstore'); ?></option>
                                 <option <?php selected($item->position, 'right-parent'); ?> value="right-parent"><?php esc_html_e( 'Right Edge of Parent item', 'cruxstore'); ?></option>
+                                <option <?php selected($item->position, 'top-parent-vertical'); ?> value="top-parent-vertical"><?php esc_html_e( 'Top Edge of Parent item (Only menu vertical)', 'delphinus'); ?></option>
+
                             </select>
                         </label>
                     </p>
