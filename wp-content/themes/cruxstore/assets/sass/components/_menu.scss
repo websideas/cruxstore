@@ -1,6 +1,6 @@
 
 .shopping-bag-wishlist{
-  .amount{
+  .wishlist-contents .amount{
     display: none;
   }
 }
@@ -48,8 +48,8 @@
       }
     }
 
-    i{
-      color: $black;
+    i.icon-space{
+      color: $primary-color;
       padding-right: 6px;
     }
     > a{
@@ -70,7 +70,7 @@
       width: 200px;
       text-align: left;
       @include box-shadow(0, 2px, 3px, rgba(0, 0, 0, 0.12));
-      border-top: 1px solid $gray-bg;
+      border-top: 2px solid $primary-color;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -78,10 +78,11 @@
       @include transform(translate(0, 30px));
       @include transition('opacity 200ms ease-in-out, transform 200ms ease-in-out, visibility 200ms ease-in-out');
       visibility: hidden;
+      line-height: 28px;
 
       > li{
         + li{
-          border-top: 1px solid $gray-bg;
+          border-top: 1px solid $border-color;
         }
         a{
           display: block;
@@ -120,7 +121,7 @@
 }
 
 
-#main-nav-socials{
+.main-nav-socials{
   margin: 0;
   padding: 0;
   list-style: none;
@@ -189,7 +190,7 @@
         @include transform(translate(0, 30px));
         @include transition('opacity 100ms ease-in-out, transform 200ms ease-in-out, visibility 200ms ease-in-out');
         text-align: left;
-        border-top: 5px solid $primary-color;
+        border-top: 2px solid $primary-color;
         background: $white;
         @include box-shadow(0, 2px, 3px, rgba(0, 0, 0, 0.12));
         pointer-events: none;
@@ -229,7 +230,7 @@
   }
 
   #main-nav-tool{
-    margin: 0 0 0 40px;
+    margin: 0 0 0 20px;
     float: right;
     > li{
       padding: 0 8px;
@@ -299,7 +300,10 @@
         margin: 0;
         width: 308px;
         li{
-          padding: 0 24px;
+          margin-left: -5px;
+          margin-right: -5px;
+          padding: 0 30px;
+
           + li{
             margin-top: 10px;
           }
@@ -497,7 +501,7 @@
 
   .header-sticky-background{
     background: $black;
-    @include opacity(.6);
+    @include opacity(.4);
   }
 
   .top-navigation{

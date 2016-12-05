@@ -356,4 +356,23 @@
   > *{
     margin-bottom: 0;
   }
+  .hesperiden.tparrows{
+    &:before,
+    &:after{
+      font-size: 18px;
+    }
+    &:before{
+      @include FontIcon('\f104');
+    }
+    &:after{
+      @include FontIcon('\f105');
+    }
+    &:hover{
+      &:before,
+      &:after{
+        color: #FFF;
+      }
+    }
+  }
 }
+

@@ -50,28 +50,7 @@ only screen and (min-resolution: 144dpi) {
 }
 /* 2. Styles for devices(>1700px) */
 @media (min-width: 1700px) {
-  .header-layout4,
-  .header-layout6{
-    .branding-default{
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 1;
-      margin-right: 0!important;
-    }
-    #nav{
-      #main-nav-tool{
-        display: block;
-      }
-    }
-  }
-  .top-navigation{
-    > li{
-      > a{
-        padding: 0 35px;
-      }
-    }
-  }
+
   
   .products-brands-carousel{
     .brand-banner{
@@ -84,13 +63,6 @@ only screen and (min-resolution: 144dpi) {
   .container {
     width: 1200px;
   }
-
-  #footer-area .footer-area-inner {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-
 
   .products-categories-carousel.style-normal{
     .category-banner{
@@ -162,9 +134,6 @@ only screen and (min-resolution: 144dpi) {
       margin-bottom: 30px;
     }
   }
-
-
-
 
   .cruxstore-products.cruxstore-products-masonry{
     .product{
@@ -247,17 +216,21 @@ only screen and (min-resolution: 144dpi) {
     }
   }
 
-  #footer-copyright.footer-copy-columns{
-      .footer-right,
-      .footer-left{
-        text-align: center;
-      }
-      .footer-left{
-        margin-bottom: 15px;
-      }
-      .footer-right{
-        margin-top: 5px;
-      }
+  #footer-copyright{
+    .display-table,
+    .display-table .display-cell{
+      display: block;
+    }
+    .footer-right,
+    .footer-left{
+      text-align: center;
+    }
+    .footer-left{
+      margin-bottom: 15px;
+    }
+    .footer-right{
+      margin-top: 5px;
+    }
   }
   
 

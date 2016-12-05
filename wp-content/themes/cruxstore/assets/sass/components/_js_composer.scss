@@ -101,6 +101,13 @@
       }
     }
   }
+  .vc_btn3-color-white{
+    color: $black;
+    &:focus,
+    &:hover{
+      color: $black;
+    }
+  }
 }
 
 

@@ -80,11 +80,6 @@ function cruxstore_register_plugins() {
             'required' => false,
         ),
         array(
-            'name' => 'YITH WooCommerce Brands Add-On',
-            'slug' => 'yith-woocommerce-brands-add-on',
-            'required' => false,
-        ),
-        array(
             'name' => 'WP Instagram Widget',
             'slug' => 'wp-instagram-widget',
             'required' => false,

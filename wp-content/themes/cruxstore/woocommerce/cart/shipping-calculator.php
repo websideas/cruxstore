@@ -93,7 +93,7 @@ if ( 'no' === get_option( 'woocommerce_enable_shipping_calc' ) || ! WC()->cart->
 
             <?php endif; ?>
 
-            <p class="no-margin"><button type="submit" name="calc_shipping" value="1" class="btn btn-gray-b"><?php esc_html_e( 'Update Totals', 'woocommerce' ); ?></button></p>
+            <p class="no-margin"><button type="submit" name="calc_shipping" value="1" class="btn btn-gray-b btn-wc"><?php esc_html_e( 'Update Totals', 'woocommerce' ); ?></button></p>
 
             <?php wp_nonce_field( 'woocommerce-cart' ); ?>
         </section>

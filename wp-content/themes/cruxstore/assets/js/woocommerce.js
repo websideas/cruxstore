@@ -16,6 +16,19 @@
     init_wc_video();
     init_wc_filters();
     init_wc_product_carousel();
+    init_wc_sticky();
+
+    function init_wc_sticky(){
+        if(!$('.wc-single-product.product-layout5').length)
+            return;
+
+        $('.product-images-wrap').imagesLoaded(function(){
+            $('.summary-wrapper').theiaStickySidebar({
+                additionalMarginTop: 70
+            });
+            $(window).trigger('scroll');
+        });
+    }
 
     function init_wc_video(){
 

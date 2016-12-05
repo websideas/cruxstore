@@ -128,8 +128,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 		?>
 		<tr>
 			<td colspan="6" class="actions">
-                <?php printf('<a class="btn btn-dark-b" href="%s">%s</a>', get_permalink( wc_get_page_id( 'shop' )), esc_html__('Continue shopping', 'cruxstore')) ?>
-				<input type="submit" class="btn btn-gray" name="update_cart" value="<?php esc_attr_e( 'update shopping cart', 'cruxstore' ); ?>" />
+                <?php printf('<a class="btn btn-dark-b btn-wc" href="%s">%s</a>', get_permalink( wc_get_page_id( 'shop' )), esc_html__('Continue shopping', 'cruxstore')) ?>
+				<input type="submit" class="btn btn-gray btn-wc" name="update_cart" value="<?php esc_attr_e( 'update shopping cart', 'cruxstore' ); ?>" />
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 			</td>
@@ -156,7 +156,7 @@ do_action( 'woocommerce_before_cart' ); ?>
             <div class="coupon wc-cart-box-inner">
                 <p class="wc-cart-box-desc"><?php esc_html_e('Enter your coupon code if you have one', 'cruxstore'); ?></p>
                 <p><input type="text" name="coupon_code" class="input-text input-bg" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /></p>
-                <input type="submit" class="btn btn-gray-b" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'cruxstore' ); ?>" />
+                <input type="submit" class="btn btn-gray-b btn-wc" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'cruxstore' ); ?>" />
                 <?php do_action( 'woocommerce_cart_coupon' ); ?>
             </div>
         </form>

@@ -841,3 +841,4 @@ function cruxstore_backtotop(){
     }
 }
 add_action('wp_footer', 'cruxstore_backtotop');
+

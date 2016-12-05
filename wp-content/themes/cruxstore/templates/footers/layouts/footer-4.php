@@ -15,10 +15,10 @@ if ( !defined('ABSPATH')) exit;
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <?php dynamic_sidebar('footer-column-2'); ?>
             </div>
-            <div class="col-md-5 col-sm-4 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <?php dynamic_sidebar('footer-column-3'); ?>
             </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <?php dynamic_sidebar('footer-column-4'); ?>
             </div>
         </div>

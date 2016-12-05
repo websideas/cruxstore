@@ -6,7 +6,7 @@
             'header-wc-myaccount',
             get_permalink( get_option('woocommerce_myaccount_page_id') ),
             $text,
-            '<i class="fa fa-user" aria-hidden="true"></i>',
+            '<i class="fa fa-user icon-space" aria-hidden="true"></i>',
             '<span class="text">'.$text.'</span>'
         );
     }

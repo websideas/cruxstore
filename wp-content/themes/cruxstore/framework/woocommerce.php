@@ -122,7 +122,7 @@ if (!function_exists('cruxstore_cart_wishlist')) {
             esc_url($yith_wcwl->get_wishlist_url()),
             'wishlist-contents',
             esc_html__('View your wishlist', 'cruxstore'),
-            '<i class="fa fa-heart" aria-hidden="true"></i>',
+            '<i class="fa fa-heart icon-space" aria-hidden="true"></i>',
             '<span class="text">'.esc_html__('Wishlist', 'cruxstore').'</span>',
             '<span class="amount">'.count($wishlist_items).'</span>'
         );
@@ -172,7 +172,7 @@ if (!function_exists('cruxstore_cart_wishlist')) {
                 }
                 echo '</ul>';
                 printf(
-                    '<p class="buttons-wishlist"><span><a class="btn btn-default btn-block wc-forward" href="%s">%s</a></span></p>',
+                    '<p class="buttons"><span><a class="btn btn-dark-b btn-block btn-wc wc-forward" href="%s">%s</a></span></p>',
                     esc_url($yith_wcwl->get_wishlist_url()),
                     esc_html__('View Wishlist', 'cruxstore')
                 );
@@ -1158,7 +1158,7 @@ function cruxstore_woocommerce_close_quickview()
 
 function cruxstore_wc_breadcrumb(){
     $layout = cruxstore_get_product_layout();
-    if($layout == 'layout1' || $layout == 'layout3' || $layout == 'layout5'){
+    if($layout == 'layout1' || $layout == 'layout5'){
         woocommerce_breadcrumb();
     }
 }

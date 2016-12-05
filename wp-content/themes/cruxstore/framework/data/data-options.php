@@ -743,6 +743,17 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'default'  => '#ed8b5c',
                         'transparent' => false,
                     ),
+                    array(
+                        'id'       => 'styling_link',
+                        'type'     => 'link_color',
+                        'title'    => esc_html__( 'Links Color', 'cruxstore' ),
+                        'output'   => array( 'a' ),
+                        'default'  => array(
+                            'regular' => '#ed8b5c',
+                            'hover' => '#f7ccb8',
+                            'active' => '#f7ccb8'
+                        )
+                    ),
                 )
             );
 
@@ -777,11 +788,39 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'default'  => array(
                             'margin-top'    => '18px',
                             'margin-right'  => '0',
-                            'margin-bottom' => '18px',
+                            'margin-bottom' => '0',
                             'margin-left'   => '0'
                         )
                     ),
+                    array(
+                        'id'   => 'divide_id',
+                        'type' => 'divide'
+                    ),
+                    array(
+                        'id'             => 'logo_sticky_width',
+                        'type'           => 'dimensions',
+                        'units'          => 'px',
+                        'title'          => esc_html__( 'Logo sticky width', 'cruxstore' ),
+                        'height'         => false,
+                        'default'        => array( 'width'  => 45, 'units'   => 'px' ),
+                        'output'   => array( '#header .is-sticky .apply-sticky .branding-default img' ),
+                    ),
 
+                    array(
+                        'id'       => 'logo_sticky_margin_spacing',
+                        'type'     => 'spacing',
+                        'mode'     => 'margin',
+                        'units'          => array( 'px' ),
+                        'units_extended' => 'true',
+                        'title'    => esc_html__( 'Logo sticky margin spacing Option', 'cruxstore' ),
+                        'default'  => array(
+                            'margin-top'    => '0',
+                            'margin-bottom' => '0',
+                            'margin-left'   => '0',
+                            'margin-right'   => '0'
+                        ),
+                        'output'   => array( '#header .is-sticky .apply-sticky .branding-default'),
+                    ),
                     array(
                         'id'   => 'divide_id',
                         'type' => 'divide'
@@ -811,9 +850,9 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'output'   => array( '.branding.branding-mobile' ),
                     ),
 
+
                 )
             );
-
 
             /**
              *	Styling Header
@@ -869,11 +908,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'left'     => false,
                         'right'    => false,
                         'top'      => false,
-                        'default'  => array(
-                            'border-bottom' => '1px',
-                            'border-style' => 'solid',
-                            'border-color' => 'rgba(246, 246, 246, 0.2)'
-                        )
+                        'default'  => array( )
                     ),
                     array(
                         'id'       => 'header_light_spacing',
@@ -885,108 +920,28 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
             );
 
             /**
-             *	Styling Header Toolbar
+             *	Styling Header topbar
              **/
             $this->sections[] = array(
-                'id'			=> 'styling_header_toolbar',
-                'title'			=> esc_html__( 'Header Toolbar', 'cruxstore' ),
+                'id'			=> 'styling_header_topbar',
+                'title'			=> esc_html__( 'TopBar', 'cruxstore' ),
                 'subsection' => true,
                 'fields'		=> array(
                     array(
-                        'id'       => 'header_toolbar_heading',
+                        'id'       => 'header_topbar_heading',
                         'type'     => 'raw',
-                        'content'  => '<div class="section-heading">'.esc_html__( 'Header Toolbar settings', 'cruxstore' ).'</div>',
+                        'content'  => '<div class="section-heading">'.esc_html__( 'Header topbar settings', 'cruxstore' ).'</div>',
                         'full_width' => true
                     ),
                     array(
-                        'id'       => 'header_toolbar_background',
+                        'id'       => 'header_topbar_background',
                         'type'     => 'background',
-                        'title'    => esc_html__( 'Header Toolbar background', 'cruxstore' ),
-                        'subtitle' => esc_html__( 'Header Toolbar background with image, color, etc.', 'cruxstore' ),
+                        'title'    => esc_html__( 'Header topbar background', 'cruxstore' ),
+                        'subtitle' => esc_html__( 'Header topbar background with image, color, etc.', 'cruxstore' ),
                         'default'   => '',
                         'output'      => array( '.topbar' ),
                     ),
-                    array(
-                        'id'       => 'header_toolbar_default_heading',
-                        'type'     => 'raw',
-                        'content'  => '<div class="section-heading">'.esc_html__( 'Header Toolbar Default', 'cruxstore' ).'</div>',
-                        'full_width' => true
-                    ),
-                    array(
-                        'id'       => 'header_toolbar_default_color',
-                        'type'     => 'color',
-                        'output'   => array(
-                            '.top-navigation > li > a'
-                        ),
-                        'title'    => esc_html__( 'Default: Top Level Color', 'cruxstore' ),
-                        'default'  => '#999999',
-                        'transparent' => false
-                    ),
-                    array(
-                        'id'       => 'header_toolbar_default_active_color',
-                        'type'     => 'color',
-                        'output'   => array(
-                            '.top-navigation > li:hover > a',
-                            '.top-navigation > li > a:hover',
-                            '.top-navigation > li > a:focus'
-                        ),
-                        'title'    => esc_html__( 'Default: Top Level Hover Color', 'cruxstore' ),
-                        'default'  => '#000000',
-                        'transparent' => false
-                    ),
-                    array(
-                        'id'       => 'header_toolbar_border_color',
-                        'type'     => 'color',
-                        'title'    => esc_html__( 'Default: Border Color', 'cruxstore' ),
-                        'default'  => '#ebebeb',
-                        'transparent' => true
-                    ),
 
-                    array(
-                        'id'       => 'header_toolbar_light_heading',
-                        'type'     => 'raw',
-                        'content'  => '<div class="section-heading">'.esc_html__( 'Header Toolbar Light', 'cruxstore' ).'</div>',
-                        'full_width' => true
-                    ),
-                    array(
-                        'id'       => 'header_toolbar_light_color',
-                        'type'     => 'color',
-                        'output'   => array(
-                            '.header-transparent.header-light .top-navigation > li > a'
-                        ),
-                        'title'    => esc_html__( 'Light: Top Level Color', 'cruxstore' ),
-                        'default'  => '#FFFFFF',
-                        'transparent' => false
-                    ),
-                    array(
-                        'id'       => 'header_toolbar_light_active_color',
-                        'type'     => 'color',
-                        'output'   => array(
-                            '.header-transparent.header-light .top-navigation > li:hover > a',
-                            '.header-transparent.header-light .top-navigation > li > a:hover',
-                            '.header-transparent.header-light .top-navigation > li > a:focus'
-                        ),
-                        'title'    => esc_html__( 'Light: Top Level Hover Color', 'cruxstore' ),
-                        'default'  => '#FFFFFF',
-                        'transparent' => false
-                    ),
-                    array(
-                        'id'       => 'header_toolbar_light_border_color',
-                        'type'     => 'color_rgba',
-                        'title'    => esc_html__( 'Light: Border Color', 'cruxstore' ),
-                        'subtitle' => esc_html__( 'Gives you the RGBA color.', 'cruxstore' ),
-                        'default'  => array(
-                            'color' => '#f6f6f6',
-                            'alpha' => '.2'
-                        ),
-                        'mode'     => 'background',
-                    ),
-                    array(
-                        'id'       => 'mega_menu_spacing',
-                        'type'     => 'raw',
-                        'content'  => '<div style="height:150px"></div>',
-                        'full_width' => true
-                    ),
 
                 )
             );
@@ -1012,31 +967,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'default'  => '3',
                         'desc' => esc_html__('Choose your sticky effect.', 'cruxstore')
                     ),
-                    array(
-                        'id'             => 'logo_sticky_width',
-                        'type'           => 'dimensions',
-                        'units'          => 'px',
-                        'title'          => esc_html__( 'Logo width', 'cruxstore' ),
-                        'height'         => false,
-                        'default'        => array( 'width'  => 45, 'units'   => 'px' ),
-                        'output'   => array( '.is-sticky .apply-sticky .branding-default img' ),
-                    ),
 
-                    array(
-                        'id'       => 'logo_sticky_margin_spacing',
-                        'type'     => 'spacing',
-                        'mode'     => 'margin',
-                        'units'          => array( 'px' ),
-                        'units_extended' => 'true',
-                        'title'    => esc_html__( 'Logo sticky margin spacing Option', 'cruxstore' ),
-                        'default'  => array(
-                            'margin-top'    => '0',
-                            'margin-bottom' => '0',
-                            'margin-left'   => '0',
-                            'margin-right'   => '0'
-                        ),
-                        'output'   => array( '.is-sticky .apply-sticky .branding-default'),
-                    ),
 
                     array(
                         'id'             => 'navigation_height_fixed',
@@ -1239,7 +1170,18 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'title'    => esc_html__( 'Footer widgets padding', 'cruxstore' ),
                         'default'  => array( )
                     ),
+                    array(
+                        'id'       => 'footer_widgets_border',
+                        'type'     => 'border',
+                        'title'    => esc_html__( 'Footer widgets Border', 'cruxstore' ),
+                        'output'   => array( '#footer-area' ),
+                        'all'      => false,
+                        'left'     => false,
+                        'right'    => false,
+                        'default'  => array(
 
+                        )
+                    ),
                     //Footer bottom settings
                     array(
                         'id'       => 'footer_bottom_heading',
@@ -1460,9 +1402,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'style'    => false,
                         'bottom'   => false,
                         'default'  => array(
-                            'border-style'      => 'solid',
-                            'border-top'        => '5',
-                            'border-color'      => '#ed8b5c'
+
                         )
                     ),
 
@@ -2011,6 +1951,137 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'text-align' => false,
                         'default'  => array( ),
                     ),
+                )
+            );
+
+            /**
+             *  Typography topbar
+             **/
+            $this->sections[] = array(
+                'id'            => 'typography_header_topbar',
+                'title'         => esc_html__( 'TopBar', 'cruxstore' ),
+                'desc'          => '',
+                'subsection' => true,
+                'fields'        => array(
+                    array(
+                        'id'       => 'typography_header_topbar_content',
+                        'type'     => 'typography',
+                        'title'    => esc_html__( 'Topbar', 'cruxstore' ),
+                        'subtitle' => esc_html__( 'Specify the topbar font properties.', 'cruxstore' ),
+                        'google'   => true,
+                        'text-align' => false,
+                        'color'    => false,
+                        'output'   => array( '.topbar' )
+                    ),
+
+                    array(
+                        'id'       => 'header_topbar_default_heading',
+                        'type'     => 'raw',
+                        'content'  => '<div class="section-heading">'.esc_html__( 'Header topbar Default', 'cruxstore' ).'</div>',
+                        'full_width' => true
+                    ),
+                    array(
+                        'id'       => 'header_topbar_default_color',
+                        'type'     => 'color',
+                        'output'   => array(
+                            '.top-navigation > li > a',
+                            '#topbar-nav > li > a',
+                            '.topbar .header-text',
+                            '.topbar .header-text a',
+                            '.topbar .header-phone',
+                            '.topbar .header-phone a',
+                            '.topbar .main-nav-socials a',
+                        ),
+                        'title'    => esc_html__( 'Default: Top Level Color', 'cruxstore' ),
+                        'default'  => '#999999',
+                        'transparent' => false
+                    ),
+                    array(
+                        'id'       => 'header_topbar_default_active_color',
+                        'type'     => 'color',
+                        'output'   => array(
+                            '.top-navigation > li > a:hover',
+                            '.top-navigation > li > a:focus',
+                            '#topbar-nav > li > a:hover',
+                            '#topbar-nav > li > a:focus',
+                            '.topbar .header-text a:hover',
+                            '.topbar .header-text a:focus',
+                            '.topbar .header-phone a:hover',
+                            '.topbar .header-phone a:focus',
+                            '.topbar .main-nav-socials a:hover',
+                            '.topbar .main-nav-socials a:focus',
+                        ),
+                        'title'    => esc_html__( 'Default: Top Level Hover Color', 'cruxstore' ),
+                        'default'  => '#000000',
+                        'transparent' => false
+                    ),
+                    array(
+                        'id'       => 'header_topbar_border_color',
+                        'type'     => 'color',
+                        'title'    => esc_html__( 'Default: Border Color', 'cruxstore' ),
+                        'default'  => '#ebebeb',
+                        'transparent' => true
+                    ),
+
+                    array(
+                        'id'       => 'header_topbar_light_heading',
+                        'type'     => 'raw',
+                        'content'  => '<div class="section-heading">'.esc_html__( 'Header topbar Light', 'cruxstore' ).'</div>',
+                        'full_width' => true
+                    ),
+                    array(
+                        'id'       => 'header_topbar_light_color',
+                        'type'     => 'color',
+                        'output'   => array(
+                            '.header-transparent.header-light .top-navigation > li > a',
+                            '.header-transparent.header-light #topbar-nav > li > a',
+                            '.header-transparent.header-light .topbar .header-text',
+                            '.header-transparent.header-light .topbar .header-phone',
+                            '.header-transparent.header-light .topbar .header-phone a',
+                            '.header-transparent.header-light .topbar .header-text a',
+                            '.header-transparent.header-light .topbar .main-nav-socials a',
+                        ),
+                        'title'    => esc_html__( 'Light: Top Level Color', 'cruxstore' ),
+                        'default'  => '#FFFFFF',
+                        'transparent' => false
+                    ),
+                    array(
+                        'id'       => 'header_topbar_light_active_color',
+                        'type'     => 'color',
+                        'output'   => array(
+                            '.header-transparent.header-light .top-navigation > li > a:hover',
+                            '.header-transparent.header-light .top-navigation > li > a:focus',
+                            '.header-transparent.header-light #topbar-nav > li > a:hover',
+                            '.header-transparent.header-light #topbar-nav > li > a:focus',
+                            '.header-transparent.header-light .topbar .header-text a:hover',
+                            '.header-transparent.header-light .topbar .header-text a:focus',
+                            '.header-transparent.header-light .topbar .header-phone a:hover',
+                            '.header-transparent.header-light .topbar .header-phone a:focus',
+                            '.header-transparent.header-light .topbar .main-nav-socials a:hover',
+                            '.header-transparent.header-light .topbar .main-nav-socials a:focus',
+                        ),
+                        'title'    => esc_html__( 'Light: Top Level Hover Color', 'cruxstore' ),
+                        'default'  => '#FFFFFF',
+                        'transparent' => false
+                    ),
+                    array(
+                        'id'       => 'header_topbar_light_border_color',
+                        'type'     => 'color_rgba',
+                        'title'    => esc_html__( 'Light: Border Color', 'cruxstore' ),
+                        'subtitle' => esc_html__( 'Gives you the RGBA color.', 'cruxstore' ),
+                        'default'  => array(
+                            'color' => '#f6f6f6',
+                            'alpha' => '.2'
+                        ),
+                        'mode'     => 'background',
+                    ),
+                    array(
+                        'id'       => 'mega_menu_spacing',
+                        'type'     => 'raw',
+                        'content'  => '<div style="height:150px"></div>',
+                        'full_width' => true
+                    ),
+
                 )
             );
 

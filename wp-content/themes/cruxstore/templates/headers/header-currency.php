@@ -29,7 +29,7 @@ if(class_exists('WOOCS') && cruxstore_is_wc()){
 
     printf(
         '<li class="currency-switcher navigation-has-children"><a href="#">%s</a><ul class="navigation-submenu currency-switcher-content">%s</ul></li>',
-        '<i class="fa fa-money" aria-hidden="true"></i> '. $currency_active,
+        '<i class="fa fa-money icon-space" aria-hidden="true"></i> '. $currency_active,
         $currency_html
     );
 

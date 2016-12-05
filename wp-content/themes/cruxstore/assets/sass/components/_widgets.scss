@@ -29,6 +29,7 @@
 
 .widget{
   margin-bottom: 30px;
+  font-size: 13px;
   .widget-title{
     font-size: 14px;
     margin: 0 0 30px;
@@ -85,10 +86,10 @@
         }
         a{
           color: $black;
-          font-weight: normal;
+          font-weight: inherit;
           &:hover,
           &:focus{
-            text-decoration: un;
+            text-decoration: underline;
           }
         }
       }
@@ -102,6 +103,7 @@
   &.widget_cruxstore_orderby{
     li{
       padding-left: 22px;
+      font-size: 12px;
       &:before,
       &:after{
         content: '';
@@ -131,6 +133,7 @@
         position: absolute;
         left: 0;
         top: 8px;
+        border: 1px solid $gray-lighter;
         img{
           vertical-align: top;
         }

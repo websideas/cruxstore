@@ -225,8 +225,10 @@
           display: none;
         }
         .title-link{
-          margin-bottom: 0;
           font-size: 12px;
+          line-height: 25px;
+          margin-bottom: 0;
+          margin-top: 0;
         }
         .entry-thumbnail{
           float: left;
@@ -518,10 +520,6 @@
       text-align: center;
       float: left;
       padding: 15px;
-      .meta-nav{
-        display: block;
-        color: $gray-text;
-      }
       + div{
         &:before{
           content: '';
@@ -535,10 +533,17 @@
           position: absolute;
         }
       }
-      a:hover{
-        color: $black;
+      a{
+        color: $primary-color;
         .meta-nav{
-          color: $gray-darker;
+          display: block;
+          color: $gray-text;
+        }
+        &:hover{
+          color: $black;
+          .meta-nav{
+            color: $gray-darker;
+          }
         }
       }
     }

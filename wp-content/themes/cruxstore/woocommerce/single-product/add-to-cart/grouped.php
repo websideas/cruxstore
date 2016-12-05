@@ -63,14 +63,15 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						</td>
 
 						<td class="grouped-label">
-							<label for="product-<?php echo esc_attr($product_id); ?>">
+							<label class="grouped-item-content" for="product-<?php echo esc_attr($product_id); ?>">
 								<?php echo ($product->is_visible()) ? '<a href="' . esc_url( apply_filters( 'woocommerce_grouped_product_list_link', get_permalink(), $product_id ) ) . '">' . esc_html( get_the_title() ) . '</a>' : esc_html( get_the_title() ); ?>
 							</label>
 						</td>
 
 						<?php do_action ( 'woocommerce_grouped_product_list_before_price', $product ); ?>
 
-						<td class="price">
+						<td class="grouped-price">
+							<label class="grouped-item-content">
 							<?php
 								echo $product->get_price_html();
 
@@ -79,6 +80,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									echo apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product );
 								}
 							?>
+							</label>
 						</td>
 					</tr>
 					<?php

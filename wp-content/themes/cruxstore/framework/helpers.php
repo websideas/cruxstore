@@ -811,7 +811,7 @@ if(!function_exists('cruxstore_color2hecxa')){
             case 'sky': $color = '#5aa1e3'; break;
             case 'green': $color = '#6dab3c'; break;
             case 'white': $color = '#FFFFFF'; break;
-            case 'accent': $color = cruxstore_option('styling_accent', '#82c14f'); break;
+            case 'accent': $color = cruxstore_option('styling_accent', '#ed8b5c'); break;
 
         }
         return $color;
@@ -847,6 +847,36 @@ if(!function_exists('cruxstore_hex2rgba')) {
         }
     }
 }
+if(!function_exists('cruxstore_color_luminance')) {
+    /**
+     * Lightens/darkens a given colour (hex format), returning the altered colour in hex format.7
+     * @param str $hex Colour as hexadecimal (with or without hash);
+     * @percent float $percent Decimal ( 0.2 = lighten by 20%(), -0.4 = darken by 40%() )
+     * @return str Lightened/Darkend colour as hexadecimal (with hash);
+     */
+    function cruxstore_color_luminance($hex, $percent)
+    {
+
+        // validate hex string
+
+        $hex = preg_replace('/[^0-9a-f]/i', '', $hex);
+        $new_hex = '#';
+
+        if (strlen($hex) < 6) {
+            $hex = $hex[0] + $hex[0] + $hex[1] + $hex[1] + $hex[2] + $hex[2];
+        }
+
+        // convert to decimal and change luminosity
+        for ($i = 0; $i < 3; $i++) {
+            $dec = hexdec(substr($hex, $i * 2, 2));
+            $dec = min(max(0, $dec + $dec * $percent), 255);
+            $new_hex .= str_pad(dechex($dec), 2, 0, STR_PAD_LEFT);
+        }
+
+        return $new_hex;
+    }
+}
+
 
 if (!function_exists('cruxstore_get_single_file')) {
     /**

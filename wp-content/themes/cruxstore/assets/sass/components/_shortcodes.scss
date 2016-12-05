@@ -299,7 +299,6 @@
   margin-bottom: $vspacing;
   .feature-box-inner{
     position: relative;
-    overflow: hidden;
   }
 
   &-icon{
@@ -337,7 +336,7 @@
   &.layout-2{
     .feature-box-readmore,
     .feature-box-content{
-      margin-top: 10px;
+      margin-top: 15px;
     }
   }
 
@@ -405,11 +404,12 @@
           width: 0;
           bottom: 0;
           @include translate(x);
-          background: $gray-lighter;
+          background: $primary-color;
           @include transition();
           content: "";
         }
         &:hover{
+          color: $primary-color;
           &:before{
             width: 100%;
           }

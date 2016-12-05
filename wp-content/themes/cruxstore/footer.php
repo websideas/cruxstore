@@ -17,13 +17,16 @@
             ?>
             <div id="footer" class="site-footer">
 
-                <?php get_template_part( 'templates/footers/footer', 'top');  ?>
+
 
                 <?php
                 if(!$footer_fullwidth){
                     echo '<div class="container">';
                 } 
                 ?>
+
+                <?php get_template_part( 'templates/footers/footer', 'top');  ?>
+
                 <?php if($footer_instagram = cruxstore_footer_instagram()){  ?>
                     <?php
                     $footer_instagram_layout = cruxstore_option('footer_instagram_layout', 'full');

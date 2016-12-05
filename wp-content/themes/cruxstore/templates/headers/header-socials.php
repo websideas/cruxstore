@@ -39,4 +39,4 @@ if($social){
     }
 }
 
-printf('<li class="header-socials"><ul id="main-nav-socials">%s</ul><!-- #main-nav-socials --></li>', $social_icons);
+printf('<li class="header-socials"><ul class="main-nav-socials">%s</ul><!-- .main-nav-socials --></li>', $social_icons);

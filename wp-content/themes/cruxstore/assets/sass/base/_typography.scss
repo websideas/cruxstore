@@ -3,7 +3,6 @@ body {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   font-size: 14px;
-  font-weight: 500;
 }
 
 body,
@@ -43,7 +42,12 @@ a {
 .font-light {
   font-weight: 300;
 }
-
+.font-medium{
+  font-weight: 500;
+}
+.font-semi-bold {
+  font-weight: 600;
+}
 .font-black {
   font-weight: 900;
 }

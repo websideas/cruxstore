@@ -66,7 +66,7 @@ $classes = array('wc-single-product', 'product-'.$layout);
                         do_action( 'woocommerce_before_single_product_summary' );
                         ?>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 summary-wrapper">
                         <div class="summary entry-summary">
                             <?php
                             if($layout == 'layout5') {

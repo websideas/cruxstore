@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<a href="<?php echo esc_url( wc_get_checkout_url() ) ;?>" class="cruxstore-checkout-button btn btn-default btn-animation wc-forward">
+<a href="<?php echo esc_url( wc_get_checkout_url() ) ;?>" class="cruxstore-checkout-button btn btn-default btn-wc btn-animation wc-forward">
 	<span>
         <?php echo esc_html__( 'Proceed to Checkout', 'woocommerce' ); ?>
         <i class="fa fa-long-arrow-right"></i>

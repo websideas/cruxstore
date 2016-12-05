@@ -95,8 +95,9 @@ if ( ! function_exists( 'cruxstore_default_fonts_url' ) ) :
      */
     function cruxstore_default_fonts_url() {
         $fonts_url = '';
-        $fonts     = array('Poppins:300,400,500,600,700');
-        $subsets   = 'latin,latin-ext';
+        $fonts     = array('Poppins:300,500,600,700');
+        $subsets   = 'latin';
+
 
         if ( $fonts ) {
             $fonts_url = add_query_arg( array(
@@ -207,6 +208,7 @@ add_action( 'wp_enqueue_scripts', 'cruxstore_add_scripts' );
 function cruxstore_setting_script() {
 
     $advanced_css = cruxstore_option('advanced_editor_css');
+    $accent = cruxstore_option('styling_accent');
     $css = $advanced_css;
 
     $styling_link = cruxstore_option('styling_link');
@@ -216,6 +218,173 @@ function cruxstore_setting_script() {
     if($styling_link['active']){
         $css .= 'a:active{color: '.$styling_link['active'].';}';
     }
+
+    if( $accent !='#ed8b5c' ){
+        $css .= '::-moz-selection{color:#fff;background:'.$accent.'}';
+        $css .= '::selection{color:#fff;background:'.$accent.'}';
+        $selections_color = array(
+            '.top-navigation > li i.icon-space',
+            '.color-accent',
+            'blockquote:before',
+            '.cruxstore-search.layout1 .searchform button',
+            '.cruxstore-list > ul > li:before',
+            '.testimonial-carousel .testimonial-rate span:after',
+            '.employees-wrapper .employees-socials a:hover',
+            '.top-navigation > li:hover > a',
+            '.top-navigation > li > a:hover',
+            'div.vc_tta.vc_tta-accordion .vc_tta-controls-icon.vc_tta-controls-icon-arrow-circle',
+            '.wc-products-tab-heading .nav-style.nav-style-2 li.active a',
+            '.wc-products-tab-heading .nav-style.nav-style-2 li a:hover',
+            '.mailchimp-form.mailchimp-layout-8 .mailchimp-input-button .btn',
+            '.mailchimp-form.mailchimp-layout-8 .mailchimp-input-button .wpcf7-submit',
+            '.mailchimp-form.mailchimp-layout-8 .mailchimp-input-button .btn::before',
+            '.mailchimp-form.mailchimp-layout-8 .mailchimp-input-button .wpcf7-submit::before',
+
+            '.blog-posts.blog-posts-widget .article-widget-item .post-meta a:hover',
+            '.blog-posts.blog-posts-widget .article-widget-item .title-link:hover',
+            '.blog-posts .blog-post .entry-title a:hover',
+            '.blog-posts .blog-post .entry-post-meta a:hover',
+            '.blog-posts.blog-posts-widget.layout-3 .article-widget-item .content:before',
+            '.comment-actions a',
+            '.comment-actions a + a:before',
+            '.author-info .author-socials a:hover',
+            '.author-info .author-title a:hover',
+            '.cruxstore-heading-title span.first',
+            '.woocommerce div.product form.cart .grouped-label a:hover',
+
+
+            'p.logged-in-as a:hover',
+            '.banner .banner-content .banner-more.banner-more-accent',
+            '.woocommerce .star-rating:before',
+            '.woocommerce .star-rating span:before',
+            '.woocommerce a.compare:before',
+            '.woocommerce ul.shop-products .product-title a:hover',
+            '.woocommerce div.product .summary .product-actions a i',
+            '.woocommerce div.product .summary .product-actions a:hover',
+            '.woocommerce div.product #wc-accordion.panel-group .panel .panel-heading a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-1 .product-content .product-actions > div a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-3 .product-content .product-actions > div a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-5 .product-content .product-actions > div a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-2 .product-content .product-actions > div a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-6 .product-content .product-actions > div a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-1 .product-content .product-actions > div a:hover:before',
+            '.woocommerce ul.shop-products .product.product-effect-3 .product-content .product-actions > div a:hover:before',
+            '.woocommerce ul.shop-products .product.product-effect-5 .product-content .product-actions > div a:hover:before',
+            '.woocommerce ul.shop-products .product.product-effect-2 .product-content .product-actions > div a:hover:before',
+            '.woocommerce ul.shop-products .product.product-effect-6 .product-content .product-actions > div a:hover:before',
+            '.woocommerce div.product .woocommerce-product-rating .woocommerce-review-link:hover',
+            '.woocommerce div.product .product-navigation > div a:hover',
+            '.woocommerce .gridlist-toggle li a.active',
+            '.woocommerce p.stars:hover a:before',
+            '.woocommerce p.stars.selected a.active:before',
+            '.woocommerce div.product .share-it a:hover',
+            '.woocommerce div.product .product_meta > span a:hover',
+            '.woocommerce div.product form.cart div.quantity .qty-adjust .qty-minus:hover',
+            '.woocommerce div.product form.cart div.quantity .qty-adjust .qty-plus:hover',
+            '.woocommerce div.product .product-detail-thumbarea .product-main-thumbnails .slick-slide.slick-current span:before',
+            '.woocommerce div.product .product-detail-thumbarea .product-tool-play',
+
+
+
+        );
+        $css .= implode($selections_color, ',').'{color: '.$accent.';}';
+
+        $selections_color_important = array(
+
+        );
+        $css .= implode($selections_color_important, ',').'{color: '.$accent.'!important;}';
+
+
+        $selections_background = array(
+            '.btn-accent',
+            '.btn-primary',
+            '.bg-accent',
+            '.shopping-bag-cart > a i',
+            '.products-price .products-price-circle',
+            '.btn-default:hover',
+            '.btn-dark-b:hover',
+            '#footer-top',
+            'blockquote.layout-5 footer::before, blockquote.layout-5 small:before',
+            'blockquote.layout-5 .small::before, blockquote.layout-6 footer:before',
+            'blockquote.layout-6 small::before, blockquote.layout-6 .small:before',
+            '.vc_btn3.vc_general.vc_btn3-color-accent',
+            '.vc_btn3.vc_general.vc_btn3-color-accent.vc_btn3-style-flat',
+
+            '.image-tooltip .image-tooltip-content',
+            'div.wpb_gallery .wpb_flexslider .flex-control-paging li a:hover',
+            'div.wpb_gallery .wpb_flexslider .flex-control-paging li a.flex-active',
+            '#main-slideshow .searchform button span',
+            '.wc-products-tab-heading .nav-style.nav-style-2 li a:before',
+            '.woocommerce .product-badge > span.wc-onsale-badge',
+            '.woocommerce .product-badge > span.wc-onsale-badge:before',
+            '.woocommerce ul.shop-products .product.product-effect-3 .product-details > .wc-addtocart-wrap a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-5 .product-details > .wc-addtocart-wrap a:hover',
+            '.woocommerce ul.shop-products .product.product-effect-4 .product-content .product-actions > div a:hover',
+            '.woocommerce div.product form.cart .btn-addtocart',
+            '.woocommerce #respond input#submit.alt:hover',
+            '.woocommerce a.button.alt:hover',
+            '.woocommerce button.button.alt:hover',
+            '.woocommerce input.button.alt:hover',
+        );
+
+
+        $css .= implode($selections_background, ',').'{background-color: '.$accent.';}';
+
+        $selections_background_important = array(
+            '.social-style-accent.social-background-fill a',
+            '.social-background-fill.social-style-dark a:hover',
+        );
+        $css .= implode($selections_background_important, ',').'{background-color: '.$accent.'!important;}';
+
+
+        $selections_background_lighter = array(
+            '.woocommerce div.product form.cart .btn-addtocart:hover',
+            '.woocommerce div.product form.cart .btn-addtocart:focus',
+        );
+
+        $accent_darker =  cruxstore_color_luminance($accent, -0.05);
+        $css .= implode($selections_background_lighter, ',').'{background-color: '.$accent_darker.';}';
+
+
+        $selections_border_color = array(
+            '.btn-accent',
+            '.btn-primary',
+            '.btn-default:hover',
+            '.btn-dark-b:hover',
+            '.top-navigation > li .navigation-submenu',
+            '.cruxstore-heading-title span.tborder',
+            '#header #main-nav-wc > li ul.sub-menu-dropdown',
+            '#header #main-nav-wc > li .cruxstore-megamenu-wrapper',
+            '#header #main-nav-wc > li .navigation-submenu',
+            '#header #main-nav-tool > li ul.sub-menu-dropdown',
+            '#header #main-nav-tool > li .cruxstore-megamenu-wrapper',
+            '#header #main-nav-tool > li .navigation-submenu',
+            '#header #main-navigation > li ul.sub-menu-dropdown',
+            '#header #main-navigation > li .cruxstore-megamenu-wrapper',
+            '#header #main-navigation > li .navigation-submenu',
+            '.woocommerce div.product form.cart .btn-addtocart',
+            '.woocommerce div.product .product-detail-thumbarea .product-main-thumbnails .slick-slide.slick-current span:before',
+            '.woocommerce div.product .product-detail-thumbarea .product-tool-play:hover',
+            '.woocommerce #respond input#submit.alt:hover',
+            '.woocommerce a.button.alt:hover',
+            '.woocommerce button.button.alt:hover',
+            '.woocommerce input.button.alt:hover',
+        );
+        $css .= implode($selections_border_color, ',').'{border-color: '.$accent.';}';
+
+        $selections_border_important = array(
+            'div.vc_tta.vc_tta-accordion.vc_tta-style-wrapper:not(.shadow) .vc_tta-panel.vc_active',
+        );
+        $css .= implode($selections_border_important, ',').'{border-color: '.$accent.'!important;}';
+
+    }
+
+
+
+
+
+
+
 
     $is_shop = false;
     if(is_archive()){
@@ -290,22 +459,16 @@ function cruxstore_setting_script() {
         $css .= implode($mega_border_arr, ',').'{border-color: '.$mega_border_color.';}';
     }
 
-    if($toolbar_color = cruxstore_option('header_toolbar_border_color', '#ebebeb')){
+    if($toolbar_color = cruxstore_option('header_topbar_border_color', '#ebebeb')){
         $toolbar_color_arr = array(
-            '.topbar',
-            '.top-navigation > li',
-            '.header-container.header-layout8 .top-navigation > li:first-child',
-            '.header-container:not(.header-layout8) .topbar .topbar-right .top-navigation > li:first-child',
+            '.topbar'
         );
         $css .= implode($toolbar_color_arr, ',').'{border-color: '.$toolbar_color.';}';
     }
 
-    if($toolbar_color_light = cruxstore_option('header_toolbar_light_border_color', array( 'color' => '#f6f6f6', 'alpha' => '.2' ))){
+    if($toolbar_color_light = cruxstore_option('header_topbar_light_border_color', array( 'color' => '#f6f6f6', 'alpha' => '.2' ))){
         $toolbar_color_light_arr = array(
-            '.header-transparent.header-light .topbar',
-            '.header-transparent.header-light .top-navigation > li',
-            '.header-transparent.header-light.header-container.header-layout8 .top-navigation > li:first-child',
-            '.header-transparent.header-light.header-container:not(.header-layout8) .topbar .topbar-right .top-navigation > li:first-child',
+            '.header-transparent.header-light .topbar'
         );
         $css .= implode($toolbar_color_light_arr, ',').'{border-color: '.cruxstore_hex2rgba($toolbar_color_light['color'], $toolbar_color_light['alpha']).';}';
     }
@@ -325,13 +488,15 @@ function cruxstore_setting_script() {
     if($navigation_height_fixed = cruxstore_option('navigation_height_fixed', 102)){
         if(isset($navigation_height_fixed['height'])){
             $navigation_fixed_arr = array(
-                '.is-sticky .apply-sticky #header #main-nav-wc > li > a',
-                '.is-sticky .apply-sticky #header #main-nav-tool > li > a',
-                '.is-sticky .apply-sticky #header #main-navigation > li > a',
+                '#header .is-sticky .apply-sticky #main-nav-wc > li > a',
+                '#header .is-sticky .apply-sticky #main-nav-tool > li > a',
+                '#header .is-sticky .apply-sticky #main-navigation > li > a',
             );
             $css .= implode($navigation_fixed_arr, ',').'{line-height: '.intval($navigation_height_fixed['height']).'px;}';
         }
     }
+
+
 
     $header_sticky_opacity = cruxstore_option('header_sticky_opacity', 0.8);
     $css .= '.header-sticky-background{opacity:'.$header_sticky_opacity.';}';
@@ -359,34 +524,26 @@ function cruxstore_addFrontCss( ){
         }
     }
 
-    $primary = cruxstore_get_mainmenu();
     $locations = get_nav_menu_locations();
     $menu = wp_get_nav_menu_object( $locations[ 'vertical' ] );
 
-   /** if(!$primary['custom']) {
-        $locations = get_nav_menu_locations();
-        $menu = wp_get_nav_menu_object( $locations[ $primary['menu'] ] );
-    }else{
-        $menu = $primary['menu'];
-    }
-    *
-    * */
-
-    $args = array(
-        'meta_query' => array(
-            array(
-                'key'     => '_menu_item_megamenu_mgitem',
-                'value'   => '',
-                'compare' => '!=',
+    if($menu){
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key'     => '_menu_item_megamenu_mgitem',
+                    'value'   => '',
+                    'compare' => '!=',
+                ),
             ),
-        ),
-    );
+        );
 
-    $items = wp_get_nav_menu_items($menu->term_id, $args);
+        $items = wp_get_nav_menu_items($menu->term_id, $args);
 
-    foreach ($items as $item){
-        $mgitem = get_post_meta( $item->ID, '_menu_item_megamenu_mgitem', true );
-        $shortcodes_custom_css .= get_post_meta( $mgitem, '_wpb_shortcodes_custom_css', true );
+        foreach ($items as $item){
+            $mgitem = get_post_meta( $item->ID, '_menu_item_megamenu_mgitem', true );
+            $shortcodes_custom_css .= get_post_meta( $mgitem, '_wpb_shortcodes_custom_css', true );
+        }
     }
 
     if (  $shortcodes_custom_css ) {
@@ -1019,7 +1176,7 @@ if( ! function_exists( 'cruxstore_share_box' ) ){
         $image = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'full');
 
         $html = '';
-        $share_arr = cruxstore_option('social_share', array('facebook' => true, 'twitter' => true, 'pinterest' => true));
+        $share_arr = cruxstore_option('social_share', array('facebook' => true, 'twitter' => true, 'pinterest' => true, 'email' => true, 'google_plus' => true));
 
         if($share_arr){
             $i =0;
