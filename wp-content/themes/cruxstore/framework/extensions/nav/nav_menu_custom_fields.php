@@ -51,8 +51,8 @@ function cruxstore_add_custom_fields( $item_id, $item, $depth, $args ) { ?>
                         </label>
                         <span class="description"><?php esc_html_e('if you choose mega menu content. mega menu columns will disable', 'cruxstore') ?></span>
                     </p>
-
-                    <p class="field-columns description description-wide">
+                    <?php $stylemgitem = ($item->mgitem) ? ' style="display: none;"' : ' style="display: block;"'; ?>
+                    <p class="field-columns description description-wide" <?php echo $stylemgitem ?>>
                         <label for="menu-item-columns-<?php echo esc_attr($item_id); ?>">
                             <?php esc_html_e( 'Mega Menu number of columns', 'cruxstore'); ?><br />
                             <select id="menu-item-columns-<?php echo esc_attr($item_id); ?>" name="menu-item-megamenu-columns[<?php echo esc_attr($item_id); ?>]" class="widefat edit-menu-item-columns">
@@ -64,7 +64,7 @@ function cruxstore_add_custom_fields( $item_id, $item, $depth, $args ) { ?>
                             </select>
                         </label>
                     </p>
-                    <p class="field-layout description description-wide">
+                    <p class="field-layout description description-wide" <?php echo $stylemgitem ?>>
                         <label for="menu-item-layout-<?php echo esc_attr($item_id); ?>">
                             <?php esc_html_e( 'Mega Menu layout', 'cruxstore'); ?><br />
                             <select id="menu-item-layout-<?php echo esc_attr($item_id); ?>" name="menu-item-megamenu-layout[<?php echo esc_attr($item_id); ?>]" class="widefat edit-menu-item-layout">

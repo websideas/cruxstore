@@ -1,0 +1,980 @@
+/*
+ * Title:   Responsive Style File
+ * Author:  http://themeforest.net/user/Kite-Themes
+ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[Table of contents]
+
+1. Retina logo
+2. Styles for devices(>=1700px)
+3. Styles for devices(>=1300px)
+4. Styles for devices(>=1200px)
+5. Styles for devices(<=1199px)
+6. Styles for devices(<=991px )
+7. Styles for devices(>=768px and <= 991px)
+8. Styles for devices(<=767px )
+9. Styles for devices(>=481px and <= 767px)
+10. Styles for devices(<=600px)
+11. Styles for devices(<=500px )
+12. Styles for devices(<=480px )
+*/
+
+
+
+
+/* 1. Retina logo */
+@media only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi) {
+  .header-dark{
+    .branding{
+      &.retina-logo-wrapper{
+        .retina-default-logo{ display: block; }
+        .default-logo{ display: none; }
+      }
+    }
+  }
+  .header-light{
+    .branding{
+      &:not(.branding-mobile){
+        &.retina-light-wrapper{
+          .light-retina-logo{ display: block; }
+          .light-logo{ display: none; }
+        }
+      }
+    }
+  }
+}
+/* 2. Styles for devices(>1700px) */
+@media (min-width: 1700px) {
+
+  
+  .products-brands-carousel{
+    .brand-banner{
+        padding: 0 32px;
+    }
+  }
+}
+/* 3. Styles for devices(>1300px) */
+@media (min-width: 1300px) {
+  .container {
+    width: 1200px;
+  }
+
+  .products-categories-carousel.style-normal{
+    .category-banner{
+      .category-banner-content{
+        h3{
+          font-size: 36px;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+/* 3. Styles for devices(>=1200px) */
+@media (min-width: 1200px) {
+
+  .woocommerce,
+  .woocommerce-page{
+    div.product,
+    #content div.product{
+      div.summary{
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .woocommerce{
+    .products-shop-header-atts{
+      #shop-filters-attrs-left{
+        float: left;
+        margin-top: 5px;
+      }
+    }
+    .shop-header-attrs{
+      > li{
+        display: inline-block;
+        margin-right: 25px;
+        &:last-child{
+          margin-right: 0;
+        }
+
+        .widget{
+          position: absolute;
+          top: 45px;
+          left: -20px;
+          @include opacity(0);
+          @include transition();
+          visibility: hidden;
+          width: 300px;
+          margin: 0;
+          z-index: 15;
+          background: $gray-bg;
+          padding: 30px 30px 0 30px;
+          color: $gray-darker;
+          @include transition();
+          max-height: 275px;
+          overflow: auto;
+          .widget-content{
+            margin-bottom: 30px;
+          }
+        }
+
+        &.selected{
+          .widget{
+            @include opacity(1);
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+
+  .side-bar-inner{
+    .sidebar-right &{
+      padding-left: 20px;
+    }
+    .sidebar-left &{
+      padding-right: 20px;
+    }
+  }
+
+  .footer-area-2{
+    .footer-area-left{
+      padding-right: 25px;
+    }
+    .footer-area-right{
+      padding-left: 45px;
+      &:last-child{
+        padding-left: 55px;
+      }
+    }
+
+  }
+
+  .footer-area-6{
+    .footer-area-right{
+      padding-left: 55px;
+    }
+  }
+
+  .themedev-product-popup.woocommerce div.product.wc-single-product-quickview .summary{
+    padding-left: 30px;
+  }
+
+  .products-price .products-price-content{
+    left: 100%;
+    margin-left: 30px;
+    margin-top: 90px;
+    position: absolute;
+    top: 0;
+  }
+
+
+
+}
+
+/* 4. Styles for devices(<=1199px) */
+@media (max-width: 1199px) {
+  #header-content-mobile{
+    display: block;
+  }
+  #header{
+    display: none;
+  }
+  #footer-top{
+    &.footer-top-2{
+      .footer-top-left{
+        margin-bottom: 30px;
+      }
+    }
+    &.footer-top-3{
+      .footer-top-left,
+      .footer-top-center{
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .cruxstore-products.cruxstore-products-masonry{
+    .product{
+      .product-details{
+        display: none;
+      }
+    }
+  }
+
+  .woocommerce {
+
+    ul.shop-products{
+      &.products-list{
+        .product-title{
+          margin-top: 0;
+        }
+        .product-content{
+          margin-right: 5%;
+          max-width: 30%;
+        }
+        .product-details{
+          width: 65%;
+        }
+        .product-details-action{
+          .product-actions{
+            > div{
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+    div.product {
+      .product-price-wrap{
+        .woocommerce-product-rating{
+          margin-left: 25px;
+        }
+        .woocommerce-review-link{
+          padding-left: 25px;
+        }
+      }
+
+      form.cart {
+        .product-actions {
+          margin-top: 20px;
+          width: 100%;
+          > div:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .products-shop-header{
+      .shop-header-right{
+        .searchform input[type="text"]{
+          width: 200px;
+        }
+      }
+    }
+
+    .products-shop-header-atts{
+      > a{
+        display: block;
+      }
+      #shop-filters-attrs-left,
+      #wc_layered_nav_filters{
+        display: none;
+      }
+      &.active{
+        #shop-filters-attrs-left,
+        #wc_layered_nav_filters{
+          display: block;
+        }
+        > a:after{
+          content: '\f106';
+        }
+      }
+    }
+    .shop-header-attrs{
+      .attrs-item-li{
+        &.selected{
+          .widget{
+            display: block;
+          }
+        }
+      }
+      .attrs-item{
+        border-bottom: 1px solid $border-color;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 0;
+        position: relative;
+        text-transform: uppercase;
+        &:after{
+          @include translate(y);
+          right: 12px;
+        }
+      }
+      .widget{
+        display: none;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/* 5. Styles for devices(<=991px ) */
+@media (max-width: 991px) {
+
+  .main-sidebar{
+    margin-top: 40px;
+  }
+  
+  .page-header{
+    .woocommerce-breadcrumb,
+    .page-header-left,
+    .page-header-right,
+    &.page-header-centered.ph-align-right,
+    &.page-header-centered.ph-align-left{
+      text-align: center;
+      float: none;
+    }
+  }
+
+  #footer-top .footer-top-right{
+    text-align: left;
+  }
+
+  #footer-copyright{
+    .display-table,
+    .display-table .display-cell{
+      display: block;
+    }
+    .footer-right,
+    .footer-left{
+      text-align: center;
+    }
+    .footer-left{
+      margin-bottom: 15px;
+    }
+    .footer-right{
+      margin-top: 5px;
+    }
+  }
+
+
+
+  .wc-products-tab-heading .nav-style{
+    &.nav-style-2 li + li{
+      margin-left: 40px;
+    }
+    li{
+      + li{
+        margin-left: 20px;
+      }
+    }
+  }
+
+
+  .woocommerce {
+
+    .woocommerce-countdown{
+      > div{
+        + div{
+          margin-left: 15px;
+        }
+      }
+    }
+
+
+    div.product{
+      &.product-layout3,
+      &.product-layout4{
+        .product-detail-thumbarea{
+          padding-left: 0;
+        }
+        .product-main-thumbnails-wrap{
+          display: none;
+        }
+        .slick-thumbs-arrow{
+          display: none!important;
+        }
+      }
+
+      &.product-type-external,
+      &.product-type-simple{
+        form.cart{
+          .product-price-wrapper{
+            display: block;
+            float: none;
+            margin-bottom: 10px;
+            margin-right: 0;
+            p.price{
+              display: inline-block;
+              min-width: 108px;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+    }
+
+    .products-shop-header{
+      .shop-header-left,
+      .shop-header-right{
+        float: none;
+        display: block;
+      }
+      #shop-header-categories{
+        display: none;
+        margin-right: 0;
+        margin-top: 30px;
+        max-width: 100%;
+        overflow: auto;
+      }
+      .shop-header-left{
+        max-width: 100%;
+      }
+      .shop-header-list{
+        li.wc-header-categories{
+          display: inline-block;
+        }
+        li.wc-header-search{
+          float:right;
+        }
+      }
+
+      .filter-hide{
+        display: none;
+      }
+    }
+
+    #cruxstore-shop-filters{
+      .widget{
+        margin-bottom: 0;
+        .widget-content{
+          &.widget-active{
+            > ul,
+            > div{
+              display: block;
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+            .widget-title{
+              &:before{
+                content: '\f106';
+              }
+            }
+          }
+
+          > ul,
+          > div{
+            display: none;
+          }
+        }
+        .widget-title{
+          border-bottom: 1px solid $border-color;
+          cursor: pointer;
+          margin-bottom: 0;
+          padding: 8px 0;
+          position: relative;
+          &:before{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .themedev-product-popup.woocommerce{
+    margin: 15px 0;
+    div.product.wc-single-product-quickview .summary{
+      padding:  30px 15px 0 15px;
+    }
+  }
+
+  #popup-wrap{
+    .mfp-close{
+      right: 15px;
+      top: 0;
+    }
+    .newletter-popup-content{
+      padding: 35px 25px;
+    }
+  }
+
+
+
+}
+
+/* 6. Styles for devices(>=768px and <= 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+/* 7. Styles for devices(>=768px ) */
+@media (min-width: 768px) {
+  .vc_row_kt{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .vc_general.vc_cta3{
+    &.vc_cta3-style-transparent{
+      &.vc_cta3-actions-right{
+        .vc_cta3-actions{
+          text-align: right;
+        }
+      }
+      .vc_cta3-content{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* 7. Styles for devices(<=767px ) */
+@media (max-width: 767px) {
+  #footer-area .footer-area-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #footer{
+    .vc_row{
+      > .container{
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+
+  .banner{
+    &.position-modern{
+      .banner-content{
+        bottom: 0;
+        left: 10%;
+        top: auto;
+        width: 85%;
+      }
+    }
+    &.position-modern2{
+      .banner-content{
+        left: 15px;
+        padding-bottom: 0;
+        padding-right: 15px;
+        top: 15px;
+        width: auto;
+      }
+    }
+  }
+
+
+
+  #instagram-footer.instagram-footer-space{
+    .widget.null-instagram-feed {
+      .instagram-pics{
+        margin: 0 -7px;
+        li{
+          width: 33.33%;
+          margin-bottom: 14px;
+          padding: 0 7px;
+        }
+      }
+    }
+  }
+
+
+  .wc-products-tab-heading .nav-style{
+    &.nav-style-1,
+    &.nav-style-3,
+    &.nav-style-4{
+      text-align: left;
+    }
+    &.nav-style-2 li,
+    li{
+      display: block;
+      margin-bottom: 10px;
+      + li{
+        margin-left: 0;
+      }
+    }
+
+    &.nav-style-1,
+    &.nav-style-5{
+      li{
+        + li{
+          margin-left: 0;
+        }
+      }
+    }
+    &.nav-style-2{
+      border: none;
+      li a{
+        padding-bottom: 0;
+        &:before{
+          left: 0;
+          @include transform(translateX(0%));
+        }
+      }
+    }
+    &.nav-style-3,
+    &.nav-style-4{
+      text-align: left;
+      li{
+        margin-left: 25px;
+        &:first-child:before{
+          display: block;
+        }
+      }
+    }
+
+    &.nav-style-5{
+      li {
+        margin-bottom: 0;
+        a{
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+
+
+  }
+
+  .banner {
+    .banner-content{
+      .banner-title{
+        font-size: 18px;
+      }
+    }
+  }
+
+  .flip-box{
+    .flip-box-before{
+      font-size: 20px;
+      padding: 32px 30px;
+    }
+  }
+
+  .category-banner{
+    .category-banner-content h3{
+      font-size: 20px;
+    }
+  }
+
+
+  h1, .h1{
+    font-size: 30px;
+  }
+  h2, .h2{
+    font-size: 28px;
+  }
+  h3, .h3{
+    font-size: 22px;
+  }
+  h4, .h4 {
+    font-size: 16px;
+  }
+
+  .page-header .page-header-title{
+    font-size: 30px;
+  }
+
+
+  .single-post-wrap{
+    .share-it{
+      .social_icons {
+        li{
+          margin-right: 10px;
+          a{
+            .count{
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .author-info{
+    .author-avatar {
+      float: none;
+      margin-right: 0;
+      max-width: 100%;
+      text-align: center;
+    }
+    .author-socials{
+      margin-top: 15px;
+      position: static;
+      @include transform('translateY(0)');
+    }
+    .author-description{
+      margin-bottom: 15px;
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+  .woocommerce{
+    .product-main-thumbnails-wrap{
+      display: none;
+    }
+    .order_details li{
+      border-bottom: 1px dashed #d3ced2;
+      border-right: medium none;
+      float: none;
+      margin: 0 0 2em;
+      padding: 0 0 2em;
+
+    }
+    ul.shop-products{
+      &.products-list{
+        .product-details-action{
+          .product-actions{
+            display: none;
+          }
+        }
+      }
+    }
+    div.product{
+
+      form.cart{
+        .btn-addtocart{
+          padding-left: 32px;
+          padding-right: 32px;
+        }
+      }
+
+      &.product-layout5{
+        div.summary{
+          max-width: none;
+          padding: 60px 15px 20px;
+        }
+      }
+
+      &.wc-single-product-quickview{
+        .entry-summary{
+          margin-top: 30px;
+        }
+      }
+    }
+
+    .related-products-wrapper,
+    .up-sells-wrapper{
+      .cruxstore-heading-title{
+        font-size: 30px;
+      }
+    }
+
+    .woocommerce-countdown{
+      > div{
+        + div{
+          margin-left: 5px;
+        }
+      }
+    }
+    &.cruxstore-products-countdown{
+      ul.shop-products .product .product-inner{
+        padding: 15px;
+      }
+    }
+  }
+
+  .woocommerce,
+  .woocommerce-page{
+    .woocommerce-result-count,
+    .woocommerce-per-page{
+      display: none;
+    }
+    .gridlist-toggle,
+    .woocommerce-ordering{
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    table.cart,
+    #content table.cart{
+      td.actions{
+        padding-left: 15px;
+        padding-right: 15px;
+        .btn{
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+
+    #content{
+      div.product{
+        .woocommerce-tabs{
+          display: block;
+          ul.tabs li a{
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+          .wc-tabs-content{
+            display: block;
+            border: none;
+          }
+          .panel{
+            padding: 25px;
+          }
+          .col-reviews-comments,
+          .col-reviews-form{
+            width: auto;
+            padding: 0;
+            float: none;
+          }
+          .col-reviews-comments{
+            margin-bottom: 15px;
+          }
+          .col-reviews-divider{
+            display: none;
+          }
+        }
+
+      }
+    }
+  }
+
+  #error404{
+    padding: 0 15px;
+    h1{
+      font-size: 140px;
+      line-height: 140px;
+    }
+  }
+
+}
+
+/* 8. Styles for devices(>=481px and <= 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* 9. Styles for devices(<=600px) */
+@media (max-width: 600px) {
+  .post-navigation{
+    .nav-links{
+      > div{
+        width: 100%;
+        + div:before{
+          left: 0;
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          height: 0;
+          border-left: none;
+        }
+      }
+    }
+  }
+
+
+  .blog-posts{
+    &.blog-posts-medium .article-post-item{
+      .entry-thumbnail{
+        display: block;
+        float: none;
+        margin: 0 0 20px;
+        width: auto;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #footer-bottom-nav .menu li + li {
+    padding-left: 25px;
+  }
+
+}
+
+/* 10. Styles for devices(<=500px ) */
+@media (max-width: 500px) {
+
+  .employees-content,
+  .blog-post-wrap{
+    width: 100%;
+  }
+  .woocommerce {
+    .shop-products{
+      &:not(.products-list){
+        .product{
+          width: 100% !important;
+        }
+      }
+      &.products-list {
+        .product-content {
+          margin-right: 0;
+          max-width: none;
+        }
+        .product-details {
+          width: 100%;
+          .product-details-action .wc_add_to_cart{
+            padding: 0 30px;
+          }
+        }
+      }
+
+    }
+    .checkout_coupon{
+      .input-group{
+        display: block;
+        .input-group-btn{
+          display: block;
+          width: 100%;
+          margin-top: 10px;
+          .btn{
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .products-shop-header{
+      .shop-header-list{
+        li{
+          &.wc-header-search{
+            display: none;
+          }
+        }
+      }
+    }
+    .related-products-wrapper,
+    .up-sells-wrapper{
+      .cruxstore-heading-title{
+        font-size: 26px;
+      }
+    }
+
+  }
+  .flip-box{
+    .flip-box-before{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+
+  .blog-posts{
+    &.blog-posts-carousel .article-post-item{
+      .entry-thumbnail{
+        display: block;
+        float: none;
+        margin: 0 0 20px;
+        width: auto;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+}
+
+/* 11. Styles for devices(<=480px ) */
+@media (max-width: 480px) {
+
+}
+
+@media screen and (max-height: 760px) {
+  .shopping-bag .woocommerce.shopping-bag-content .product_list_widget {
+    max-height: 274px;
+  }
+  #header #main-navigation > li.dropdown-scroll .megamenu-mgitem{
+    height: 275px;
+  }
+}

@@ -105,6 +105,7 @@ vc_add_param('vc_row', array(
 
 $composer_addons = array(
     'heading.php',
+    'heading2.php',
     'icon.php',
     'icon_box.php',
     'lightbox.php',
@@ -129,14 +130,13 @@ $composer_addons = array(
     'search.php',
     'counter.php',
     'blockquote.php',
-
 );
 
 if(cruxstore_is_wc()){
     $composer_wc_addons = array(
-        'brands.php',
-        'brands_grid.php',
+        'attribute_grid.php',
         'products_carousel.php',
+        'product_category.php',
         'product_categories_list.php',
         'product_categories_carousel.php',
         'product_categories_masonry.php',
@@ -144,14 +144,14 @@ if(cruxstore_is_wc()){
         'products.php',
         'products_tab.php',
         'products_tab_vertical.php',
+        'products_tab_horizontal.php',
         'products_mini.php',
         'products_sale_countdown.php',
-        'vertical_menu.php'
+        'vertical_menu.php',
+        'product_widgets.php'
     );
     $composer_addons = array_merge($composer_wc_addons, $composer_addons);
 }
-
-
 
 
 

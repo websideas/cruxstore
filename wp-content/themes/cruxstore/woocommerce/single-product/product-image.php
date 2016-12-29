@@ -37,7 +37,7 @@ $count_class = ( $attachment_count > 0 ) ? 'multi' : 'single';
 
 <div class="product-images-wrap product-images-<?php echo esc_attr($count_class); ?>">
     <?php do_action( 'woocommerce_product_images' ); ?>
-    <div class="product-main-images" id="sync1">
+    <div class="product-main-images clearfix" id="sync1">
         <?php
 
         //<div class="easyzoom easyzoom--overlay"></div>

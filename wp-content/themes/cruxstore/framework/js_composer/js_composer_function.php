@@ -108,9 +108,9 @@ function cruxstore_getCSSAnimation( $css_animation ) {
     return $output;
 }
 
-function cruxstore_map_add_carousel_parrams( $label = true ) {
-    return array(
-        // Carousel
+function cruxstore_map_add_carousel_parrams( $selects = array('other', 'columns', 'navigation', 'pagination') ) {
+
+    $carousel['other'] = array(
         array(
             'type' => 'cruxstore_switch',
             'heading' => esc_html__( 'Auto Height', 'cruxstore' ),
@@ -155,11 +155,15 @@ function cruxstore_map_add_carousel_parrams( $label = true ) {
             "suffix" => esc_html__("milliseconds", 'cruxstore'),
             'group' => esc_html__( 'Carousel', 'cruxstore' )
         ),
+
+    );
+
+    $carousel['columns'] = array(
         array(
             "type" => "cruxstore_heading",
             "heading" => esc_html__("Items to Show?", 'cruxstore'),
             "param_name" => "items_show",
-            'group' => esc_html__( 'Carousel', 'cruxstore' )
+            'group' => esc_html__( 'Carousel', 'cruxstore' ),
         ),
         array(
             "type" => "cruxstore_number",
@@ -209,6 +213,9 @@ function cruxstore_map_add_carousel_parrams( $label = true ) {
             "step" => "1",
             'group' => esc_html__( 'Carousel', 'cruxstore' )
         ),
+    );
+
+    $carousel['navigation'] = array(
         array(
             "type" => "cruxstore_heading",
             "heading" => esc_html__("Navigation settings", 'cruxstore'),
@@ -253,6 +260,7 @@ function cruxstore_map_add_carousel_parrams( $label = true ) {
             'group' => esc_html__( 'Carousel', 'cruxstore' ),
             'value' => array(
                 esc_html__( 'Normal', 'cruxstore' ) => 'normal',
+                esc_html__( 'Normal light', 'cruxstore' ) => 'normal-light',
                 esc_html__( 'Circle Background', 'cruxstore' ) => 'circle-background',
                 esc_html__( 'Square Background', 'cruxstore' ) => 'square-background',
                 esc_html__( 'Round Background', 'cruxstore' ) => 'round-background',
@@ -263,6 +271,9 @@ function cruxstore_map_add_carousel_parrams( $label = true ) {
             'std' => 'normal',
             "dependency" => array("element" => "navigation","value" => array('true')),
         ),
+    );
+
+    $carousel['pagination'] = array(
         array(
             "type" => "cruxstore_heading",
             "heading" => esc_html__("Pagination settings", 'cruxstore'),
@@ -297,13 +308,25 @@ function cruxstore_map_add_carousel_parrams( $label = true ) {
             'group' => esc_html__( 'Carousel', 'cruxstore' ),
             'value' => array(
                 esc_html__( 'Dot stroke', 'cruxstore' ) => 'dot-stroke',
-                esc_html__( 'Fill pp', 'cruxstore' ) => 'fill-up',
+                esc_html__( 'Fill Up', 'cruxstore' ) => 'fill-up',
                 esc_html__( 'Circle grow', 'cruxstore' ) => 'circle-grow',
+                esc_html__( 'Flip', 'cruxstore' ) => 'flip',
             ),
             'std' => 'dot_stroke',
             "dependency" => array("element" => "pagination","value" => array('true')),
+            "description" => esc_html__("Choose pagination style in carousel", 'cruxstore'),
         ),
     );
+
+
+    if(count($selects)){
+        $output = array();
+        foreach($selects as $select){
+            $output = array_merge($output, $carousel[$select]);
+        };
+        return $output;
+    }
+    return false;
 }
 
 

@@ -158,8 +158,6 @@ vc_map( array(
             "heading" => esc_html__("Layout setting", 'cruxstore'),
             "param_name" => "layout_settings",
         ),
-
-
         array(
             'type' => 'dropdown',
             'heading' => esc_html__( 'Product display type', 'cruxstore' ),
@@ -169,6 +167,7 @@ vc_map( array(
                 esc_html__( 'Gallery', 'js_composer' ) => 'gallery',
                 esc_html__( 'Masonry', 'js_composer' ) => 'masonry',
                 esc_html__( 'Preview Slider', 'js_composer' ) => 'slider',
+                esc_html__( 'Dividers', 'js_composer' ) => 'dividers',
             ),
             'std' => 'classic',
             'description' => esc_html__( 'select your product type', 'cruxstore' ),
@@ -187,6 +186,7 @@ vc_map( array(
                 esc_html__('Effect 4', 'cruxstore' ) => '4',
                 esc_html__('Effect 5', 'cruxstore' ) => '5',
                 esc_html__('Effect 6', 'cruxstore' ) => '6',
+                esc_html__('Effect 7', 'cruxstore' ) => '7',
             ),
             'admin_label' => true,
             'description' => esc_html__( 'select effect of product', 'cruxstore' ),

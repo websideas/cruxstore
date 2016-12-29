@@ -179,7 +179,7 @@ class WC_Widget_CruxStore_Price_Filter extends WC_Widget {
 
             if($step == $minprice && $min_price == $maxprice){
                 $output .= '<li class="selected">' . $price_text . '</li>';
-            }else{
+            }elseif($min_price > $min){
                 $output .= '<li><a href="' . esc_url( $link ) . '">' . $price_text . '</a></li>';
             }
 

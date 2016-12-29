@@ -98,23 +98,23 @@ if ( ! class_exists( 'YITH_WCBR' ) ) {
 		 */
 		 public function register_taxonomy(){
 			 $taxonomy_labels = array(
-				 'name' => __( 'Brands', 'yith-wcbr' ),
-				 'singular_name' => __( 'Brand', 'yith-wcbr' ),
-				 'all_items' => __( 'All Brands', 'yith-wcbr' ),
-				 'edit_item' => __( 'Edit Brand', 'yith-wcbr' ),
-				 'view_item' => __( 'View Brand', 'yith-wcbr' ),
-				 'update_item' => __( 'Update Brand', 'yith-wcbr' ),
-				 'add_new_item' => __( 'Add New Brand', 'yith-wcbr' ),
-				 'new_item_name' => __( 'New Brand Name', 'yith-wcbr' ),
-				 'parent_item' => __( 'Parent Brand', 'yith-wcbr' ),
-				 'parent_item_colon' => __( 'Parent Brand:', 'yith-wcbr' ),
-				 'search_items' => __( 'Search Brands', 'yith-wcbr' ),
-				 'separate_items_with_commas' => __( 'Separate brands with commas', 'yith-wcbr' ),
-				 'not_found' => __( 'No Brands Found', 'yith-wcbr' )
+				 'name' => __( 'Brands', 'yith-woocommerce-brands-add-on' ),
+				 'singular_name' => __( 'Brand', 'yith-woocommerce-brands-add-on' ),
+				 'all_items' => __( 'All Brands', 'yith-woocommerce-brands-add-on' ),
+				 'edit_item' => __( 'Edit Brand', 'yith-woocommerce-brands-add-on' ),
+				 'view_item' => __( 'View Brand', 'yith-woocommerce-brands-add-on' ),
+				 'update_item' => __( 'Update Brand', 'yith-woocommerce-brands-add-on' ),
+				 'add_new_item' => __( 'Add New Brand', 'yith-woocommerce-brands-add-on' ),
+				 'new_item_name' => __( 'New Brand Name', 'yith-woocommerce-brands-add-on' ),
+				 'parent_item' => __( 'Parent Brand', 'yith-woocommerce-brands-add-on' ),
+				 'parent_item_colon' => __( 'Parent Brand:', 'yith-woocommerce-brands-add-on' ),
+				 'search_items' => __( 'Search Brands', 'yith-woocommerce-brands-add-on' ),
+				 'separate_items_with_commas' => __( 'Separate brands with commas', 'yith-woocommerce-brands-add-on' ),
+				 'not_found' => __( 'No Brands Found', 'yith-woocommerce-brands-add-on' )
 			 );
 
 			 $taxonomy_args = array(
-				 'label' => apply_filters( 'yith_wcbr_taxonomy_label', __( 'Brands', 'yith-wcbr' ) ),
+				 'label' => apply_filters( 'yith_wcbr_taxonomy_label', __( 'Brands', 'yith-woocommerce-brands-add-on' ) ),
 				 'labels' => $taxonomy_labels,
 				 'public' => true,
 				 'show_admin_column' => true,

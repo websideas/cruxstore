@@ -106,7 +106,10 @@ if (!function_exists('cruxstore_get_image_sizes')){
             $option_text = array();
             $option_text[] = ucfirst(str_replace('_', ' ', $_size));
             if( isset($sizes[ $_size ]) ){
-                $option_text[] = '('.$sizes[ $_size ]['width'].' x '.$sizes[ $_size ]['height'].')';
+                $wsize = ($sizes[ $_size ]['width']) ? $sizes[ $_size ]['width'] : esc_html__('Auto', 'cruxstore');
+                $hsize = ($sizes[ $_size ]['height']) ? $sizes[ $_size ]['height'] : esc_html__('Auto', 'cruxstore');
+
+                $option_text[] = '('.$wsize.' x '.$hsize.')';
                 if($sizes[ $_size ]['crop']){
                     $option_text[] = esc_html__('Crop', 'cruxstore');
                 }
@@ -940,7 +943,7 @@ if (!function_exists('cruxstore_footer_instagram')) {
         }elseif($footer_instagram == 'off'){
             $footer_instagram = false;
         }else{
-            $footer_instagram = cruxstore_option('footer_widgets', true);
+            $footer_instagram = cruxstore_option('footer_instagram', true);
         }
         if(!is_active_sidebar( 'instagram-footer' )){
             $footer_instagram = false;
@@ -1040,3 +1043,40 @@ if (!function_exists('cruxstore_render_custom_css')) {
     }
 }
 
+if (!function_exists('cruxstore_get_subscribe_form')) {
+    function cruxstore_get_subscribe_form($popup_id, $attr = ''){
+
+        $content_popup = cruxstore_option( 'content_popup' );
+        $image_popup = cruxstore_option( 'popup_image' );
+        $popup_form = cruxstore_option( 'popup_form' );
+
+        $main_class = ( $image_popup['url'] ) ? 'col-md-8 col-sm-8' : 'col-md-12 col-sm-12';
+
+        ?>
+        <div id="<?php echo esc_attr($popup_id); ?>" class="popup-wrap-newletter mfp-hide mfp-with-anim" <?php echo $attr; ?>>
+            <div class="container-fluid">
+                <div class="wrapper-newletter-content">
+                    <div class="row no-gutters">
+                        <?php if( $image_popup['url'] ){ ?>
+                            <div class="col-md-4 col-sm-4 newletter-popup-img hidden-xs">
+                                <img src="<?php echo esc_attr($image_popup['url']); ?>" alt="" class="img-responsive"/>
+                            </div>
+                        <?php } ?>
+                        <div class="<?php echo esc_attr($main_class); ?> wrapper-newletter-popup">
+                            <div class="newletter-popup-content">
+                                <?php
+                                echo apply_filters('the_content', $content_popup);
+                                if($popup_form){
+                                    printf('<div class="newletter-popup-form">%s</div>', apply_filters('the_content', $popup_form));
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+    }
+}

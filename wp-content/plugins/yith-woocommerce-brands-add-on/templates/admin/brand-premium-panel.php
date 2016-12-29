@@ -214,17 +214,17 @@ if ( ! defined( 'YITH_WCBR' ) ) {
         <div class="landing-container">
             <div class="premium-cta">
                 <p>
-                    <?php echo sprintf( __('Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Brands Add-On%2$s to benefit from all features!','yith-wcbr'),'<span class="highlight">','</span>' );?>
+                    <?php echo sprintf( __('Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Brands Add-On%2$s to benefit from all features!','yith-woocommerce-brands-add-on'),'<span class="highlight">','</span>' );?>
                 </p>
                 <a href="<?php echo $this->get_premium_landing_uri() ?>" target="_blank" class="premium-cta-button button btn">
-                    <span class="highlight"><?php _e('UPGRADE','yith-wcbr');?></span>
-                    <span><?php _e('to the premium version','yith-wcbr');?></span>
+                    <span class="highlight"><?php _e('UPGRADE','yith-woocommerce-brands-add-on');?></span>
+                    <span><?php _e('to the premium version','yith-woocommerce-brands-add-on');?></span>
                 </a>
             </div>
         </div>
     </div>
     <div class="section section-even clear" style="background: url(<?php echo YITH_WCBR_URL ?>assets/images/01-bg.png) no-repeat #fff; background-position: 85% 75%">
-        <h1><?php _e('Premium Features','yith-wcbr');?></h1>
+        <h1><?php _e('Premium Features','yith-woocommerce-brands-add-on');?></h1>
         <div class="landing-container">
             <div class="col-1">
                 <img src="<?php echo YITH_WCBR_URL ?>assets/images/01.png" alt="" />
@@ -232,10 +232,10 @@ if ( ! defined( 'YITH_WCBR' ) ) {
             <div class="col-2">
                 <div class="section-title">
                     <img src="<?php echo YITH_WCBR_URL ?>assets/images/01-icon.png" alt=""/>
-                    <h2><?php _e('Banners and links','yith-wcbr');?></h2>
+                    <h2><?php _e('Banners and links','yith-woocommerce-brands-add-on');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf(__('Two additional details for each brand in your store: show a %1$sbanner%2$s to users when they access the page of the selected brand and specify a %1$slink%2$s redirecting users to a page different from brand archive page (e.g. brand official website).', 'yith-wcbr'), '<b>', '</b>');?>
+                    <?php echo sprintf(__('Two additional details for each brand in your store: show a %1$sbanner%2$s to users when they access the page of the selected brand and specify a %1$slink%2$s redirecting users to a page different from brand archive page (e.g. brand official website).', 'yith-woocommerce-brands-add-on'), '<b>', '</b>');?>
                 </p>
             </div>
         </div>
@@ -245,10 +245,10 @@ if ( ! defined( 'YITH_WCBR' ) ) {
             <div class="col-2">
                 <div class="section-title">
                     <img src="<?php echo YITH_WCBR_URL ?>assets/images/02-icon.png" alt="icon 02" />
-                    <h2><?php _e('Brand taxonomy','yith-wcbr');?></h2>
+                    <h2><?php _e('Brand taxonomy','yith-woocommerce-brands-add-on');?></h2>
                 </div>
                 <p>
-                    <?php _e( 'With the premium version of the plugin, all taxonomies defined for products (usually categories, tags and attributes) can be turned into brands for products of your shop!','yith-wcbr' );?></p>
+                    <?php _e( 'With the premium version of the plugin, all taxonomies defined for products (usually categories, tags and attributes) can be turned into brands for products of your shop!','yith-woocommerce-brands-add-on' );?></p>
             </div>
             <div class="col-1">
                 <img src="<?php echo YITH_WCBR_URL ?>assets/images/02.png" alt="" />
@@ -263,9 +263,9 @@ if ( ! defined( 'YITH_WCBR' ) ) {
             <div class="col-2">
                 <div class="section-title">
                     <img src="<?php echo YITH_WCBR_URL ?>assets/images/03-icon.png" alt="icon 03" />
-                    <h2><?php _e( 'Position','yith-wcbr');?></h2>
+                    <h2><?php _e( 'Position','yith-woocommerce-brands-add-on');?></h2>
                 </div>
-                <p><?php _e('Position of product brand is no longer static: it will be up to you to choose the most suitable position for brands in product detail page and in shop page.','yith-wcbr');?>
+                <p><?php _e('Position of product brand is no longer static: it will be up to you to choose the most suitable position for brands in product detail page and in shop page.','yith-woocommerce-brands-add-on');?>
                 </p>
             </div>
         </div>
@@ -275,10 +275,10 @@ if ( ! defined( 'YITH_WCBR' ) ) {
             <div class="col-2">
                 <div class="section-title">
                     <img src="<?php echo YITH_WCBR_URL ?>assets/images/04-icon.png" alt="icon 04" />
-                    <h2><?php _e('Content','yith-wcbr');?></h2>
+                    <h2><?php _e('Content','yith-woocommerce-brands-add-on');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __( 'Name, logo or both? You can decide what information to show to your users just with a click. Whether it is shown in %1$sshop page or in product detail page%2$s, decide the information you want to show about the selected brand.','yith-wcbr' ),'<b>','</b>' );?>
+                    <?php echo sprintf( __( 'Name, logo or both? You can decide what information to show to your users just with a click. Whether it is shown in %1$sshop page or in product detail page%2$s, decide the information you want to show about the selected brand.','yith-woocommerce-brands-add-on' ),'<b>','</b>' );?>
                 </p>
             </div>
             <div class="col-1">
@@ -294,10 +294,10 @@ if ( ! defined( 'YITH_WCBR' ) ) {
             <div class="col-2">
                 <div class="section-title">
                     <img src="<?php echo YITH_WCBR_URL?>assets/images/05-icon.png" alt="icon 05" />
-                    <h2><?php _e('5 widgets','yith-wcbr');?></h2>
+                    <h2><?php _e('5 widgets','yith-woocommerce-brands-add-on');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __('5 different solutions to add and show all your brands in your sidebars! Beautiful and useful, thanks to them, %1$syour brands will become dynamic%2$s and you will be able to further value them using the numerous options availble for each widget. Discover them now!','yith-wcbr'),'<b>','</b>' );?></p>
+                    <?php echo sprintf( __('5 different solutions to add and show all your brands in your sidebars! Beautiful and useful, thanks to them, %1$syour brands will become dynamic%2$s and you will be able to further value them using the numerous options availble for each widget. Discover them now!','yith-woocommerce-brands-add-on'),'<b>','</b>' );?></p>
             </div>
         </div>
     </div>
@@ -306,10 +306,10 @@ if ( ! defined( 'YITH_WCBR' ) ) {
             <div class="col-2">
                 <div class="section-title">
                     <img src="<?php echo YITH_WCBR_URL ?>assets/images/06-icon.png" alt="icon 04" />
-                    <h2><?php _e('8 shortcodes','yith-wcbr');?></h2>
+                    <h2><?php _e('8 shortcodes','yith-woocommerce-brands-add-on');?></h2>
                 </div>
                 <p>
-                    <?php echo sprintf( __( '8 new solutions to add brands to your e-commerce pages. %1$sEight different ways to value your brands and brand products:%2$s you can show them either in a slider or as a simple list and users will also be able to filter them and restrict seach results only to those they are interested in.','yith-wcbr' ),'<b>','</b>' );?>
+                    <?php echo sprintf( __( '8 new solutions to add brands to your e-commerce pages. %1$sEight different ways to value your brands and brand products:%2$s you can show them either in a slider or as a simple list and users will also be able to filter them and restrict seach results only to those they are interested in.','yith-woocommerce-brands-add-on' ),'<b>','</b>' );?>
                 </p>
             </div>
             <div class="col-1">
@@ -321,11 +321,11 @@ if ( ! defined( 'YITH_WCBR' ) ) {
         <div class="landing-container">
             <div class="premium-cta">
                 <p>
-                    <?php echo sprintf( __('Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Brands Add-On%2$s to benefit from all features!','yith-wcbr'),'<span class="highlight">','</span>' );?>
+                    <?php echo sprintf( __('Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Brands Add-On%2$s to benefit from all features!','yith-woocommerce-brands-add-on'),'<span class="highlight">','</span>' );?>
                 </p>
                 <a href="<?php echo $this->get_premium_landing_uri() ?>" target="_blank" class="premium-cta-button button btn">
-                    <span class="highlight"><?php _e('UPGRADE','yith-wcbr');?></span>
-                    <span><?php _e('to the premium version','yith-wcbr');?></span>
+                    <span class="highlight"><?php _e('UPGRADE','yith-woocommerce-brands-add-on');?></span>
+                    <span><?php _e('to the premium version','yith-woocommerce-brands-add-on');?></span>
                 </a>
             </div>
         </div>

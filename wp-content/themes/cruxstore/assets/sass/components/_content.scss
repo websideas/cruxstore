@@ -207,6 +207,7 @@
         .title-link{
           font-size: 14px;
           margin-bottom: 1px;
+          font-weight: 500;
         }
       }
     }
@@ -272,6 +273,7 @@
   &.blog-posts-medium,
   &.blog-posts-carousel{
     .article-post-item{
+
       @include clearfix;
       .entry-thumbnail{
         float: left;
@@ -317,6 +319,15 @@
   }
 
   &.blog-posts-carousel{
+    .blog-post{
+      .blog-post-content{
+        margin-bottom: 0;
+      }
+      .entry-title{
+        font-size: 14px;
+        line-height: 28px;
+      }
+    }
     .article-post-item{
       .entry-thumbnail{
         width: 200px;

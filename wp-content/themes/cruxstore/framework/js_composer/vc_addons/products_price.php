@@ -20,19 +20,14 @@ class WPBakeryShortCode_Products_Price extends WPBakeryShortCode_VC_Custom_headi
             'css' => '',
         ), $atts );
         extract($atts);
-        
-        $output = '';
-        
+
         $product_columns = 12/$desktop;
-        $product_land = ($product_columns == 4) ? 2 : 3;
+        $product_land = ($product_columns == 4) ? 4 : 6;
         
         
         $values = (array) vc_param_group_parse_atts( $values );
         $text = '';
         foreach ( $values as $data ) {
-            $new_line = $data;
-            
-            $button_text = '';
             
             $img_id = isset( $data['image'] ) ? $data['image'] : 0;
             $pd_link = isset( $data['link'] ) ? $data['link'] : '';
@@ -81,7 +76,7 @@ class WPBakeryShortCode_Products_Price extends WPBakeryShortCode_VC_Custom_headi
         $output = '<div class="row multi-columns-row">'.$text.'</div>';
         
         $output .= sprintf(
-            '<div class="products-price-content visible-lg-block"><div class="products-price-circle"><span class="products-price-only">%s</span><span class="products-price-currency">%s</span><span class="products-price-text">%s</span></div><span class="products-price-cart">%s</span></div>',
+            '<div class="products-price-content"><div class="products-price-circle"><span class="products-price-only">%s</span><span class="products-price-currency">%s</span><span class="products-price-text">%s</span></div><span class="products-price-cart">%s</span></div>',
             $badge,
             $currency,
             $price,
@@ -89,7 +84,7 @@ class WPBakeryShortCode_Products_Price extends WPBakeryShortCode_VC_Custom_headi
         );
         
         $elementClass = array(
-            'base' => apply_filters(VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'products-price ', $this->settings['base'], $atts),
+            'base' => apply_filters(VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'products-price clearfix', $this->settings['base'], $atts),
             'extra' => $this->getExtraClass($el_class),
             'css_animation' => $this->getCSSAnimation($css_animation),
             'shortcode_custom' => vc_shortcode_custom_css_class($css, ' ')
@@ -140,6 +135,7 @@ vc_map( array(
             "type" => "cruxstore_heading",
             "heading" => esc_html__("Columns to Show?", 'cruxstore'),
             "edit_field_class" => "cruxstore_sub_heading vc_column",
+            "param_name" => "items_show",
         ),
         array(
             'type' => 'dropdown',
@@ -149,7 +145,7 @@ vc_map( array(
                 esc_html__( '4 columns', 'js_composer' ) => '4',
                 esc_html__( '3 columns', 'js_composer' ) => '3',
             ),
-            'std' => '3',
+            'std' => '4',
             'description' => esc_html__('The columns attribute controls how many columns wide the products should be before wrapping.', 'cruxstore')
         ),
         array(

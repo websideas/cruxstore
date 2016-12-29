@@ -9,24 +9,18 @@
                 <?php do_action( 'cruxstore_content_bottom' ); ?>
             </div><!-- #content -->
         </div><!-- #wrapper-content -->
-
         <?php if(cruxstore_option('footer', true)){ ?>
             <?php 
                 do_action( 'cruxstore_before_footer' );
                 $footer_fullwidth = cruxstore_option('footer_fullwidth', true);
             ?>
             <div id="footer" class="site-footer">
-
-
-
                 <?php
                 if(!$footer_fullwidth){
                     echo '<div class="container">';
                 } 
                 ?>
-
                 <?php get_template_part( 'templates/footers/footer', 'top');  ?>
-
                 <?php if($footer_instagram = cruxstore_footer_instagram()){  ?>
                     <?php
                     $footer_instagram_layout = cruxstore_option('footer_instagram_layout', 'full');
@@ -43,9 +37,7 @@
                     }
                     ?>
                 <?php } ?>
-
                 <?php
-
                 if($footer_widgets = cruxstore_footer_widgets()){
                     get_template_part( 'templates/footers/footer', 'widgets');
                 }
@@ -53,9 +45,7 @@
                 if(cruxstore_option('footer_bottom', false)){
                     get_template_part( 'templates/footers/footer', 'bottom');
                 }
-
                 ?>
-
                 <?php if(cruxstore_option('footer_copyright', true)){ ?>
                     <?php $copyright_layout = cruxstore_option('footer_copyright_layout', 'centered') ?>
                     <footer id="footer-copyright" class="footer-copy-<?php echo esc_attr($copyright_layout); ?>">
@@ -76,15 +66,11 @@
                 } 
                 ?>
             </div><!-- #footer -->
-
             <?php do_action( 'cruxstore_after_footer' ); ?>
         <?php } ?>
     </div><!-- #page -->
 </div><!-- #page_outter -->
-
-
 <?php wp_footer(); ?>
 <!-- W3TC-include-js-head -->
-
 </body>
 </html>

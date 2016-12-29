@@ -35,7 +35,22 @@ $footer_fullwidth = cruxstore_option('footer_fullwidth', true);
     }
     if($layout == 1){
         dynamic_sidebar('footer-top-1');
-    }else{ ?>
+    }elseif($layout == 3){ ?>
+        <div class="footer-top-inner">
+            <div class="footer-top-bg"></div>
+            <div class="row">
+                <div class="footer-top-left col-md-6 col-lg-3">
+                    <?php dynamic_sidebar('footer-top-1') ?>
+                </div>
+                <div class="footer-top-center col-md-6 col-lg-3">
+                    <?php dynamic_sidebar('footer-top-2') ?>
+                </div>
+                <div class="footer-top-right col-md-12 col-lg-6">
+                    <?php dynamic_sidebar('footer-top-3') ?>
+                </div>
+            </div>
+        </div>
+    <?php }else{ ?>
         <div class="footer-top-inner">
             <div class="footer-top-bg"></div>
             <div class="row">

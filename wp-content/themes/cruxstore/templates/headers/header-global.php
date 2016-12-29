@@ -5,6 +5,17 @@ if ( !defined('ABSPATH')) exit;
 
 $layouts = explode('-', cruxstore_option('global_header_layout', '4-4-4'));
 
+$global_header = false;
+
+for ($i = 1; $i <= count($layouts); $i++) {
+    if ( is_active_sidebar( 'global-banner-'.$i )  ) {
+        $global_header = true;
+        break;
+    }
+}
+
+if (!$global_header) return;
+
 ?>
 <div class="global-header">
     <div class="container">

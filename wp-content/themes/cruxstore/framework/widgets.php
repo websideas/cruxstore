@@ -91,7 +91,7 @@ if ( function_exists('register_sidebar')) {
             'description' => esc_html__('Use the Instagram widget here. IMPORTANT: For best result select "Small" under "Photo Size" and set number of photos to 6.', 'cruxstore'),
         ));
 
-        $count = 2;
+        $count = 3;
         for($i=1; $i<=$count;$i++){
             register_sidebar( array(
                 'name' => sprintf(esc_html__( 'Footer Top Column %s', 'cruxstore'), $i) ,

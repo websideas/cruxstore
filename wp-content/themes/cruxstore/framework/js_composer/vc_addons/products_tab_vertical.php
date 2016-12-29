@@ -38,10 +38,10 @@ class WPBakeryShortCode_Products_Tab_Vertical extends WPBakeryShortCode_VC_Custo
         extract( $this->getAttributes( $atts ) );
         unset($font_container_data['values']['text_align']);
 
-        $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
-        extract( $atts );
+        $attsf = vc_map_get_attributes( $this->getShortcode(), $atts );
+        extract( $attsf );
 
-        extract( $this->getStyles( $el_class, $css, $google_fonts_data, $font_container_data, $atts ) );
+        extract( $this->getStyles( $el_class, $css, $google_fonts_data, $font_container_data, $attsf ) );
 
         $settings = get_option( 'wpb_js_google_fonts_subsets' );
         if ( is_array( $settings ) && ! empty( $settings ) ) {
@@ -50,7 +50,7 @@ class WPBakeryShortCode_Products_Tab_Vertical extends WPBakeryShortCode_VC_Custo
             $subsets = '';
         }
 
-        if ( isset( $google_fonts_data['values']['font_family'] ) ) {
+        if ( isset($google_fonts_data['values']) && isset( $google_fonts_data['values']['font_family'] ) ) {
             wp_enqueue_style( 'vc_google_fonts_' . vc_build_safe_css_class( $google_fonts_data['values']['font_family'] ), '//fonts.googleapis.com/css?family=' . $google_fonts_data['values']['font_family'] . $subsets );
         }
 
@@ -69,7 +69,7 @@ class WPBakeryShortCode_Products_Tab_Vertical extends WPBakeryShortCode_VC_Custo
 
 
         $elementClass = array(
-            'base' => apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'wc-products-vertical', $this->settings['base'], $atts ),
+            'base' => apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'wc-products-vertical wc-productstab-carousel', $this->settings['base'], $atts ),
             'extra' => $this->getExtraClass( $el_class ),
             'css_animation' => $this->getCSSAnimation( $css_animation ),
             'shortcode_custom' => vc_shortcode_custom_css_class( $css, ' ' ),
@@ -109,7 +109,7 @@ class WPBakeryShortCode_Products_Tab_Vertical extends WPBakeryShortCode_VC_Custo
                 $text = $term->name;
             }else{
                 if($tab == 'new'){
-                    $text = esc_html__('Arrivals Products', 'cruxstore');
+                    $text = esc_html__('New Products', 'cruxstore');
                 }elseif($tab == 'bestselling'){
                     $text = esc_html__('Best Sellers', 'cruxstore');
                 }elseif($tab == 'onsale'){
@@ -181,7 +181,7 @@ class WPBakeryShortCode_Products_Tab_Vertical extends WPBakeryShortCode_VC_Custo
             $carousel_html = str_replace('%carousel_html%', $carousel_html, $carousel_ouput);
 
             $class = ($active_section == $i) ? 'fade in active' : 'fade';
-            $output_content .= sprintf('<div id="%s" class="tab-pane %s">%s</div><!-- .tab-pane -->', 'tab-'.$tab.'-'.$uniqeID, $class, $carousel_html);
+            $output_content .= sprintf('<div id="%s" role="tabpanel" class="tab-pane %s">%s</div><!-- .tab-pane -->', 'tab-'.$tab.'-'.$uniqeID, $class, $carousel_html);
 
             $i++;
         }
@@ -200,7 +200,7 @@ class WPBakeryShortCode_Products_Tab_Vertical extends WPBakeryShortCode_VC_Custo
 
         $title = sprintf('<%1$s class="wc-products-vertical-title" %2$s>%3$s</%1$s>', $font_container_data['values']['tag'], $style, $title );
         $heading = sprintf('<div class="wc-products-vertical-heading">%s</div>', $tab_heading);
-        $navigation = '<div class="wc-products-vertical-navigation"><span class="wc-products-vertical-left"><i class="fa fa-angle-left" aria-hidden="true"></i></span><span class="wc-products-vertical-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span></div>';
+        $navigation = '<div class="wc-products-tab-navigation"><span class="wc-products-nav-left"><i class="fa fa-angle-left" aria-hidden="true"></i></span><span class="wc-products-nav-right"><i class="fa fa-angle-right" aria-hidden="true"></i></span></div>';
         $content = ($content) ? sprintf('<div class="wc-products-vertical-content">%s</div>', $content) : '';
 
 
@@ -264,6 +264,7 @@ vc_map( array(
         array(
             "type" => "cruxstore_taxonomy",
             'taxonomy' => 'product_cat',
+            'select' => 'slug',
             'heading' => esc_html__( 'Categories', 'cruxstore' ),
             'param_name' => 'categories',
             'placeholder' => esc_html__( 'Select your categories', 'cruxstore' ),

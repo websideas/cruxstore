@@ -495,6 +495,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'options' => array(
                             '1' => array('alt' => esc_html__('Layout 1', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-top-1.png'),
                             '2' => array('alt' => esc_html__('Layout 2', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-top-2.png'),
+                            '3' => array('alt' => esc_html__('Layout 3', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-top-3.png'),
                         ),
                         'default' => '1'
                     ),
@@ -505,6 +506,14 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'type' => 'raw',
                         'content' => '<div class="section-heading">' . esc_html__('Footer Instagram settings', 'cruxstore') . '</div>',
                         'full_width' => true
+                    ),
+                    array(
+                        'id' => 'footer_instagram',
+                        'type' => 'switch',
+                        'title' => esc_html__('Footer widgets enable', 'cruxstore'),
+                        'default' => true,
+                        'on' => esc_html__('Enabled', 'cruxstore'),
+                        'off' => esc_html__('Disabled', 'cruxstore'),
                     ),
                     array(
                         'id'       => 'footer_instagram_layout',
@@ -700,14 +709,14 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'title' => esc_html__('Global Header layout', 'cruxstore'),
                         'subtitle' => esc_html__('Select your Global Header layout', 'cruxstore'),
                         'options' => array(
-                            '6-3-3' => array('alt' => esc_html__('Layout 3', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-2.jpg'),
-                            '3-3-6' => array('alt' => esc_html__('Layout 4', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-3.jpg'),
-                            '6-6' => array('alt' => esc_html__('Layout 5', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-4.jpg'),
-                            '4-4-4' => array('alt' => esc_html__('Layout 6', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-5.jpg'),
-                            '8-4' => array('alt' => esc_html__('Layout 7', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-6.jpg'),
-                            '4-8' => array('alt' => esc_html__('Layout 8', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-7.jpg'),
-                            '3-6-3' => array('alt' => esc_html__('Layout 9', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-8.jpg'),
-                            '12' => array('alt' => esc_html__('Layout 10', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'footer/footer-9.jpg'),
+                            '6-3-3' => array('alt' => esc_html__('Layout 1', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-1.jpg'),
+                            '3-3-6' => array('alt' => esc_html__('Layout 2', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-2.jpg'),
+                            '6-6' => array('alt' => esc_html__('Layout 3', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-3.jpg'),
+                            '4-4-4' => array('alt' => esc_html__('Layout 4', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-4.jpg'),
+                            '8-4' => array('alt' => esc_html__('Layout 5', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-5.jpg'),
+                            '4-8' => array('alt' => esc_html__('Layout 6', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-6.jpg'),
+                            '3-6-3' => array('alt' => esc_html__('Layout 7', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-7.jpg'),
+                            '12' => array('alt' => esc_html__('Layout 8', 'cruxstore'), 'img' => CRUXSTORE_FW_IMG . 'global/global-8.jpg'),
                         ),
                         'default' => '4-4-4'
                     ),
@@ -941,7 +950,27 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'default'   => '',
                         'output'      => array( '.topbar' ),
                     ),
-
+                    array(
+                        'id'       => 'header_topbar_icon',
+                        'type'     => 'color',
+                        'title'    => esc_html__( 'Header Topbar Icon', 'cruxstore' ),
+                        'default'  => '',
+                        'transparent' => false,
+                        'output'   => array('.top-navigation > li i.icon-space')
+                    ),
+                    array(
+                        'id'             => 'header_topbar_height',
+                        'type'           => 'dimensions',
+                        'units'          => 'px',
+                        'units_extended' => 'true',
+                        'title'          => esc_html__( 'Header Topbar Height', 'cruxstore' ),
+                        'subtitle'          => esc_html__( 'Change height of topbar', 'cruxstore' ),
+                        'width'         => false,
+                        'default'        => array(
+                            'height'  => '60',
+                            'units'  => 'px'
+                        )
+                    ),
 
                 )
             );
@@ -1430,9 +1459,9 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'output'   => array(
                             '#header #main-nav-wc > li > a',
                             '#header #main-navigation > li > a',
+                            '#header #main-nav-tool > li > a',
                         ),
                         'title'    => esc_html__( 'Dark: Top Level Color', 'cruxstore' ),
-                        'default'  => '#999999',
                         'transparent' => false
                     ),
                     array(
@@ -1445,9 +1474,10 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '#header #main-navigation > li.current-menu-item > a',
                             '#header #main-navigation > li > a:hover',
                             '#header #main-navigation > li > a:focus',
+                            '#header #main-nav-tool > li > a:hover',
+                            '#header #main-nav-tool > li > a:focus',
                         ),
                         'title'    => esc_html__( 'Dark: Top Level hover Color', 'cruxstore' ),
-                        'default'  => '#000000',
                         'transparent' => false
                     ),
 
@@ -1460,7 +1490,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '.header-transparent.header-light #header #main-navigation > li > a',
                         ),
                         'title'    => esc_html__( 'Light: Top Level Color', 'cruxstore' ),
-                        'default'  => '#FFFFFF',
                         'transparent' => false
                     ),
 
@@ -1476,7 +1505,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '.header-transparent.header-light #header #main-navigation > li > a:focus',
                         ),
                         'title'    => esc_html__( 'Light: Top Level hover Color', 'cruxstore' ),
-                        'default'  => '#FFFFFF',
                         'transparent' => false
                     ),
 
@@ -1549,7 +1577,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '.shopping-bag .woocommerce.navigation-submenu .mini_cart_item .amount',
                         ),
                         'title'    => esc_html__( 'Dropdown Text Color', 'cruxstore' ),
-                        'default'  => '#999999',
                         'transparent' => false
                     ),
 
@@ -1563,32 +1590,8 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '.shopping-bag .navigation-submenu.woocommerce ul.product_list_widget li a'
                         ),
                         'title'    => esc_html__( 'Dropdown Text Hover Color', 'cruxstore' ),
-                        'default'  => '#000000',
                         'transparent' => false
                     ),
-                    /*
-                    array(
-                        'id'       => 'dropdown_border',
-                        'type'     => 'border',
-                        'title'    => esc_html__( 'DropDown Border', 'cruxstore' ),
-                        'output'   => array(
-                            '#header #main-navigation > li ul.sub-menu-dropdown li + li',
-                            '.shopping-bag .woocommerce.shopping-bag-content .mini_cart_item + .mini_cart_item',
-                            '.shopping-bag .woocommerce.shopping-bag-content .total',
-                            '.top-navigation > li .navigation-submenu > li + li'
-                        ),
-                        'all'      => false,
-                        'left'     => false,
-                        'right'    => false,
-                        'style'    => false,
-                        'bottom'   => false,
-                        'default'  => array(
-                            'border-style'      => 'solid',
-                            'border-top'        => '1',
-                            'border-color'      => '#ebebeb'
-                        )
-                    ),
-                    */
                     array(
                         'id'       => 'styling_navigation_mega',
                         'type'     => 'raw',
@@ -1606,7 +1609,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '#header #main-navigation > li .cruxstore-megamenu-wrapper > ul > li .widget-title',
                         ),
                         'title'    => esc_html__( 'MegaMenu Title color', 'cruxstore' ),
-                        'default'  => '#000000',
                         'transparent' => false
                     ),
                     array(
@@ -1616,7 +1618,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '#header #main-navigation > li .cruxstore-megamenu-wrapper > ul > li > a:hover'
                         ),
                         'title'    => esc_html__( 'MegaMenu Title Hover Color', 'cruxstore' ),
-                        'default'  => '#000000',
                         'transparent' => false
                     ),
                     array(
@@ -1626,7 +1627,6 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '#header #main-navigation > li > .cruxstore-megamenu-wrapper > .cruxstore-megamenu-ul > li ul.sub-menu-megamenu a'
                         ),
                         'title'    => esc_html__( 'MegaMenu Text color', 'cruxstore' ),
-                        'default'  => '#999999',
                         'transparent' => false
                     ),
 
@@ -1639,14 +1639,12 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
 
                         ),
                         'title'    => esc_html__( 'MegaMenu Text Hover color', 'cruxstore' ),
-                        'default'  => '#000000',
                         'transparent' => false
                     ),
                     array(
                         'id'       => 'mega_border_color',
                         'title'    => esc_html__( 'MegaMenu Border color', 'cruxstore' ),
                         'type'     => 'color',
-                        'default'  => '#ebebeb`',
                         'transparent' => false
                     ),
                     array(
@@ -2136,6 +2134,15 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         ),
                     ),
                     array(
+                        'id'       => 'typography_footer_top_link',
+                        'type'     => 'link_color',
+                        'title'    => esc_html__( 'Footer widgets Links Color', 'cruxstore' ),
+                        'output'      => array( '#footer-top a' ),
+                        'default'  => array(
+
+                        )
+                    ),
+                    array(
                         'id'       => 'typography_footer_widgets_heading',
                         'type'     => 'raw',
                         'content'  => '<div class="section-heading">'.esc_html__( 'Typography Footer widgets settings', 'cruxstore' ).'</div>',
@@ -2573,6 +2580,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             '3' => esc_html__('Effect 3', 'cruxstore' ),
                             '4' => esc_html__('Effect 4', 'cruxstore' ),
                             '5' => esc_html__('Effect 5', 'cruxstore' ),
+                            '6' => esc_html__('Effect 6', 'cruxstore' ),
                         ),
                         'default'  => '1'
                     ),
@@ -2711,7 +2719,7 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                             'layout2' => esc_html__('Layout 2', 'cruxstore'),
                             'layout3' => esc_html__('Layout 3', 'cruxstore'),
                         ),
-                        'default'  => 'layout1',
+                        'default'  => 'layout2',
                     ),
 
                     
@@ -3328,14 +3336,12 @@ if ( ! class_exists( 'CRUXSTORE_config' ) ) {
                         'url'      => true,
                         'compiler' => true,
                         'title'    => esc_html__( 'Popup Image', 'cruxstore' ),
-                        'required' => array('enable_popup','equals', 1)
                     ),
                     array(
                         'id'       => 'content_popup',
                         'type'     => 'editor',
                         'title'    => esc_html__( 'Popup Content', 'cruxstore' ),
                         'subtitle' => esc_html__( '', 'cruxstore' ),
-                        'required' => array('enable_popup','equals', 1),
                         'default'  => '<h3>NEWSLETTER</h3><p>Subscribe to the Universal mailing list to receive updates on new arrivals, offers and other discount information.</p>',
                     ),
                     array(

@@ -32,6 +32,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     <p class="cart-desc empty"><?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?></p>
 <?php }; ?>
 
+
+
 <ul class="cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
 	<?php if ( ! WC()->cart->is_empty() ) : ?>
 		<?php

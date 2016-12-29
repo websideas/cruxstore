@@ -393,15 +393,14 @@ class WC_Widget_Color_Filter extends WC_Widget {
 
 
             if($display_type == 'color' && $term_color){
-                printf('<span class="product-swatche-item swatche_color" style="background: %s;" title="%s" data-toggle="tooltip" data-placement="top">&nbsp;</span>', $term_color, $term->name);
+                printf('<span class="product-swatche-item swatche_color" style="background: %s;" title="%s">&nbsp;</span>', $term_color, $term->name);
             }else{
                 $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
                 $image = wp_get_attachment_thumb_url( $thumbnail_id );
                 if($thumbnail_id){
                     $image = str_replace( ' ', '%20', $image );
-                    echo '<span class="product-swatche-item swatche_image" title="'.esc_attr($term->name).'" data-toggle="tooltip" data-placement="top"><img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'woocommerce' ) . '" class="wp-post-image" height="48" width="48" /></span>';
+                    echo '<span class="product-swatche-item swatche_image" title="'.esc_attr($term->name).'"><img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'woocommerce' ) . '" class="wp-post-image" height="48" width="48" /></span>';
                 }
-
             }
 
 

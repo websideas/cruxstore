@@ -88,7 +88,11 @@ class KTMegaWalker extends Walker_Nav_Menu{
                 if(!$this->megamenu_position) $this->megamenu_position = 'center';
                 if(!$this->megamenu_layout) $this->megamenu_layout = 'default';
             }
+
+
         }
+
+        $mgitem = get_post_meta( $item->ID, '_menu_item_megamenu_mgitem', true );
 
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
@@ -101,6 +105,10 @@ class KTMegaWalker extends Walker_Nav_Menu{
         if( $depth === 0 && $this->megamenu_enable) {
             $classes[] = 'cruxstore-megamenu-item';
             $classes[] = 'cruxstore-megamenu-item-'.$this->megamenu_width;
+
+            if($mgitem){
+                $classes[] = 'menu-item-has-children';
+            }
         }
         $endrow = get_post_meta( $item->ID, '_menu_item_megamenu_endrow', true );
         if($depth == 1 && $endrow){
@@ -241,8 +249,8 @@ class KTMegaWalker extends Walker_Nav_Menu{
                 $background_style = 'style="'.$background_style.'"';
             }
 
-            $mgitem = get_post_meta( $item->ID, '_menu_item_megamenu_mgitem', true );
-            $mgitem_class = ($mgitem) ? 'cruxstore-megamenu-mgitem' : '';
+
+            $mgitem_class = ($mgitem) ? 'cruxstore-megamenu-mgitem ' : '';
 
             $item_output .= "\n$indent<div class=\"cruxstore-megamenu-wrapper $mgitem_class $position $layout megamenu-columns-$colums \" $background_style>\n";
 

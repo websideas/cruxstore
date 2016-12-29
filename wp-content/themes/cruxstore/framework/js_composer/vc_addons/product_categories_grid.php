@@ -9,7 +9,7 @@ class WPBakeryShortCode_Categories_Grid extends WPBakeryShortCode {
     protected function content($atts, $content = null) {
         $atts = shortcode_atts( array(
             'per_page' => '',
-            'orderby' => 'name',
+            'orderby' => 'order',
             'order' => 'ASC',
             'ids' => '',
             'hide_empty' => 'true',
@@ -53,10 +53,15 @@ class WPBakeryShortCode_Categories_Grid extends WPBakeryShortCode {
             'hide_empty' => $hide_empty,
             'include'    => $ids,
             'pad_counts' => true,
-            'child_of'   => $atts['parent']
+            'child_of'   => $atts['parent'],
+            'taxonomy'   => 'product_cat'
         );
-
-        $product_categories = get_terms( 'product_cat', $args );
+        if ( $atts['orderby'] == 'order' ) {
+            $args['menu_order'] = 'asc';
+            unset($args['orderby']);
+            unset($args['order']);
+        }
+        $product_categories = get_categories( $args );
 
         if ( '' !== $atts['parent'] ) {
             $product_categories = wp_list_filter( $product_categories, array( 'parent' => $atts['parent'] ) );
@@ -117,7 +122,6 @@ vc_map( array(
     "base" => "categories_grid",
     "category" => esc_html__('by Kite-Themes', 'cruxstore' ),
     "params" => array(
-
         array(
             "type" => "cruxstore_taxonomy",
             'taxonomy' => 'product_cat',
@@ -148,8 +152,9 @@ vc_map( array(
                 esc_html__( 'Count', 'js_composer' ) => 'count',
                 esc_html__( 'Slug', 'js_composer' ) => 'slug',
                 esc_html__( 'None', 'js_composer' ) => 'none',
+                esc_html__( 'Category Order', 'woocommerce' ) => 'order',
             ),
-            'std' => 'name',
+            'std' => 'order',
             "admin_label" => true,
         ),
 

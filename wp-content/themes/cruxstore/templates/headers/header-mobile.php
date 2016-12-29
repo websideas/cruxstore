@@ -19,7 +19,6 @@ if ( !defined('ABSPATH')) exit;
                 </a>
             </p><!-- .site-logo -->
         </div><!-- .site-branding -->
-
         <div class="header-mobile-tools">
             <a title="<?php esc_attr_e('Menu', 'cruxstore') ?>" href="#" id="hamburger-icon" class="">
                 <span class="hamburger-icon-inner">
@@ -31,7 +30,6 @@ if ( !defined('ABSPATH')) exit;
             <?php if ( cruxstore_is_wc() && cruxstore_option('header_cart', 1) && !cruxstore_option('catalog_mode', 0) ) { ?>
                 <?php cruxstore_cart_link('cart-mobile'); ?>
             <?php } ?>
-
         </div>
     </div>
 </div>

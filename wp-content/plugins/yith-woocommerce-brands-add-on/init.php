@@ -3,10 +3,10 @@
  * Plugin Name: YITH WooCommerce Brands Add-on
  * Plugin URI: http://yithemes.com/themes/plugins/yith-woocommerce-brands-add-on/
  * Description: YITH WooCommerce Brands Add-on allows you to add brands functionality to default WooCommerce plugin
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: Yithemes
  * Author URI: http://yithemes.com/
- * Text Domain: yith-wcbr
+ * Text Domain: yith-woocommerce-brands-add-on
  * Domain Path: /languages/
  *
  * @author Your Inspiration Themes
@@ -37,7 +37,7 @@ if ( ! defined( 'YITH_WCBR' ) ) {
 }
 
 if ( ! defined( 'YITH_WCBR_VERSION' ) ) {
-	define( 'YITH_WCBR_VERSION', '1.0.7' );
+	define( 'YITH_WCBR_VERSION', '1.0.8' );
 }
 
 if ( ! defined( 'YITH_WCBR_URL' ) ) {
@@ -68,7 +68,7 @@ yit_maybe_plugin_fw_loader( YITH_WCBR_DIR  );
 
 if( ! function_exists( 'yith_brands_constructor' ) ) {
 	function yith_brands_constructor() {
-		load_plugin_textdomain( 'yith-wcbr', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'yith-woocommerce-brands-add-on', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 		require_once( YITH_WCBR_INC . 'functions.yith-wcbr.php' );
 		require_once( YITH_WCBR_INC . 'class.yith-wcbr.php' );
@@ -110,7 +110,7 @@ if( ! function_exists( 'yith_wcbr_install_woocommerce_admin_notice' ) ) {
 	function yith_wcbr_install_woocommerce_admin_notice() {
 		?>
 		<div class="error">
-			<p><?php _e( 'YITH WooCommerce Brands is enabled but not effective. It requires WooCommerce in order to work.', 'yith-wcbr' ); ?></p>
+			<p><?php _e( 'YITH WooCommerce Brands is enabled but not effective. It requires WooCommerce in order to work.', 'yith-woocommerce-brands-add-on' ); ?></p>
 		</div>
 	<?php
 	}
@@ -120,7 +120,7 @@ if( ! function_exists( 'yith_wcbr_install_free_admin_notice' ) ){
 	function yith_wcbr_install_free_admin_notice() {
 		?>
 		<div class="error">
-			<p><?php _e( 'You can\'t activate the free version of YITH WooCommerce Brands while you are using the premium one.', 'yith-wcbr' ); ?></p>
+			<p><?php _e( 'You can\'t activate the free version of YITH WooCommerce Brands while you are using the premium one.', 'yith-woocommerce-brands-add-on' ); ?></p>
 		</div>
 	<?php
 	}

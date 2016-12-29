@@ -16,8 +16,8 @@
 /// @param {*} $value Value
 
 @mixin css3-prefix($property, $value) {
+  /*-khtml-#{$property}: #{$value};*/
   -webkit-#{$property}: #{$value};
-  -khtml-#{$property}: #{$value};
   -moz-#{$property}: #{$value};
   -ms-#{$property}: #{$value};
   -o-#{$property}: #{$value};
@@ -26,8 +26,8 @@
 
 
 @mixin css3-prefix-value($property, $value) {
+  /*#{$property}: -khtml-#{$value};*/
   #{$property}: -webkit-#{$value};
-  #{$property}: -khtml-#{$value};
   #{$property}: -moz-#{$value};
   #{$property}: -ms-#{$value};
   #{$property}: -o-#{$value};

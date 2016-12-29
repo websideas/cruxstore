@@ -249,7 +249,7 @@ vc_map( array(
             "heading" => esc_html__("Extra setting", 'cruxstore'),
             "param_name" => "extra_settings",
         ),
-
+        /*
         array(
             'type' => 'dropdown',
             'heading' => esc_html__( 'Readmore button', 'cruxstore' ),
@@ -264,7 +264,7 @@ vc_map( array(
                 'value_not_equal_to' => array( 'classic', 'widget')
             ),
         ),
-
+        */
         array(
             'type' => 'dropdown',
             'heading' => esc_html__( 'Navigation type', 'js_composer' ),

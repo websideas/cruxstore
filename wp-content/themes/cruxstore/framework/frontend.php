@@ -127,26 +127,15 @@ function cruxstore_add_scripts() {
     wp_enqueue_script( 'respond', CRUXSTORE_THEME_JS . 'respond.min.js' );
     wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
 
-
     $typography_body = cruxstore_option('typography_body');
     if(isset($typography_body['font-family']) && $typography_body['font-family'] == ''){
         wp_enqueue_style( 'poppins-fonts', cruxstore_default_fonts_url(), array(), null );
     }
 
-    wp_enqueue_style( 'bootstrap', CRUXSTORE_THEME_LIBS . 'bootstrap/css/bootstrap.css', array());
     wp_enqueue_style( 'font-awesome', CRUXSTORE_THEME_LIBS . 'font-awesome/css/font-awesome.min.css', array());
-    wp_enqueue_style( 'font-kticon', CRUXSTORE_THEME_LIBS . 'kticon/style.min.css', array());
-    wp_enqueue_style( 'font-flaticoneco', CRUXSTORE_THEME_LIBS . 'flaticoneco/flaticoneco.css', array());
-
-    wp_enqueue_style( 'cruxstore-plugins', CRUXSTORE_THEME_CSS . 'plugins.css', array());
-
-    if(cruxstore_is_wc()){
-        wp_enqueue_style( 'cruxstore-woocommerce', CRUXSTORE_THEME_CSS . 'woocommerce.css' );
-    }
 
 	// Load our main stylesheet.
     wp_enqueue_style( 'cruxstore-main', CRUXSTORE_THEME_CSS . 'style.css');
-    wp_enqueue_style( 'cruxstore-queries', CRUXSTORE_THEME_CSS . 'queries.css');
 
 	// Load the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'cruxstore-ie', CRUXSTORE_THEME_CSS . 'ie.css');
@@ -161,9 +150,8 @@ function cruxstore_add_scripts() {
         wp_enqueue_script( 'cruxstore-pace', CRUXSTORE_THEME_JS . 'pace.min.js', array( 'jquery' ), null );
     }
 
-    wp_enqueue_script( 'bootstrap', CRUXSTORE_THEME_LIBS . 'bootstrap/js/bootstrap.min.js', array( 'jquery' ), null, true );
     wp_enqueue_script( 'cruxstore-plugins', CRUXSTORE_THEME_JS . 'plugins.js', array( 'jquery' ), null, true );
-    wp_enqueue_script( 'cruxstore-main-script', CRUXSTORE_THEME_JS . 'functions.js', array( 'jquery', 'mediaelement', 'wp-mediaelement' ), null, true );
+    wp_enqueue_script( 'cruxstore-main-script', CRUXSTORE_THEME_JS . 'functions.js', array( 'jquery' ), null, true );
 
     wp_localize_script( 'cruxstore-main-script', 'ajax_frontend', array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -171,7 +159,6 @@ function cruxstore_add_scripts() {
     ));
 
     if(cruxstore_is_wc()){
-
 
         $ajax_filter = 0;
 
@@ -190,8 +177,7 @@ function cruxstore_add_scripts() {
             'ajax_filter' => $ajax_filter
         );
 
-        wp_enqueue_script( 'cruxstore-woocommerce', CRUXSTORE_THEME_JS . 'woocommerce.js', array( 'jquery' ), null, true );
-        wp_localize_script( 'cruxstore-woocommerce', 'cruxstore_woocommerce', $woo_attr);
+        wp_localize_script( 'cruxstore-main-script', 'cruxstore_woocommerce', $woo_attr);
     }
 
 }
@@ -219,9 +205,17 @@ function cruxstore_setting_script() {
         $css .= 'a:active{color: '.$styling_link['active'].';}';
     }
 
+
+    //echo cruxstore_color_luminance('abc84a', -0.05);
+
     if( $accent !='#ed8b5c' ){
         $css .= '::-moz-selection{color:#fff;background:'.$accent.'}';
         $css .= '::selection{color:#fff;background:'.$accent.'}';
+
+
+        $accent_darker =  cruxstore_color_luminance($accent, -0.05);
+
+
         $selections_color = array(
             '.top-navigation > li i.icon-space',
             '.color-accent',
@@ -250,11 +244,12 @@ function cruxstore_setting_script() {
             '.author-info .author-socials a:hover',
             '.author-info .author-title a:hover',
             '.cruxstore-heading-title span.first',
-            '.woocommerce div.product form.cart .grouped-label a:hover',
-
-
+            '#header-content-mobile .header-mobile-tools a',
+            'div.vc_toggle.vc_toggle_color_accent .vc_toggle_icon',
             'p.logged-in-as a:hover',
             '.banner .banner-content .banner-more.banner-more-accent',
+            '#header #main-navigation > li ul.sub-menu-dropdown li.current-menu-item > a',
+            '#header #main-navigation > li ul.sub-menu-dropdown li > a:hover',
             '.woocommerce .star-rating:before',
             '.woocommerce .star-rating span:before',
             '.woocommerce a.compare:before',
@@ -262,6 +257,7 @@ function cruxstore_setting_script() {
             '.woocommerce div.product .summary .product-actions a i',
             '.woocommerce div.product .summary .product-actions a:hover',
             '.woocommerce div.product #wc-accordion.panel-group .panel .panel-heading a:hover',
+            '.woocommerce div.product form.cart .grouped-label a:hover',
             '.woocommerce ul.shop-products .product.product-effect-1 .product-content .product-actions > div a:hover',
             '.woocommerce ul.shop-products .product.product-effect-3 .product-content .product-actions > div a:hover',
             '.woocommerce ul.shop-products .product.product-effect-5 .product-content .product-actions > div a:hover',
@@ -283,14 +279,23 @@ function cruxstore_setting_script() {
             '.woocommerce div.product form.cart div.quantity .qty-adjust .qty-plus:hover',
             '.woocommerce div.product .product-detail-thumbarea .product-main-thumbnails .slick-slide.slick-current span:before',
             '.woocommerce div.product .product-detail-thumbarea .product-tool-play',
-
-
+            '.woocommerce ul.cart_list li a:hover, .woocommerce ul.product_list_widget li a:hover',
+            '.woocommerce .products-shop-header .shop-header-list li.current-cat a',
+            '.woocommerce .products-shop-header .shop-header-list li a.active',
+            '.woocommerce .products-shop-header .shop-header-list li a:hover',
+            '.attribute-gird .brand-count span',
+            '.feature-box.layout-3 .feature-box-readmore a:hover',
+            '.feature-box.layout-4 .feature-box-readmore a:hover',
+            '.header-layout2 .header-branding-text',
+            '.wc-products-tab-heading .nav-style.nav-style-5 li.active a',
+            '.wc-products-tab-heading .nav-style.nav-style-5 li a:hover',
+            '.wc-product-widgets .product-widgets-title.product-widgets-accent'
 
         );
         $css .= implode($selections_color, ',').'{color: '.$accent.';}';
 
         $selections_color_important = array(
-
+            '.social-background-fill.social-style-light a'
         );
         $css .= implode($selections_color_important, ',').'{color: '.$accent.'!important;}';
 
@@ -320,11 +325,24 @@ function cruxstore_setting_script() {
             '.woocommerce ul.shop-products .product.product-effect-3 .product-details > .wc-addtocart-wrap a:hover',
             '.woocommerce ul.shop-products .product.product-effect-5 .product-details > .wc-addtocart-wrap a:hover',
             '.woocommerce ul.shop-products .product.product-effect-4 .product-content .product-actions > div a:hover',
+            '.woocommerce div.product .product-detail-thumbarea .product-tool-play:hover',
             '.woocommerce div.product form.cart .btn-addtocart',
             '.woocommerce #respond input#submit.alt:hover',
             '.woocommerce a.button.alt:hover',
             '.woocommerce button.button.alt:hover',
             '.woocommerce input.button.alt:hover',
+            '.wc-products-vertical .wc-products-vertical-heading .nav-style li.active a',
+            '.wc-products-vertical .wc-products-vertical-heading .nav-style li a:hover',
+            '.wc-products-vertical .wc-products-vertical-navigation > span:hover',
+            '.feature-box.layout-3 .feature-box-readmore a:before',
+            '.feature-box.layout-4 .feature-box-readmore a:before',
+            '#header-content-mobile .header-mobile-tools a.cart-mobile span.amount',
+            '#hamburger-icon .line',
+            '.rev_slider_wrapper .hesperiden.tparrows:hover',
+            '.global-header',
+            '.attribute-gird .brand-banner:hover .brand-count:after',
+            '.owl-carousel-kt.pagination-flip .owl-page span:after',
+            '.wc-products-tab-heading .nav-style.nav-style-5 li a:before'
         );
 
 
@@ -338,11 +356,17 @@ function cruxstore_setting_script() {
 
 
         $selections_background_lighter = array(
+            '.btn-primary:focus',
+            '.btn-primary:hover',
+            '.vc_btn3.vc_general.vc_btn3-color-accent:focus',
+            '.vc_btn3.vc_general.vc_btn3-color-accent:hover',
+            '.vc_btn3.vc_general.vc_btn3-color-accent.vc_btn3-style-flat:focus',
+            '.vc_btn3.vc_general.vc_btn3-color-accent.vc_btn3-style-flat:hover',
             '.woocommerce div.product form.cart .btn-addtocart:hover',
             '.woocommerce div.product form.cart .btn-addtocart:focus',
         );
 
-        $accent_darker =  cruxstore_color_luminance($accent, -0.05);
+
         $css .= implode($selections_background_lighter, ',').'{background-color: '.$accent_darker.';}';
 
 
@@ -365,11 +389,15 @@ function cruxstore_setting_script() {
             '.woocommerce div.product form.cart .btn-addtocart',
             '.woocommerce div.product .product-detail-thumbarea .product-main-thumbnails .slick-slide.slick-current span:before',
             '.woocommerce div.product .product-detail-thumbarea .product-tool-play:hover',
+            '.woocommerce div.product form.cart div.quantity input:focus',
             '.woocommerce #respond input#submit.alt:hover',
             '.woocommerce a.button.alt:hover',
             '.woocommerce button.button.alt:hover',
             '.woocommerce input.button.alt:hover',
+            '.wc-product-widgets .product-widgets-title.product-widgets-accent'
+
         );
+
         $css .= implode($selections_border_color, ',').'{border-color: '.$accent.';}';
 
         $selections_border_important = array(
@@ -378,12 +406,6 @@ function cruxstore_setting_script() {
         $css .= implode($selections_border_important, ',').'{border-color: '.$accent.'!important;}';
 
     }
-
-
-
-
-
-
 
 
     $is_shop = false;
@@ -437,7 +459,7 @@ function cruxstore_setting_script() {
 
         $pageh_breadcrumbs_color = cruxstore_meta('_cruxstore_page_header_breadcrumbs_color', array(), $post_id);
         if($pageh_breadcrumbs_color != ''){
-            $css .= 'div.page-header .woocommerce-breadcrumb{color:'.$pageh_breadcrumbs_color.';}';
+            $css .= 'div.page-header .woocommerce-breadcrumb, .woocommerce-breadcrumb .breadcrumb-content{color:'.$pageh_breadcrumbs_color.';}';
         }
 
         $css .= cruxstore_render_custom_css('_cruxstore_page_header_background', 'div.page-header', $post_id);
@@ -484,6 +506,11 @@ function cruxstore_setting_script() {
         }
     }
 
+    if($header_topbar_height = cruxstore_option('header_topbar_height', 60)){
+        if(isset($header_topbar_height['height'])){
+            $css .= '.topbar{line-height: '.intval($header_topbar_height['height']).'px;}';
+        }
+    }
 
     if($navigation_height_fixed = cruxstore_option('navigation_height_fixed', 102)){
         if(isset($navigation_height_fixed['height'])){

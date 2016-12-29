@@ -145,9 +145,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 
 
-<div class="cart-collaterals row">
-
-	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
+<div class="row wc-cart-collaterals">
+	<div class=" col-md-4 col-sm-6 col-xs-12">
+		<div class="cart-collaterals">
+			<?php do_action( 'woocommerce_cart_collaterals' ); ?>
+		</div>
+	</div>
     <?php woocommerce_shipping_calculator(); ?>
     <?php if ( wc_coupons_enabled() ) { ?>
     <div class="wc-coupon-wrap col-md-4 col-sm-6 col-xs-12">
@@ -162,12 +165,6 @@ do_action( 'woocommerce_before_cart' ); ?>
         </form>
     </div>
     <?php } ?>
-
-
 </div>
-
-
-
-
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

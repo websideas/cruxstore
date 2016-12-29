@@ -47,7 +47,7 @@ class WPBakeryShortCode_Blockquote extends WPBakeryShortCode {
 }
 
 vc_map( array(
-    "name" => esc_html__( "Blockquote", 'cruxstore'),
+    "name" => esc_html__( "KT: Blockquote", 'cruxstore'),
     "base" => "blockquote",
     "category" => esc_html__('by Kite-Themes', 'cruxstore' ),
     "wrapper_class" => "clearfix",

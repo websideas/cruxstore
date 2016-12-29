@@ -69,8 +69,8 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 		public function __construct() {
 			// sets available tab
 			$this->available_tabs = apply_filters( 'yith_wcbr_available_admin_tabs', array(
-				'settings' => __( 'Settings', 'yith-wcbr' ),
-				'premium' => __( 'Premium Version', 'yith-wcbr' )
+				'settings' => __( 'Settings', 'yith-woocommerce-brands-add-on' ),
+				'premium' => __( 'Premium Version', 'yith-woocommerce-brands-add-on' )
 			) );
 
 			// register plugin panel
@@ -116,8 +116,8 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 
 				wp_localize_script( 'yith-wcbr', 'yith_wcbr', array(
 					'labels' => array(
-						'upload_file_frame_title' => __( 'Choose an image', 'yith-wcbr' ),
-						'upload_file_frame_button' => __( 'Use image', 'yith-wcbr' )
+						'upload_file_frame_title' => __( 'Choose an image', 'yith-woocommerce-brands-add-on' ),
+						'upload_file_frame_button' => __( 'Use image', 'yith-woocommerce-brands-add-on' )
 					),
 					'wc_placeholder_img_src' => wc_placeholder_img_src()
 				) );
@@ -180,7 +180,7 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 		public function brand_taxonomy_columns( $columns ) {
 			$new_columns          = array();
 			$new_columns['cb']    = $columns['cb'];
-			$new_columns['thumb'] = __( 'Image', 'yith-wcbr' );
+			$new_columns['thumb'] = __( 'Image', 'yith-woocommerce-brands-add-on' );
 
 			unset( $columns['cb'] );
 
@@ -210,7 +210,7 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 
 				$image = str_replace( ' ', '%20', $image );
 
-				$columns = '<img src="' . esc_url( $image ) . '" alt="' . __( 'Thumbnail', 'yith-wcbr' ) . '" class="wp-post-image" height="48" width="48" />';
+				$columns = '<img src="' . esc_url( $image ) . '" alt="' . __( 'Thumbnail', 'yith-woocommerce-brands-add-on' ) . '" class="wp-post-image" height="48" width="48" />';
 
 			}
 
@@ -224,7 +224,7 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 		 * @since 1.0.0
 		 */
 		public function brand_taxonomy_description() {
-			echo wpautop( __( 'Product brands for your store can be managed here. To display more brands here, click on "screen options" link on top of the page.', 'yith-wcbr' ) );
+			echo wpautop( __( 'Product brands for your store can be managed here. To display more brands here, click on "screen options" link on top of the page.', 'yith-woocommerce-brands-add-on' ) );
 		}
 
 		/* === PLUGIN PANEL METHODS === */
@@ -239,8 +239,8 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 			$args = array(
 				'create_menu_page' => true,
 				'parent_slug'   => '',
-				'page_title'    => __( 'Brands', 'yith-wcbr' ),
-				'menu_title'    => __( 'Brands', 'yith-wcbr' ),
+				'page_title'    => __( 'Brands', 'yith-woocommerce-brands-add-on' ),
+				'menu_title'    => __( 'Brands', 'yith-woocommerce-brands-add-on' ),
 				'capability'    => 'manage_options',
 				'parent'        => '',
 				'parent_page'   => 'yit_plugin_panel',
@@ -290,11 +290,11 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 		 */
 		public function action_links( $links ) {
 			$plugin_links = array(
-				'<a href="' . admin_url( 'admin.php?page=yith_wcbr_panel&tab=settings' ) . '">' . __( 'Settings', 'yith-wcbr' ) . '</a>'
+				'<a href="' . admin_url( 'admin.php?page=yith_wcbr_panel&tab=settings' ) . '">' . __( 'Settings', 'yith-woocommerce-brands-add-on' ) . '</a>'
 			);
 
 			if( ! defined( 'YITH_WCBR_PREMIUM_INIT' ) ){
-				$plugin_links[] = '<a target="_blank" href="' . $this->get_premium_landing_uri() . '">' . __( 'Premium Version', 'yith-wcbr' ) . '</a>';
+				$plugin_links[] = '<a target="_blank" href="' . $this->get_premium_landing_uri() . '">' . __( 'Premium Version', 'yith-woocommerce-brands-add-on' ) . '</a>';
 			}
 
 			return array_merge( $links, $plugin_links );
@@ -314,7 +314,7 @@ if ( ! class_exists( 'YITH_WCBR_Admin' ) ) {
 
 			if ( $plugin_file == plugin_basename( YITH_WCBR_DIR . 'init.php' ) ) {
 				// documentation link
-				$plugin_meta['documentation'] = '<a target="_blank" href="' . $this->doc_url . '">' . __( 'Plugin Documentation', 'yith-wcbr' ) . '</a>';
+				$plugin_meta['documentation'] = '<a target="_blank" href="' . $this->doc_url . '">' . __( 'Plugin Documentation', 'yith-woocommerce-brands-add-on' ) . '</a>';
 			}
 
 			return $plugin_meta;

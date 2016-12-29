@@ -29,7 +29,6 @@
 
 .widget{
   margin-bottom: 30px;
-  font-size: 13px;
   .widget-title{
     font-size: 14px;
     margin: 0 0 30px;
@@ -420,7 +419,18 @@
           clear: left;
         }
       }
+      &.style-disc{
+        list-style-type: disc;
+        margin-left: 12px;
+        li{
+          display: list-item;
+        }
+
+      }
     }
+
+
+
   }
 
   &.widget_kt_mailchimp{
@@ -524,6 +534,7 @@
     margin-bottom: 0;
     .widget-title{
       text-transform: uppercase;
+      letter-spacing: 0.025em;
     }
   }
 }
@@ -531,12 +542,25 @@
 #cruxstore-shop-filters{
   .widget{
     .widget-title{
-      font-family: inherit;
-      font-size: 14px;
+      font-weight: 600;
+      font-size: 12px;
     }
   }
 }
-
+#footer-area{
+  .widget{
+    margin-bottom: 22px;
+    border: none;
+    padding: 0;
+    .widget-title{
+      text-transform: uppercase;
+      margin: 0 0 20px;
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}
 
 .global-header{
   .widget{

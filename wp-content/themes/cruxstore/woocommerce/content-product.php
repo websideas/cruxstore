@@ -41,11 +41,11 @@ $woocommerce_loop['loop']++;
 
 
 
-if ( empty( $woocommerce_loop['type'] ) ) {
+if ( empty( $woocommerce_loop['type'] ) || $woocommerce_loop['type'] == 'dividers' || $woocommerce_loop['type'] == 'divider' ) {
     $woocommerce_loop['type'] = 'classic';
 }
 
-if($woocommerce_loop['type'] == 'classic'){
+if($woocommerce_loop['type'] == 'classic' ){
     $default = cruxstore_option('shop_products_effect', '1');
     if ( empty( $woocommerce_loop['effect'] ) ) {
         $woocommerce_loop['effect'] = $default;

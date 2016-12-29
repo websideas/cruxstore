@@ -9,7 +9,7 @@ class WPBakeryShortCode_Categories_Carousel extends WPBakeryShortCode {
     protected function content($atts, $content = null) {
         $atts = shortcode_atts( array(
             'per_page' => '',
-            'orderby' => 'name',
+            'orderby' => 'order',
             'order' => 'ASC',
             'ids' => '',
             'categories_style' => 'normal',
@@ -86,10 +86,15 @@ class WPBakeryShortCode_Categories_Carousel extends WPBakeryShortCode {
             'hide_empty' => $hide_empty,
             'include'    => $ids,
             'pad_counts' => true,
-            'child_of'   => $atts['parent']
+            'child_of'   => $atts['parent'],
+            'taxonomy'   => 'product_cat'
         );
-
-        $product_categories = get_terms( 'product_cat', $args );
+        if ( $atts['orderby'] == 'order' ) {
+            $args['menu_order'] = 'asc';
+            unset($args['orderby']);
+            unset($args['order']);
+        }
+        $product_categories = get_categories( $args );
 
         if ( '' !== $atts['parent'] ) {
             $product_categories = wp_list_filter( $product_categories, array( 'parent' => $atts['parent'] ) );
@@ -188,8 +193,9 @@ vc_map( array(
                     esc_html__( 'Count', 'js_composer' ) => 'count',
                     esc_html__( 'Slug', 'js_composer' ) => 'slug',
                     esc_html__( 'None', 'js_composer' ) => 'none',
+                    esc_html__( 'Category Order', 'woocommerce' ) => 'order',
                 ),
-                'std' => 'name',
+                'std' => 'order',
                 'param_holder_class' => 'vc_grid-data-type-not-ids',
                 "admin_label" => true,
             ),

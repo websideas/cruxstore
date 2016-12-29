@@ -124,9 +124,10 @@ class KT_MailChimp
                 $name = '';
 
                 $output .= ($text_before) ? '<div class="mailchimp-before">'.$text_before.'</div>' : '';
+                $button_class = ($layout == 2) ? 'btn-light' : 'btn-default';
 
                 $email = '<input name="email" class="mailchimp-email" type="email" placeholder="'.$placeholder.' *"/>';
-                $button = '<button data-loading="'.esc_attr(__('Loading', 'cruxstore_core')).'" data-text="'.esc_attr(__('Subscribe', 'cruxstore_core')).'"  class="btn btn-default mailchimp-submit" type="submit">'.__('Subscribe', 'cruxstore_core').'</button>';
+                $button = '<button data-loading="'.esc_attr(__('Loading', 'cruxstore_core')).'" data-text="'.esc_attr(__('Subscribe', 'cruxstore_core')).'"  class="btn mailchimp-submit '.$button_class.'" type="submit">'.__('Subscribe', 'cruxstore_core').'</button>';
 
                 if($disable_names != 'yes'){
                     $name .= '<div class="mailchimp-input-fname"><input name="firstname" class="mailchimp-firstname" type="text" placeholder="'.__('First Name', 'cruxstore_core').'"/></div>';
@@ -135,7 +136,7 @@ class KT_MailChimp
 
                 if($layout == 2){
                     $text_mailchimp = '%1$s <div class="mailchimp-input-email">%2$s</div> <div class="mailchimp-input-button">%3$s</div>';
-                }elseif($layout == 1 || $layout == 3 || $layout == 8 || $layout == 12){
+                }elseif($layout == 1 || $layout == 3 || $layout == 8 || $layout == 9){
                     $text_mailchimp = '%1$s <div class="mailchimp-email-button"><div class="mailchimp-input-email">%2$s</div> <div class="mailchimp-input-button">%3$s</div></div>';
                 }else{
                     $text_mailchimp = '%1$s <div class="input-group">%2$s <div class="input-group-btn">%3$s</div></div>';

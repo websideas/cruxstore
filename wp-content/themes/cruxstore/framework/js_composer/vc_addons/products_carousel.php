@@ -116,8 +116,8 @@ class WPBakeryShortCode_Products_Carousel extends WPBakeryShortCode {
             global $woocommerce_loop;
             $woocommerce_loop['columns'] = $desktop;
             $carousel_ouput = cruxstore_render_carousel(apply_filters( 'cruxstore_render_args', $atts), '', 'wc-carousel-wrapper');
-            if($layout == 'transparent'){
-                $woocommerce_loop['type'] = 'transparent';
+            if($layout !== 'normal'){
+                $woocommerce_loop['type'] = $layout;
             }else{
                 $woocommerce_loop['type'] = 'normal';
             }
@@ -160,6 +160,7 @@ vc_map( array(
                 'value' => array(
                     esc_html__( 'Normal', 'woocommerce' ) => 'normal',
                     esc_html__( 'Transparent', 'js_composer' ) => 'transparent',
+                    esc_html__( 'Divider', 'js_composer' ) => 'divider',
                 ),
                 'std' => 'normal',
                 'description' => esc_html__( 'Select your product layout.', 'cruxstore' )
@@ -193,6 +194,7 @@ vc_map( array(
                 'placeholder' => esc_html__( 'Select your categories', 'cruxstore' ),
                 "dependency" => array("element" => "source","value" => array('categories')),
                 'multiple' => true,
+                'select' => 'slug'
             ),
             array(
                 "type" => "cruxstore_posts",

@@ -82,32 +82,25 @@ class WPBakeryShortCode_Categories_Masonry extends WPBakeryShortCode {
             $i = 1;
             foreach ( $product_categories as $category ) {
                 if($layout == 2){
-                    $bootstrapColumnMobile = 6;
                     if(($i % 10) == 1 || ($i % 10 == 8)){
                         $bootstrapColumn = 6;
                         if($i == 1){
-                            $bootstrapColumnMobile = 12;
                         }
                     }else{
                         $bootstrapColumn = 3;
                     }
                 }else{
-                    $bootstrapColumnMobile = 6;
                     if($i == 1 || $i == 2){
                         $bootstrapColumn = 6;
-                        if($i == 1){
-                            $bootstrapColumnMobile = 12;
-                        }
                     }else{
                         $bootstrapColumn = 3;
                     }
                 }
 
+                $bootstrapColumnMobile = 12;
+                $bootstrapTabletMobile = 6;
 
-
-
-
-                echo '<div class="category-masonry-item col-md-'.$bootstrapColumn.' col-sm-'.$bootstrapColumn.' col-xs-'.$bootstrapColumnMobile.'">';
+                echo '<div class="category-masonry-item col-md-'.$bootstrapColumn.' col-sm-'.$bootstrapTabletMobile.' col-xs-'.$bootstrapColumnMobile.'">';
                 wc_get_template( 'content-product_cat_masonry.php', array(
                     'category' => $category
                 ) );

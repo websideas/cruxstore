@@ -106,6 +106,7 @@
       line-height: 32px;
       margin-left: 10px;
       font-size: 18px;
+      color: $primary-color;
       &:last-child {
         margin: 0;
       }
@@ -660,8 +661,9 @@
   }
 
   &.instagram-footer-space{
-    padding-bottom: 100px;
+    padding-bottom: 70px;
     .widget.null-instagram-feed{
+      margin-bottom: 0;
       .widget-title{
         margin-bottom: 50px;
       }
@@ -669,6 +671,7 @@
         margin: 0 -15px;
         li{
           padding: 0 15px;
+          margin-bottom: 30px;
         }
       }
     }
@@ -703,8 +706,10 @@
   .footer-top-inner{
     position: relative;
   }
-  .footer-top-right{
-    text-align: right;
+  &.footer-top-2{
+    .footer-top-right{
+      text-align: right;
+    }
   }
 }
 #footer-area{
@@ -715,17 +720,6 @@
   .widget_text{
     p{
       margin-bottom: 15px;
-    }
-  }
-  .widget{
-    margin-bottom: 22px;
-    border: none;
-    padding: 0;
-    .widget-title{
-      text-transform: uppercase;
-      margin: 0 0 20px;
-      color: #FFF;
-      font-size: 14px;
     }
   }
 }
@@ -748,8 +742,8 @@
   line-height: 24px;
   font-size: 12px;
   color: $white;
-  font-weight: bold;
   background: #222222;
+
   .socials-icon-wrapper{
     margin: 0;
   }
@@ -787,6 +781,15 @@
   .kt-mailchimp-wrapper{
     margin-bottom: 0;
   }
+
+  .mailchimp-form {
+    input[type="text"],
+    input[type="email"]{
+      font-size: 12px;
+    }
+  }
+
+
 }
 
 #bottom-nav{
@@ -988,7 +991,7 @@
   }
 
   h3{
-    letter-spacing: .2em;
+    font-weight: 600;
   }
 
   .mailchimp-form{

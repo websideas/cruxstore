@@ -34,7 +34,7 @@ if ( cruxstore_is_wc()){
             }
 
             $currency_html .= sprintf(
-                '<li class="%s"><a href="#" data-currency="%s" title="%s"><span></span>%s</a>',
+                '<li class="%s"><a href="#" data-currency="%s" class="currency-item" title="%s"><span></span>%s</a>',
                 $selected,
                 esc_attr($currency['name']),
                 esc_attr($currency['description']),
@@ -42,7 +42,7 @@ if ( cruxstore_is_wc()){
             );
         }
         $items_wrap .=  sprintf(
-            '<li class="menu-item menu-item-currency"><a href="#">%s</a><ul class="sub-menu-dropdown">%s</ul></li>',
+            '<li class="menu-item menu-item-currency"><a href="#" class="currency-item">%s</a><ul class="sub-menu-dropdown">%s</ul></li>',
             esc_html__('Currency', 'cruxstore').': '.$currency_active,
             $currency_html
         );

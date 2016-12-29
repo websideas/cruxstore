@@ -33,6 +33,7 @@ class WC_Widget_CRUXSTORE_Orderby extends WC_Widget {
             return;
         }
 
+
         $this->widget_start( $args, $instance );
 
         $orderby                 = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
@@ -85,6 +86,10 @@ class WC_Widget_CRUXSTORE_Orderby extends WC_Widget {
             }
         endforeach;
 
+        $class_custom = (isset($instance['custom_class'])) ? $instance['custom_class'] : '';
+
+
+
         if($type){
 
             foreach ( $_GET as $key => $val ) {
@@ -100,9 +105,9 @@ class WC_Widget_CRUXSTORE_Orderby extends WC_Widget {
                 }
             }
 
-            printf('<form method="get"><select class="orderby" name="orderby">%s</select></form>', $output);
+            printf('<form method="get" class="%s"><select class="orderby" name="orderby">%s</select></form>',$class_custom, $output);
         }else{
-            printf('<ul class="orderby">%s</ul>', $output);
+            printf('<ul class="orderby %s">%s</ul>', $class_custom, $output);
         }
 
         $this->widget_end( $args );

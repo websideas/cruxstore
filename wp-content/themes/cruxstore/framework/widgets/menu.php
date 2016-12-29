@@ -47,10 +47,13 @@ class Widget_Cruxstore_Menu extends WP_Widget {
         if ( !empty($instance['title']) )
             echo $args['before_title'] . $instance['title'] . $args['after_title'];
 
+        $style = ! empty( $instance['style'] ) ? 'style-'.$instance['style'] : '';
+
         $nav_menu_args = array(
             'fallback_cb' => '',
             'menu'        => $nav_menu,
-            'depth' => 1
+            'depth' => 1,
+            'menu_class' => $style
         );
 
         wp_nav_menu( apply_filters( 'widget_nav_menu_args', $nav_menu_args, $nav_menu, $args, $instance ) );
@@ -77,6 +80,9 @@ class Widget_Cruxstore_Menu extends WP_Widget {
         if ( ! empty( $new_instance['nav_menu'] ) ) {
             $instance['nav_menu'] = (int) $new_instance['nav_menu'];
         }
+        if ( ! empty( $new_instance['style'] ) ) {
+            $instance['style'] = $new_instance['style'];
+        }
         return $instance;
     }
 
@@ -93,6 +99,8 @@ class Widget_Cruxstore_Menu extends WP_Widget {
         global $wp_customize;
         $title = isset( $instance['title'] ) ? $instance['title'] : '';
         $nav_menu = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
+        $style = isset( $instance['style'] ) ? $instance['style'] : 'none';
+
 
         // Get menus
         $menus = wp_get_nav_menus();
@@ -116,13 +124,21 @@ class Widget_Cruxstore_Menu extends WP_Widget {
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id( 'nav_menu' ); ?>"><?php esc_html_e( 'Select Menu:', 'cruxstore' ); ?></label>
-                <select id="<?php echo $this->get_field_id( 'nav_menu' ); ?>" name="<?php echo $this->get_field_name( 'nav_menu' ); ?>">
+                <select class="widefat" id="<?php echo $this->get_field_id( 'nav_menu' ); ?>" name="<?php echo $this->get_field_name( 'nav_menu' ); ?>">
                     <option value="0"><?php _e( '&mdash; Select &mdash;' ); ?></option>
                     <?php foreach ( $menus as $menu ) : ?>
                         <option value="<?php echo esc_attr( $menu->term_id ); ?>" <?php selected( $nav_menu, $menu->term_id ); ?>>
                             <?php echo esc_html( $menu->name ); ?>
                         </option>
                     <?php endforeach; ?>
+                </select>
+            </p>
+
+            <p><label for="<?php echo esc_attr($this->get_field_id('style')); ?>"><?php esc_html_e('List Style:', 'cruxstore'); ?></label>
+                <select class="widefat" id="<?php echo esc_attr($this->get_field_id('style')); ?>" name="<?php echo esc_attr($this->get_field_name('style')); ?>">
+                    <option <?php selected( $style, 'none' ); ?> value="none"><?php esc_html_e('None','cruxstore'); ?></option>
+                    <option <?php selected( $style, 'disc' ); ?> value="disc"><?php esc_html_e('Disc','cruxstore'); ?></option>
+                    <option <?php selected( $style, 'square' ); ?> value="square"><?php esc_html_e('Square','cruxstore'); ?></option>
                 </select>
             </p>
             <?php if ( $wp_customize instanceof WP_Customize_Manager ) : ?>

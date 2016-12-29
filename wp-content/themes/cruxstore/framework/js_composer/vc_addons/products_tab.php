@@ -54,9 +54,8 @@ class WPBakeryShortCode_Products_Tab extends WPBakeryShortCode {
             $args['order'] = $order;
             $args['orderby'] = $orderby;
         }else{
-            $tabs = array('onsale', 'featured', 'new', 'bestselling' );
+            $tabs = array( 'new', 'onsale','featured' ,'bestselling' );
         }
-
         $tab_heading = '<ul class="nav-style nav-style-'.$style.'" data-count="'.count($tabs).'">';
 
         $i = 1;
@@ -68,7 +67,7 @@ class WPBakeryShortCode_Products_Tab extends WPBakeryShortCode {
                 if($tab == 'featured'){
                     $text = esc_html__('Recommend', 'cruxstore');
                 }elseif($tab == 'new'){
-                    $text = esc_html__('Arrivals Products', 'cruxstore');
+                    $text = esc_html__('New Products', 'cruxstore');
                 }elseif($tab == 'bestselling'){
                     $text = esc_html__('Best Sellers', 'cruxstore');
                 }elseif($tab == 'onsale'){
@@ -189,6 +188,7 @@ vc_map( array(
             'placeholder' => esc_html__( 'Select your categories', 'cruxstore' ),
             "dependency" => array("element" => "source","value" => array('categories')),
             'multiple' => true,
+            'select' => 'slug'
         ),
 
         array(
@@ -247,7 +247,6 @@ vc_map( array(
                 esc_html__( '2 columns', 'js_composer' ) => '2',
                 esc_html__( '3 columns', 'js_composer' ) => '3',
                 esc_html__( '4 columns', 'js_composer' ) => '4',
-                esc_html__( '6 columns', 'js_composer' ) => '6',
             ),
             'std' => '4',
             'description' => esc_html__('The columns attribute controls how many columns wide the products should be before wrapping.', 'cruxstore')
@@ -276,6 +275,7 @@ vc_map( array(
                 esc_html__( 'Style 2', 'cruxstore' ) => '2',
                 esc_html__( 'Style 3', 'cruxstore' ) => '3',
                 esc_html__( 'Style 4', 'cruxstore' ) => '4',
+                esc_html__( 'Style 5', 'cruxstore' ) => '5',
             ),
             'std' => 1,
             'description' => esc_html__( 'Select your style.', 'cruxstore' ),

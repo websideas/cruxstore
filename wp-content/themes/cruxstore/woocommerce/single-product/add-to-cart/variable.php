@@ -43,8 +43,6 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
                     $selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) : $product->get_variation_default_attribute( $attribute_name );
 
-                    echo $selected;
-
                     $swatch = false;
                     $swatch_html = $class = '';
                     foreach($options as $option){
@@ -56,7 +54,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
                             $columns = sprintf('<span class="swatch-term term_color" data-term="%s" style="background: %s;">&nbsp;</span>', $option, $term_color);
                             $swatch = true;
                         }elseif($display_type == 'image'){
-                            $thumbnail_id = get_woocommerce_term_meta( $id, 'thumbnail_id', true );
+                            $thumbnail_id = get_woocommerce_term_meta( $taxonomy->term_id, 'thumbnail_id', true );
                             $image = ( $thumbnail_id ) ? wp_get_attachment_thumb_url( $thumbnail_id ) : $image = wc_placeholder_img_src();
                             $image = str_replace( ' ', '%20', $image );
                             $columns = '<span class="swatch-term term_image" data-term="'.$option.'"><img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'woocommerce' ) . '" class="wp-post-image" height="48" width="48" /></span>';

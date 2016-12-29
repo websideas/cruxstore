@@ -52,8 +52,25 @@
         }
         $(document).on('change', "select[name^='menu-item-megamenu-width']", function(){
             var $objPosition = $(this).closest('.megamenu-layout').find('p.description-position');
-    		($(this).val() == 'full') ? $objPosition.hide() : $objPosition.show();
+    		($(this).val() == '') ? $objPosition.hide() : $objPosition.show();
         });
+        $(document).on('change', "select[name^='menu-item-megamenu-mgitem']", function(){
+
+            var $objMegamenuLayout = $(this).closest('.megamenu-layout'),
+                $objColumns = $objMegamenuLayout.find('p.field-columns'),
+                $objLayout = $objMegamenuLayout.find('p.field-layout');
+
+            if($(this).val() == ''){
+                $objColumns.show();
+                $objLayout.show();
+            }else{
+                $objColumns.hide();
+                $objLayout.hide();
+            }
+        });
+
+
+
         
         $( document ).on( 'mouseup', '.menu-item-bar', function( event, ui ) {
     		if( ! $( event.target ).is( 'a' )) {

@@ -1,12 +1,11 @@
 
-
 @font-face {
   font-family: "Flaticoneco";
-  src: url("./Flaticoneco.eot");
-  src: url("./Flaticoneco.eot?#iefix") format("embedded-opentype"),
-       url("./Flaticoneco.woff") format("woff"),
-       url("./Flaticoneco.ttf") format("truetype"),
-       url("./Flaticoneco.svg#Flaticoneco") format("svg");
+  src: url("../libs/flaticoneco/Flaticoneco.eot");
+  src: url("../libs/flaticoneco/Flaticoneco.eot?#iefix") format("embedded-opentype"),
+       url("../libs/flaticoneco/Flaticoneco.woff") format("woff"),
+       url("../libs/flaticoneco/Flaticoneco.ttf") format("truetype"),
+       url("../libs/flaticoneco/Flaticoneco.svg#Flaticoneco") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +13,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "flaticoneco";
-    src: url("./Flaticoneco.svg#Flaticoneco") format("svg");
+    src: url("../libs/flaticoneco/Flaticoneco.svg#Flaticoneco") format("svg");
   }
 }
 

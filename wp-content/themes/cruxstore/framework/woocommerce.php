@@ -34,9 +34,15 @@ if (!function_exists('cruxstore_get_product_layout')) {
     function cruxstore_get_product_layout()
     {
         $layout = cruxstore_meta('_cruxstore_detail_layout', array(), get_the_ID());
-        if (!$layout) {
-            $layout = cruxstore_option('product_detail_layout', 'layout1');
+
+        if(isset($_REQUEST['action']) && $_REQUEST['action'] = 'frontend_product_quick_view'){
+            $layout = 'layout2';
         }
+
+        if (!$layout) {
+            $layout = cruxstore_option('product_detail_layout', 'layout2');
+        }
+
         return $layout;
     }
 }
@@ -323,7 +329,6 @@ if (!function_exists('cruxstore_wc_subcategory_thumbnail')) {
             $small_thumbnail_size = apply_filters('single_product_small_thumbnail_size', 'cruxstore_cate_carousel');
         } else {
             $small_thumbnail_size = apply_filters('single_product_small_thumbnail_size', 'shop_catalog');
-
         }
 
         $dimensions = wc_get_image_size($small_thumbnail_size);
@@ -406,7 +411,7 @@ function cruxstore_wc_product_loop_start($classes)
 if (!function_exists('cruxstore_product_shop_count')) {
     function cruxstore_product_shop_count()
     {
-        $default_count = $products_per_page = cruxstore_option('products_per_page', 12);
+        $default_count = $products_per_page = cruxstore_option('loop_shop_per_page', 12);
         $count = isset($_GET['per_page']) ? $_GET['per_page'] : $default_count;
         if ($count === 'all') {
             $count = -1;
@@ -664,7 +669,7 @@ function cruxstore_woocommerce_shop_loop()
 
             if ( is_object( $wp_widget_factory ) && isset( $wp_widget_factory->widgets, $wp_widget_factory->widgets[ $type ] ) ) {
                 ob_start();
-                the_widget( $type, array('type'=>'select'), array() );
+                the_widget( $type, array('type'=>'select', 'custom_class' => 'visible-lg-block'), array() );
                 $widget = ob_get_clean();
             } else {
                 $widget = $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found.' );
@@ -672,8 +677,9 @@ function cruxstore_woocommerce_shop_loop()
 
             $attributes = cruxstore_attributes_menu();
             $current = cruxstore_current_attrs();
+            $mobile_label = sprintf('<a href="#">%s</a>', esc_html__('Filter', 'cruxstore'));
 
-            printf('<div class="products-shop-header-atts">%s%s%s</div>', $widget, $attributes, $current);
+            printf('<div class="products-shop-header-atts">%s%s%s%s</div>', $mobile_label, $widget, $attributes, $current);
 
 
 
@@ -837,8 +843,14 @@ function cruxstore_product_attribute_swatche(){
         );
         $all_terms = get_terms( $swatche_term, apply_filters( 'woocommerce_product_attribute_terms', $args ) );
         if ( $all_terms ) {
+
+
+
             foreach ( $all_terms as $term ) {
+
+
                 if( has_term( absint( $term->term_id ), $swatche_term, $post_id )){
+
                     $display_type = get_woocommerce_term_meta( $term->term_id, 'display_type', true );
                     $term_color = get_woocommerce_term_meta( $term->term_id, 'term_color', true );
 
@@ -847,8 +859,9 @@ function cruxstore_product_attribute_swatche(){
                     }elseif($display_type == 'text'){
                         $swatche_html .= sprintf('<span class="product-swatche-item swatche_text" title="%1$s" data-toggle="tooltip" data-placement="top">%1$s</span>', $term->name);
                     }else{
-                        $thumbnail_id = get_woocommerce_term_meta( $term->id, 'thumbnail_id', true );
+                        $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
                         $image = wp_get_attachment_thumb_url( $thumbnail_id );
+
                         if($thumbnail_id){
                             $image = str_replace( ' ', '%20', $image );
                             $swatche_html .= '<span class="product-swatche-item swatche_image" title="'.esc_attr($term->name).'" data-toggle="tooltip" data-placement="top"><img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'woocommerce' ) . '" class="wp-post-image" height="48" width="48" /></span>';
@@ -1151,11 +1164,6 @@ function cruxstore_frontend_product_quick_view_callback()
 }
 
 
-function cruxstore_woocommerce_close_quickview()
-{
-    echo '<a class="close-quickview" href="#"><i class="fa fa-times"></i></a>';
-}
-
 function cruxstore_wc_breadcrumb(){
     $layout = cruxstore_get_product_layout();
     if($layout == 'layout1' || $layout == 'layout5'){
@@ -1277,7 +1285,6 @@ add_action('woocommerce_product_images', 'cruxstore_woocommerce_show_product_bad
 add_filter('woocommerce_product_tabs', 'cruxstore_woocommerce_product_tabs');
 
 add_action('woocommerce_single_product_summary', 'cruxstore_wc_breadcrumb', 2);
-add_action('woocommerce_single_product_summary', 'cruxstore_woocommerce_close_quickview', 2);
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 13);
 
 add_action('woocommerce_single_product_summary', 'cruxstore_template_single_excerpt', 10);

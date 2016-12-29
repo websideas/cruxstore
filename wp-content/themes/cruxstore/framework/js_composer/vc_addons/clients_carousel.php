@@ -203,6 +203,7 @@ vc_map( array(
                 "dependency" => array("element" => "source","value" => array('categories')),
                 'multiple' => true,
                 'group' => esc_html__( 'Data settings', 'js_composer' ),
+                'select' => 'slug'
             ),
             array(
                 "type" => "cruxstore_posts",

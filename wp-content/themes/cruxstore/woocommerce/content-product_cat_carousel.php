@@ -49,17 +49,17 @@ if ( empty( $woocommerce_carousel ) ) {
             printf(
                 '<h3><a href="%s" class="category-banner-link">%s</a></h3>',
                 get_term_link( $category->slug, 'product_cat' ),
-
                 $category->name
             );
 
 
         }elseif($woocommerce_carousel == 'modern'){
             printf(
-                '<a href="%s" class="%s">%s</a>',
+                '<a href="%s" class="%s">%s %s</a>',
                 get_term_link( $category->slug, 'product_cat' ),
                 'btn btn-light',
-                esc_html__('Shop now', 'cruxstore')
+                esc_html__('Shop', 'cruxstore'),
+                $category->name
             );
         }else{
             printf('<h3>%s</h3>', $category->name);

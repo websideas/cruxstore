@@ -3,8 +3,8 @@
 Contributors: yithemes
 Tags: brand, brands, logo, manufacturer, yit, e-commerce, ecommerce, shop, supplier, woocommerce brand, woocommerce filter, filter, brand filter, woocommerce manufacturer, woocommerce supplier, brands for woocommerce, brands for wc, product brands, brands for products
 Requires at least: 4.0
-Tested up to: 4.5.2
-Stable tag: 1.0.7
+Tested up to: 4.6.1
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,12 @@ YITH WooCommerce Brands Add-on will add a new submenu called "Brands" under "YIT
 5. Brands option panel
 
 == Changelog ==
+
+= 1.0.8 - Released: Nov, 28 - 2016 =
+
+* Add: spanish translation
+* Tweak: updated plugin-fw
+* Tweak: changed text-domain to yith-woocommerce-brands-add-on
 
 = 1.0.7 - Released: Jun, 10 - 2016 =
 
@@ -100,9 +106,11 @@ If you have suggestions about how to improve YITH WooCommerce Brands Add-On, you
 = Available Languages =
 * English - UNITED KINGDOM (Default)
 * Dutch - NETHERLANDS
+* Italian - ITALY
+* Spanish - SPAIN
 
-If you have created your own language pack, or have an update for an existing one, you can send [gettext PO and MO file](http://codex.wordpress.org/Translating_WordPress "Translating WordPress")
-[use](http://yithemes.com/contact/ "Your Inspiration Themes") so we can bundle it into YITH WooCommerce Brands Add-On Languages.
+Need to translate this plugin into your own language? You can contribute to its translation from [this page](https://translate.wordpress.org/projects/wp-plugins/yith-woocommerce-brands-add-on "Translating WordPress").
+Your help is precious! Thanks
 
 == Documentation ==
 

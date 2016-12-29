@@ -540,6 +540,8 @@ function cruxstore_icons_source_register( $icons )
         array( "fa fa-stethoscope" => esc_html__( "Stethoscope", "js_composer" ) ),
         array( "fa fa-user-md" => esc_html__( "User-md", "js_composer" ) ),
         array( "fa fa-wheelchair" => esc_html__( "Wheelchair", "js_composer" ) ),
+        array( "fa fa-get-pocket" => esc_html__( "Get Pocket", "js_composer" ) ),
+
     );
 
     $icons['flaticon_ecommerce'] = array(

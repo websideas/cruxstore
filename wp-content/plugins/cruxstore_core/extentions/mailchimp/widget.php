@@ -32,8 +32,7 @@ class Widget_KT_Mailchimp extends WP_Widget {
             }
 
             if ( isset ( $this->options['api_key'] ) && !empty ( $this->options['api_key'] ) ) {
-
-                echo do_shortcode('[kt_mailchimp placeholder="'.$instance['placeholder'].'" layout="'.$instance['layout'].'" list="'.$instance['list'].'" opt_in="'.$instance['opt_in'].'" disable_names="'.$instance['disable_names'].'"]');
+                echo do_shortcode('[kt_mailchimp text_before="'.$instance['text_before'].'" placeholder="'.$instance['placeholder'].'" layout="'.$instance['layout'].'" list="'.$instance['list'].'" opt_in="'.$instance['opt_in'].'" disable_names="'.$instance['disable_names'].'"]');
 
             }else{
                 echo '<p>'.__("Please enter your mailchimp API key in setting page", 'cruxstore_core').'</p>';
@@ -132,6 +131,7 @@ class Widget_KT_Mailchimp extends WP_Widget {
                 <option <?php selected( $instance['layout'], '6' ); ?> value="6"><?php _e('Layout 6','cruxstore_core'); ?></option>
                 <option <?php selected( $instance['layout'], '7' ); ?> value="7"><?php _e('Layout 7','cruxstore_core'); ?></option>
                 <option <?php selected( $instance['layout'], '8' ); ?> value="8"><?php _e('Layout 8','cruxstore_core'); ?></option>
+                <option <?php selected( $instance['layout'], '9' ); ?> value="9"><?php _e('Layout 9','cruxstore_core'); ?></option>
             </select>
         </p>
     <?php

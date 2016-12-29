@@ -262,6 +262,12 @@ div.wpb_gallery{
   .wpb_flexslider{
     border: none;
     @include box-shadow(0, 0, 0);
+    margin: 0;
+    .slides {
+      img{
+        height: auto;
+      }
+    }
     .flex-control-nav{
       bottom: 15px;
       margin: 0;
@@ -295,7 +301,7 @@ div.wpb_gallery{
 
 div.vc_tta.vc_tta-accordion{
   .vc_tta-controls-icon.vc_tta-controls-icon-arrow-circle{
-    margin-top: -3px;
+    margin-top: -5px;
     color: $primary-color;
     &:before{
       @include FontIcon('\f18e');
@@ -312,11 +318,12 @@ div.vc_tta.vc_tta-accordion{
 
   &.vc_tta-style-flat{
     .vc_tta-panel-title > a{
-      padding: 20px;
+      padding-top: 18px;
+      padding-bottom: 18px;
       font-weight: 600;
     }
     .vc_tta-panel-body{
-      padding: 0px 48px 38px;
+      padding: 0 48px 38px;
     }
     &.vc_tta-color-white{
       .vc_tta-panel .vc_tta-panel-title > a{

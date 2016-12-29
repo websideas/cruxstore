@@ -166,8 +166,7 @@ vc_map( array(
     "name" => esc_html__( "KT: Banner", 'cruxstore'),
     "base" => "banner",
     "category" => esc_html__('by Kite-Themes', 'cruxstore' ),
-    "description" => esc_html__( "", 'cruxstore'),
-
+    "description" => '',
     "params" => array(
         array(
             "type" => "textfield",

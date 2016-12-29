@@ -9,8 +9,9 @@ class WPBakeryShortCode_CruxStore_Search extends WPBakeryShortCode {
 
         $atts = shortcode_atts(array(
             'layout' => 'default',
-            'css_animation' => '',
             'type' => 'all',
+
+            'css_animation' => '',
             'animation_delay' => '',
             'el_class' => '',
             'css'      => '',
@@ -29,7 +30,9 @@ class WPBakeryShortCode_CruxStore_Search extends WPBakeryShortCode {
         $rand = rand();
         
         $type = ($type == 'products' && cruxstore_is_wc()) ? 'WC_Widget_Product_Search' : 'WP_Widget_Search';
-        
+
+        $output = '';
+
         $args = array();
         global $wp_widget_factory;
         // to avoid unwanted warnings let's check before using widget
@@ -38,9 +41,13 @@ class WPBakeryShortCode_CruxStore_Search extends WPBakeryShortCode {
         	the_widget( $type, $atts, $args );
         	$output .= ob_get_clean();
         } else {
-        	$output .= $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found in : vc_wp_search' );
+        	$output .= $this->debugComment( 'Widget ' . esc_attr( $type ) . 'Not found in : '.$type );
         }
-        
+
+        if($animation_delay){
+            $animation_delay = sprintf(' data-wow-delay="%sms"', $animation_delay);
+        }
+
         $elementClass = preg_replace( array( '/\s+/', '/^\s|\s$/' ), array( ' ', '' ), implode( ' ', $elementClass ) );
         return '<div id="cruxstore-search'.$rand.'" class="'.esc_attr( $elementClass ).'"'.$animation_delay.'>'.$output.'</div>';
 

@@ -113,7 +113,6 @@ function cruxstore_add_search_full(){
 add_action('cruxstore_body_top', 'cruxstore_add_search_full', 999);
 
 
-
 /**
  * Add popup
  *
@@ -121,47 +120,15 @@ add_action('cruxstore_body_top', 'cruxstore_add_search_full', 999);
  */
 
 function cruxstore_body_top_add_popup(){
-    $popup_id = "";
     $enable_popup = cruxstore_option( 'enable_popup', 0 );
     if( $enable_popup == 1 && !isset($_COOKIE['cruxstore_popup']) ){
-        $popup_id = ' id="popup-wrap"';
-
-        $content_popup = cruxstore_option( 'content_popup' );
         $time_show = cruxstore_option( 'time_show', 0 );
-        $image_popup = cruxstore_option( 'popup_image' );
-        $popup_form = cruxstore_option( 'popup_form' );
-
-        $main_class = ( $image_popup['url'] ) ? 'col-md-8 col-sm-8' : 'col-md-12 col-sm-12';
-
-        ?>
-        <div <?php echo $popup_id; ?> class="popup-wrap-newletter mfp-hide mfp-with-anim" data-timeshow="<?php echo esc_attr($time_show); ?>">
-            <div class="container-fluid">
-                <div class="wrapper-newletter-content">
-                    <div class="row no-gutters">
-                        <?php if( $image_popup['url'] ){ ?>
-                            <div class="col-md-4 col-sm-4 newletter-popup-img hidden-xs">
-                                <img src="<?php echo esc_attr($image_popup['url']); ?>" alt="" class="img-responsive"/>
-                            </div>
-                        <?php } ?>
-                        <div class="<?php echo esc_attr($main_class); ?> wrapper-newletter-popup">
-                            <div class="newletter-popup-content">
-                                <?php
-                                echo apply_filters('the_content', $content_popup);
-                                if($popup_form){
-                                    printf('<div class="newletter-popup-form">%s</div>', apply_filters('the_content', $popup_form));
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php
+        $attr = 'data-timeshow="'.$time_show.'"';
+        cruxstore_get_subscribe_form('popup-wrap', $attr);
     }
 }
 
-add_action( 'cruxstore_body_top', 'cruxstore_body_top_add_popup', 20 );
+add_action( 'wp_footer', 'cruxstore_body_top_add_popup' );
 
 
 /**
@@ -348,7 +315,6 @@ function cruxstore_page_header( ){
 
         $heading = cruxstore_get_title_heading();
 
-
         if($heading){
             $title = cruxstore_get_page_title();
             $subtitle = cruxstore_get_page_subtitle();
@@ -463,7 +429,7 @@ function cruxstore_get_title_heading(){
             $show = $show_option;
         }
 
-        if(is_singular()){
+        if(is_singular('post')){
             $show = '0';
         }
 
@@ -622,7 +588,7 @@ function cruxstore_get_page_layout(){
         $page_header_layout =  cruxstore_meta('_cruxstore_page_header_layout');
     }elseif(is_page() || is_singular()){
         $page_header_layout =  cruxstore_meta('_cruxstore_page_header_layout');
-        if(is_singular()){
+        if(is_singular('post')){
             $page_header_layout = 'centered';
         }
         if(cruxstore_is_wc()){
@@ -664,7 +630,7 @@ function cruxstore_get_page_align(){
         $page_header_align =  cruxstore_meta('_cruxstore_page_header_align');
     }elseif(is_page() || is_singular()){
         $page_header_align =  cruxstore_meta('_cruxstore_page_header_align');
-        if(is_singular()){
+        if(is_singular('post')){
             $page_header_align = 'left';
         }
         if(cruxstore_is_wc()){
